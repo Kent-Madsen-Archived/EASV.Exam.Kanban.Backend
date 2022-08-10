@@ -2,6 +2,13 @@
 [2022, Designermadsen, Deviantart](https://www.deviantart.com/designermadsen/art/The-infinite-library-Garden-924910668)
 
 # Exam project - Kanban
+## Status
+| [![CodeScene general](https://codescene.io/images/analyzed-by-codescene-badge.svg)](https://codescene.io/projects/28547)             |
+| ------------------------------------------------------------------------------------------------------------------------------------ |
+| [![CodeScene Code Health](https://codescene.io/projects/28547/status-badges/code-health)](https://codescene.io/projects/28547)       |
+| [![CodeScene System Mastery](https://codescene.io/projects/28547/status-badges/system-mastery)](https://codescene.io/projects/28547) |
+
+
 ## Content
 * [Contribute](contributing.md)
 * [Code of Conduct](code_of_conduct.md)
