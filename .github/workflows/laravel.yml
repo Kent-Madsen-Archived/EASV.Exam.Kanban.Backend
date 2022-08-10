@@ -2,10 +2,10 @@ name: Laravel
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "development" ]
 
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "test", "publish" ]
 
 jobs:
   laravel-tests:
@@ -19,5 +19,5 @@ jobs:
       run: bash './.setup.test.sh'
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: |
-      cd code
+      cd code &&
       vendor/bin/phpunit
