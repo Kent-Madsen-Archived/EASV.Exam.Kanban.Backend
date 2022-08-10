@@ -13,7 +13,7 @@
 ### Document details
 Author: Kent Madsen
 
-Copyright: Kent vejrup Madsen 2022
+Copyright: 2022, Kent vejrup Madsen
 
 License: [MIT License](https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md)
 
@@ -27,4 +27,5 @@ Contact Information:
 Made using: [Template.Project.PHP](https://github.com/KentVejrupMadsen/Template.Project.PHP)
 
 Created at: 2022, 08, 10
+
 Last updated at: 2022, 08, 10
