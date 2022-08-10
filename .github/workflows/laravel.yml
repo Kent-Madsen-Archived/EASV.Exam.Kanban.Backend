@@ -18,4 +18,4 @@ jobs:
     - name: Setup application enviroments
       run: bash './.setup.test.sh'
     - name: Execute tests (Unit and Feature tests) via PHPUnit
-      run: code/vendor/bin/phpunit
+      run: code/vendor/bin/phpunit --coverage-xml ./code/phpunit.xml
