@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\projectModel;
-use App\Http\Requests\StoreprojectModelRequest;
-use App\Http\Requests\UpdateprojectModelRequest;
+use App\Models\ProjectModel;
+use App\Http\Requests\StoreProjectModelRequest;
+use App\Http\Requests\UpdateProjectModelRequest;
 
 class projectController extends Controller
 {
@@ -21,10 +21,10 @@ class projectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreprojectModelRequest  $request
+     * @param  \App\Http\Requests\StoreProjectModelRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreprojectModelRequest $request)
+    public function store(StoreProjectModelRequest $request)
     {
         //
     }
@@ -32,10 +32,10 @@ class projectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\projectModel  $projectModel
+     * @param  \App\Models\ProjectModel  $projectModel
      * @return \Illuminate\Http\Response
      */
-    public function show(projectModel $projectModel)
+    public function show(ProjectModel $projectModel)
     {
         //
     }
@@ -43,11 +43,11 @@ class projectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateprojectModelRequest  $request
-     * @param  \App\Models\projectModel  $projectModel
+     * @param  \App\Http\Requests\UpdateProjectModelRequest  $request
+     * @param  \App\Models\ProjectModel  $projectModel
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateprojectModelRequest $request, projectModel $projectModel)
+    public function update(UpdateProjectModelRequest $request, ProjectModel $projectModel)
     {
         //
     }
@@ -55,10 +55,10 @@ class projectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\projectModel  $projectModel
+     * @param  \App\Models\ProjectModel  $projectModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(projectModel $projectModel)
+    public function destroy(ProjectModel $projectModel)
     {
         //
     }

@@ -5,8 +5,8 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class TaskGroupModel
-        extends Model
+    class SettingModel
+       extends Model
     {
         use HasFactory;
     }

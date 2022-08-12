@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TeamMemberOptionsModel;
-use App\Http\Requests\StoreTeamMemberOptionsModelRequest;
+use App\Http\Requests\StoreTeamMemberOptionModelRequest;
 use App\Http\Requests\UpdateTeamMemberOptionsModelRequest;
 
 class TeamMemberOptionsController extends Controller
@@ -21,10 +21,10 @@ class TeamMemberOptionsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTeamMemberOptionsModelRequest  $request
+     * @param  \App\Http\Requests\StoreTeamMemberOptionModelRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTeamMemberOptionsModelRequest $request)
+    public function store(StoreTeamMemberOptionModelRequest $request)
     {
         //
     }

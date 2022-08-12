@@ -5,7 +5,7 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class TaskGroupModel
+    class ProjectModel
         extends Model
     {
         use HasFactory;
