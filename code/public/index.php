@@ -1,55 +1,32 @@
 <?php
+    use Illuminate\Contracts\Http\Kernel;
+    use Illuminate\Http\Request;
 
-use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Http\Request;
+    define('LARAVEL_START', microtime(true));
 
-define('LARAVEL_START', microtime(true));
+    if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+        require $maintenance;
+    }
 
-/*
-|--------------------------------------------------------------------------
-| Check If The Application Is Under Maintenance
-|--------------------------------------------------------------------------
-|
-| If the application is in maintenance / demo mode via the "down" command
-| we will load this file so that any pre-rendered content can be shown
-| instead of starting the framework, which could cause an exception.
-|
-*/
+    require __DIR__.'/../vendor/autoload.php';
 
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
-}
+    $app = require_once __DIR__.'/../bootstrap/app.php';
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| this application. We just need to utilize it! We'll simply require it
-| into the script here so we don't need to manually load our classes.
-|
-*/
+    $kernel = $app->make(Kernel::class);
 
-require __DIR__.'/../vendor/autoload.php';
+    $response = $kernel->handle(
+        $request = Request::capture()
+    )->send();
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request using
-| the application's HTTP kernel. Then, we will send the response back
-| to this client's browser, allowing them to enjoy our application.
-|
-*/
+    $kernel->terminate($request, $response);
+?>
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7YKLR7Y3GH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-$kernel = $app->make(Kernel::class);
-
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
-
-$kernel->terminate($request, $response);
+  gtag('config', 'G-7YKLR7Y3GH');
+</script>
