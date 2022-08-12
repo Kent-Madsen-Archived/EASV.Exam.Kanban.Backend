@@ -1,12 +1,13 @@
 <?php
-
     namespace App\Http\Controllers;
 
     use App\Models\TaskGroupModel;
     use App\Http\Requests\StoreTaskGroupModelRequest;
     use App\Http\Requests\UpdateTaskGroupModelRequest;
 
-    class TaskGroupController extends Controller
+
+    class TaskGroupController
+        extends Controller
     {
         /**
          * Display a listing of the resource.
