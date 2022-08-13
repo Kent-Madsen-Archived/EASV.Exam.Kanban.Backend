@@ -2,7 +2,7 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    
+
     Route::middleware( middlewareSanctum )->get( '/user',
         function( Request $request )
         {
