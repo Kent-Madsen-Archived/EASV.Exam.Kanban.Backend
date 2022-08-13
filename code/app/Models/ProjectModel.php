@@ -9,5 +9,6 @@
         extends Model
     {
         use HasFactory;
+
     }
 ?>
