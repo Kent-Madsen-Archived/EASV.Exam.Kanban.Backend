@@ -6,18 +6,18 @@
         as TaskController;
 
     Route::middleware( middlewareSanctum )->get( '/tasks/{id}',
-        [TaskController::class, '']
+        [TaskController::class, 'show']
     );
 
     Route::middleware( middlewareSanctum )->post( '/tasks/create',
-        [TaskController::class, '']
+        [TaskController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/tasks/update',
-        [TaskController::class, '']
+        [TaskController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/tasks/delete/{id}',
-        [TaskController::class, '']
+        [TaskController::class, 'destroy']
     );
 ?>

@@ -7,18 +7,18 @@
 
 
     Route::middleware( middlewareSanctum )->get( '/settings/{id}',
-        [SettingController::class, '']
+        [SettingController::class, 'show']
     );
 
     Route::middleware( middlewareSanctum )->post( '/settings/create',
-        [SettingController::class, '']
+        [SettingController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/settings/update',
-        [SettingController::class, '']
+        [SettingController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/settings/delete/{id}',
-        [SettingController::class, '']
+        [SettingController::class, 'destroy']
     );
 ?>

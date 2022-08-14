@@ -6,18 +6,18 @@
             as TaskGroupController;
 
     Route::middleware( middlewareSanctum )->get( '/tasks/group/{id}',
-        [TaskGroupController::class, '']
+        [TaskGroupController::class, 'show']
     );
 
     Route::middleware( middlewareSanctum )->post( '/tasks/group/create',
-        [TaskGroupController::class, '']
+        [TaskGroupController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/tasks/group/update',
-        [TaskGroupController::class, '']
+        [TaskGroupController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/tasks/group/delete/{id}',
-        [TaskGroupController::class, '']
+        [TaskGroupController::class, 'destroy']
     );
 ?>

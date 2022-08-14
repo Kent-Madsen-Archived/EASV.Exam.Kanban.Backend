@@ -7,18 +7,18 @@
 
 
     Route::middleware( middlewareSanctum )->get( '/projects/{id}',
-        [ProjectController::class, '']
+        [ProjectController::class, 'show']
     );
 
     Route::middleware( middlewareSanctum )->post( '/projects/create',
-        [ProjectController::class, '']
+        [ProjectController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/projects/update',
-        [ProjectController::class, '']
+        [ProjectController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/projects/delete/{id}',
-        [ProjectController::class, '']
+        [ProjectController::class, 'destroy']
     );
 ?>
