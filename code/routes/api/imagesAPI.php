@@ -2,32 +2,22 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
+    use App\Http\Controllers\ImagesController as ImageController;
+
 
     Route::get( '/resources/images/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ImageController::class, 'show']
     );
 
     Route::middleware( middlewareSanctum )->post( '/resources/images/create',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ImageController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/resources/images/update',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ImageController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/resources/images/delete/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ImageController::class, 'destroy']
     );
 ?>
