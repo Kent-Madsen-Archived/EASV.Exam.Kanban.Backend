@@ -6,7 +6,7 @@
 
 
     class SettingModel
-       extends Model
+        extends Model
     {
         use HasFactory;
     }
