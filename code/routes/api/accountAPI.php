@@ -6,25 +6,25 @@
 
 
     Route::get( '/accounts/{id}',
-        [AccountController::class, '']
+        [AccountController::class, 'show']
     );
 
 
     Route::middleware( middlewareSanctum )->get( '/accounts/me',
-        [AccountController::class, '']
+        [AccountController::class, 'me']
     );
 
 
     Route::post( '/accounts/create',
-        [AccountController::class, '']
+        [AccountController::class, 'store']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/accounts/update',
-        [AccountController::class, '']
+        [AccountController::class, 'update']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/accounts/delete/{id}',
-        [AccountController::class, '']
+        [AccountController::class, 'delete']
     );
 
 ?>
