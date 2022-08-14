@@ -6,19 +6,19 @@
             as TeamMemberController;
 
 
-    Route::middleware( middlewareSanctum )->get( '/team/member/{id}',
+    Route::middleware( usingSanctum )->get( '/team/member/{id}',
         [TeamMemberController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/team/member/create',
+    Route::middleware( usingSanctum )->post( '/team/member/create',
         [TeamMemberController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/team/member/update',
+    Route::middleware( usingSanctum )->patch( '/team/member/update',
         [TeamMemberController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/team/member/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/team/member/delete/{id}',
         [TeamMemberController::class, 'destroy']
     );
 ?>

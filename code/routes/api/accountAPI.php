@@ -10,7 +10,7 @@
         [AccountController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->get( '/accounts/me',
+    Route::middleware( usingSanctum )->get( '/accounts/me',
         [AccountController::class, 'me']
     );
 
@@ -18,11 +18,11 @@
         [AccountController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/accounts/update',
+    Route::middleware( usingSanctum )->patch( '/accounts/update',
         [AccountController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/accounts/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/accounts/delete/{id}',
         [AccountController::class, 'delete']
     );
 ?>

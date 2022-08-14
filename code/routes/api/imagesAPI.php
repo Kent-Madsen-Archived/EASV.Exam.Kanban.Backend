@@ -10,15 +10,15 @@
         [ImageController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/resources/images/create',
+    Route::middleware( usingSanctum )->post( '/resources/images/create',
         [ImageController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/resources/images/update',
+    Route::middleware( usingSanctum )->patch( '/resources/images/update',
         [ImageController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/resources/images/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/resources/images/delete/{id}',
         [ImageController::class, 'destroy']
     );
 ?>

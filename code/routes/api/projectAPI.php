@@ -6,19 +6,19 @@
         as ProjectController;
 
 
-    Route::middleware( middlewareSanctum )->get( '/projects/{id}',
+    Route::middleware( usingSanctum )->get( '/projects/{id}',
         [ProjectController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/projects/create',
+    Route::middleware( usingSanctum )->post( '/projects/create',
         [ProjectController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/projects/update',
+    Route::middleware( usingSanctum )->patch( '/projects/update',
         [ProjectController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/projects/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/projects/delete/{id}',
         [ProjectController::class, 'destroy']
     );
 ?>

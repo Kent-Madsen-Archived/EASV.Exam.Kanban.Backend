@@ -6,19 +6,19 @@
             as TeamMemberOptionsController;
 
 
-    Route::middleware( middlewareSanctum )->get( '/team/member/options/{id}',
+    Route::middleware( usingSanctum )->get( '/team/member/options/{id}',
         [TeamMemberOptionsController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/team/member/options/create',
+    Route::middleware( usingSanctum )->post( '/team/member/options/create',
         [TeamMemberOptionsController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/team/member/options/update',
+    Route::middleware( usingSanctum )->patch( '/team/member/options/update',
         [TeamMemberOptionsController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/team/member/options/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/team/member/options/delete/{id}',
         [TeamMemberOptionsController::class, 'destroy']
     );
 ?>
