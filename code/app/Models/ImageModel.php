@@ -5,10 +5,9 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class ProjectModel
+    class ImageModel
         extends Model
     {
         use HasFactory;
-
     }
 ?>
