@@ -3,7 +3,7 @@
     use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\ProjectController
-            as ProjectController;
+        as ProjectController;
 
 
     Route::middleware( middlewareSanctum )->get( '/projects/{id}',

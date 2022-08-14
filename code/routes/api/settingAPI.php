@@ -3,7 +3,7 @@
     use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\SettingController
-                as SettingController;
+        as SettingController;
 
 
     Route::middleware( middlewareSanctum )->get( '/settings/{id}',

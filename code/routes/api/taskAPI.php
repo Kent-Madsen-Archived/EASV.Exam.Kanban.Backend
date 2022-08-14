@@ -5,6 +5,7 @@
     use App\Http\Controllers\TaskController
         as TaskController;
 
+
     Route::middleware( middlewareSanctum )->get( '/tasks/{id}',
         [TaskController::class, 'show']
     );

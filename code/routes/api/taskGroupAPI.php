@@ -5,6 +5,7 @@
     use App\Http\Controllers\TaskGroupController
             as TaskGroupController;
 
+
     Route::middleware( middlewareSanctum )->get( '/tasks/group/{id}',
         [TaskGroupController::class, 'show']
     );
