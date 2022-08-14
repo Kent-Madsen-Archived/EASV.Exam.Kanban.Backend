@@ -10,11 +10,9 @@
         [AccountController::class, 'show']
     );
 
-
     Route::middleware( middlewareSanctum )->get( '/accounts/me',
         [AccountController::class, 'me']
     );
-
 
     Route::post( '/accounts/create',
         [AccountController::class, 'store']
@@ -27,5 +25,4 @@
     Route::middleware( middlewareSanctum )->delete( '/accounts/delete/{id}',
         [AccountController::class, 'delete']
     );
-
 ?>
