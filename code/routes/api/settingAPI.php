@@ -6,19 +6,19 @@
         as SettingController;
 
 
-    Route::middleware( middlewareSanctum )->get( '/settings/{id}',
+    Route::middleware( usingSanctum )->get( '/settings/{id}',
         [SettingController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/settings/create',
+    Route::middleware( usingSanctum )->post( '/settings/create',
         [SettingController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/settings/update',
+    Route::middleware( usingSanctum )->patch( '/settings/update',
         [SettingController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/settings/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/settings/delete/{id}',
         [SettingController::class, 'destroy']
     );
 ?>

@@ -6,19 +6,19 @@
             as TaskGroupController;
 
 
-    Route::middleware( middlewareSanctum )->get( '/tasks/group/{id}',
+    Route::middleware( usingSanctum )->get( '/tasks/group/{id}',
         [TaskGroupController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/tasks/group/create',
+    Route::middleware( usingSanctum )->post( '/tasks/group/create',
         [TaskGroupController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/tasks/group/update',
+    Route::middleware( usingSanctum )->patch( '/tasks/group/update',
         [TaskGroupController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/tasks/group/delete/{id}',
+    Route::middleware( usingSanctum )->delete( '/tasks/group/delete/{id}',
         [TaskGroupController::class, 'destroy']
     );
 ?>
