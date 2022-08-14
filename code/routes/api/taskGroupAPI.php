@@ -5,20 +5,23 @@
     use App\Http\Controllers\TaskGroupController
             as TaskGroupController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( usingSanctum )->get( '/tasks/group/{id}',
+
+    Route::middleware( $secure )->get( '/tasks/group/{id}',
         [TaskGroupController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->post( '/tasks/group/create',
+    Route::middleware( $secure )->post( '/tasks/group/create',
         [TaskGroupController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/tasks/group/update',
+    Route::middleware( $secure )->patch( '/tasks/group/update',
         [TaskGroupController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/tasks/group/delete/{id}',
+    Route::middleware( $secure )->delete( '/tasks/group/delete/{id}',
         [TaskGroupController::class, 'destroy']
     );
 ?>

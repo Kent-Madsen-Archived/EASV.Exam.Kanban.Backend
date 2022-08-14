@@ -5,12 +5,15 @@
     use App\Http\Controllers\AccountController
         as AccountController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
+
 
     Route::get( '/accounts/{id}',
         [AccountController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->get( '/accounts/me',
+    Route::middleware( $secure )->get( '/accounts/me',
         [AccountController::class, 'me']
     );
 
@@ -18,11 +21,11 @@
         [AccountController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/accounts/update',
+    Route::middleware( $secure )->patch( '/accounts/update',
         [AccountController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/accounts/delete/{id}',
+    Route::middleware( $secure )->delete( '/accounts/delete/{id}',
         [AccountController::class, 'delete']
     );
 ?>
