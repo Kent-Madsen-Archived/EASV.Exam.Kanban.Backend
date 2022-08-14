@@ -5,20 +5,23 @@
     use App\Http\Controllers\ImagesController
         as ImageController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
+
 
     Route::get( '/resources/images/{id}',
         [ImageController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->post( '/resources/images/create',
+    Route::middleware( $secure )->post( '/resources/images/create',
         [ImageController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/resources/images/update',
+    Route::middleware( $secure )->patch( '/resources/images/update',
         [ImageController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/resources/images/delete/{id}',
+    Route::middleware( $secure )->delete( '/resources/images/delete/{id}',
         [ImageController::class, 'destroy']
     );
 ?>

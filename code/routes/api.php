@@ -1,6 +1,4 @@
 <?php
-    const usingSanctum = 'auth:sanctum';
-
     // account
     require_once 'api/accountAPI.php';
 

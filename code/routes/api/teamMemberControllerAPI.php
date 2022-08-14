@@ -5,20 +5,22 @@
     use App\Http\Controllers\TeamMemberController
             as TeamMemberController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( usingSanctum )->get( '/team/member/{id}',
+    Route::middleware( $secure )->get( '/team/member/{id}',
         [TeamMemberController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->post( '/team/member/create',
+    Route::middleware( $secure )->post( '/team/member/create',
         [TeamMemberController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/team/member/update',
+    Route::middleware( $secure )->patch( '/team/member/update',
         [TeamMemberController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/team/member/delete/{id}',
+    Route::middleware( $secure )->delete( '/team/member/delete/{id}',
         [TeamMemberController::class, 'destroy']
     );
 ?>

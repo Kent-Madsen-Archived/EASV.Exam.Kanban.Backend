@@ -5,20 +5,23 @@
     use App\Http\Controllers\TeamMemberOptionsController
             as TeamMemberOptionsController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( usingSanctum )->get( '/team/member/options/{id}',
+
+    Route::middleware( $secure )->get( '/team/member/options/{id}',
         [TeamMemberOptionsController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->post( '/team/member/options/create',
+    Route::middleware( $secure )->post( '/team/member/options/create',
         [TeamMemberOptionsController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/team/member/options/update',
+    Route::middleware( $secure )->patch( '/team/member/options/update',
         [TeamMemberOptionsController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/team/member/options/delete/{id}',
+    Route::middleware( $secure )->delete( '/team/member/options/delete/{id}',
         [TeamMemberOptionsController::class, 'destroy']
     );
 ?>

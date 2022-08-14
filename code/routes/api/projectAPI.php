@@ -5,20 +5,23 @@
     use App\Http\Controllers\ProjectController
         as ProjectController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( usingSanctum )->get( '/projects/{id}',
+
+    Route::middleware( $secure )->get( '/projects/{id}',
         [ProjectController::class, 'show']
     );
 
-    Route::middleware( usingSanctum )->post( '/projects/create',
+    Route::middleware( $secure )->post( '/projects/create',
         [ProjectController::class, 'store']
     );
 
-    Route::middleware( usingSanctum )->patch( '/projects/update',
+    Route::middleware( $secure )->patch( '/projects/update',
         [ProjectController::class, 'update']
     );
 
-    Route::middleware( usingSanctum )->delete( '/projects/delete/{id}',
+    Route::middleware( $secure )->delete( '/projects/delete/{id}',
         [ProjectController::class, 'destroy']
     );
 ?>
