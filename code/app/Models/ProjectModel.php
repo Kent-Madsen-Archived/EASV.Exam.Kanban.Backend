@@ -10,5 +10,21 @@
     {
         use HasFactory;
 
+        protected $fillable =
+        [
+
+        ];
+
+
+        protected $hidden =
+        [
+
+        ];
+
+
+        protected $casts =
+        [
+
+        ];
     }
 ?>
