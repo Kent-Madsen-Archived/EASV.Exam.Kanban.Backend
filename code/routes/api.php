@@ -1,12 +1,20 @@
 <?php
-    use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Route;
+    const middlewareSanctum = 'auth:sanctum';
 
+    // account
+    require_once 'api/accountAPI.php';
 
-    Route::middleware( 'auth:sanctum' )->get( '/user',
-        function( Request $request )
-        {
-            return $request->user();
-        }
-    );
+    // Resources
+    require_once 'api/imagesAPI.php';
+
+    // Application
+    require_once 'api/projectAPI.php';
+    require_once 'api/settingAPI.php';
+
+    require_once 'api/taskAPI.php';
+    require_once 'api/taskGroupAPI.php';
+
+    // Teams
+    require_once 'api/teamMemberControllerAPI.php';
+    require_once 'api/teamMemberOptionsControllerAPI.php';
 ?>

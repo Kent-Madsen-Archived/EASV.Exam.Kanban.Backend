@@ -1,12 +1,12 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\TaskModel;
-    use App\Http\Requests\StoreTaskModelRequest;
-    use App\Http\Requests\UpdateTaskModelRequest;
+    use App\Models\ImageModel;
+    use App\Http\Requests\StoreImageModelRequest;
+    use App\Http\Requests\UpdateImageModelRequest;
 
 
-    class TaskController
+    class ImagesController
         extends Controller
     {
         /**
@@ -22,10 +22,10 @@
         /**
          * Store a newly created resource in storage.
          *
-         * @param  \App\Http\Requests\StoreTaskModelRequest  $request
+         * @param  \App\Http\Requests\StoreImageModelRequest  $request
          * @return \Illuminate\Http\Response
          */
-        public function store(StoreTaskModelRequest $request)
+        public function store(StoreImageModelRequest $request)
         {
             //
         }
@@ -33,10 +33,10 @@
         /**
          * Display the specified resource.
          *
-         * @param  \App\Models\TaskModel  $taskModel
+         * @param  \App\Models\ImageModel  $imageModel
          * @return \Illuminate\Http\Response
          */
-        public function show(TaskModel $taskModel)
+        public function show(ImageModel $imageModel)
         {
             //
         }
@@ -44,11 +44,11 @@
         /**
          * Update the specified resource in storage.
          *
-         * @param  \App\Http\Requests\UpdateTaskModelRequest  $request
-         * @param  \App\Models\TaskModel  $taskModel
+         * @param  \App\Http\Requests\UpdateImageModelRequest  $request
+         * @param  \App\Models\ImageModel  $imageModel
          * @return \Illuminate\Http\Response
          */
-        public function update(UpdateTaskModelRequest $request, TaskModel $taskModel)
+        public function update(UpdateImageModelRequest $request, ImageModel $imageModel)
         {
             //
         }
@@ -56,12 +56,12 @@
         /**
          * Remove the specified resource from storage.
          *
-         * @param  \App\Models\TaskModel  $taskModel
+         * @param  \App\Models\ImageModel  $imageModel
          * @return \Illuminate\Http\Response
          */
-        public function destroy(TaskModel $taskModel)
+        public function destroy(ImageModel $imageModel)
         {
             //
         }
-}
+    }
 ?>
