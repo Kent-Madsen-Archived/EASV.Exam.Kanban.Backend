@@ -2,7 +2,8 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\ImagesController as ImageController;
+    use App\Http\Controllers\ImagesController
+        as ImageController;
 
 
     Route::get( '/resources/images/{id}',

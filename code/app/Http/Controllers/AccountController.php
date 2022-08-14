@@ -10,7 +10,7 @@
 
 
 
-    class Controller
+    class AccountController
         extends BaseController
     {
         use AuthorizesRequests,

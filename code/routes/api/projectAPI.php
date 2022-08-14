@@ -2,32 +2,23 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
+    use App\Http\Controllers\ProjectController
+            as ProjectController;
+
 
     Route::middleware( middlewareSanctum )->get( '/projects/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ProjectController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->post( '/projects/create',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ProjectController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/projects/update',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ProjectController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/projects/delete/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [ProjectController::class, '']
     );
 ?>

@@ -2,32 +2,22 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
+    use App\Http\Controllers\TaskController
+        as TaskController;
 
     Route::middleware( middlewareSanctum )->get( '/tasks/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [TaskController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->post( '/tasks/create',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [TaskController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/tasks/update',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [TaskController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/tasks/delete/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [TaskController::class, '']
     );
 ?>

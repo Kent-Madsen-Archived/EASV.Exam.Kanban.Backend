@@ -1,43 +1,30 @@
 <?php
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\AccountController
+        as AccountController;
 
 
     Route::get( '/accounts/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [AccountController::class, '']
     );
 
 
     Route::middleware( middlewareSanctum )->get( '/accounts/me',
-        function( Request $request )
-        {
-                return $request->user();
-        }
+        [AccountController::class, '']
     );
 
 
     Route::post( '/accounts/create',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [AccountController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->patch( '/accounts/update',
-        function( Request $request )
-        {
-                return $request->user();
-        }
+        [AccountController::class, '']
     );
 
     Route::middleware( middlewareSanctum )->delete( '/accounts/delete/{id}',
-        function( Request $request )
-        {
-            return $request->user();
-        }
+        [AccountController::class, '']
     );
 
 ?>
