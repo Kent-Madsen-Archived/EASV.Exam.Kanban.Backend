@@ -13,8 +13,10 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
                     $table->morphs( 'tokenable' );
                     $table->string( 'name' );
+
                     $table->string( 'token', 64 )
                           ->unique();
 

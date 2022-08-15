@@ -10,7 +10,7 @@
         public function up()
         {
             //
-            Schema::create('teamMembers',
+            Schema::create('team_members',
                 function( Blueprint $table )
                 {
                     $table->id();
@@ -23,7 +23,7 @@
         public function down()
         {
             //
-            Schema::dropIfExists( 'teamMembers' );
+            Schema::dropIfExists( 'team_members' );
         }
     };
 ?>
