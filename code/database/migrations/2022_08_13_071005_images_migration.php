@@ -10,12 +10,20 @@
         public function up()
         {
             //
+            Schema::create('images',
+                function( Blueprint $table )
+                {
+                    $table->id();
+                    $table->timestamps();
+                }
+            );
         }
 
 
         public function down()
         {
             //
+            Schema::dropIfExists( 'images' );
         }
     };
 ?>

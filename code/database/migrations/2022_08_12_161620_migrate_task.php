@@ -22,6 +22,7 @@
         public function down()
         {
             //
+            Schema::dropIfExists( 'tasks' );
         }
     };
 ?>

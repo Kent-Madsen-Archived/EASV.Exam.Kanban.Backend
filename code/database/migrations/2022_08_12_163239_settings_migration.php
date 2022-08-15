@@ -10,7 +10,7 @@
         public function up()
         {
             //
-            Schema::create('tasks',
+            Schema::create('settings',
                 function( Blueprint $table )
                 {
                     $table->id();
@@ -23,6 +23,7 @@
         public function down()
         {
             //
+            Schema::dropIfExists( 'settings' );
         }
     };
 ?>
