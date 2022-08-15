@@ -5,20 +5,22 @@
     use App\Http\Controllers\SettingController
         as SettingController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( middlewareSanctum )->get( '/settings/{id}',
+    Route::middleware( $secure )->get( '/settings/{id}',
         [SettingController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/settings/create',
+    Route::middleware( $secure )->post( '/settings/create',
         [SettingController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/settings/update',
+    Route::middleware( $secure )->patch( '/settings/update',
         [SettingController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/settings/delete/{id}',
+    Route::middleware( $secure )->delete( '/settings/delete/{id}',
         [SettingController::class, 'destroy']
     );
 ?>

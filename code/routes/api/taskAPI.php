@@ -5,20 +5,22 @@
     use App\Http\Controllers\TaskController
         as TaskController;
 
+    use App\cfg;
+    $secure = cfg::$secure;
 
-    Route::middleware( middlewareSanctum )->get( '/tasks/{id}',
+    Route::middleware( $secure )->get( '/tasks/{id}',
         [TaskController::class, 'show']
     );
 
-    Route::middleware( middlewareSanctum )->post( '/tasks/create',
+    Route::middleware( $secure )->post( '/tasks/create',
         [TaskController::class, 'store']
     );
 
-    Route::middleware( middlewareSanctum )->patch( '/tasks/update',
+    Route::middleware( $secure )->patch( '/tasks/update',
         [TaskController::class, 'update']
     );
 
-    Route::middleware( middlewareSanctum )->delete( '/tasks/delete/{id}',
+    Route::middleware( $secure )->delete( '/tasks/delete/{id}',
         [TaskController::class, 'destroy']
     );
 ?>

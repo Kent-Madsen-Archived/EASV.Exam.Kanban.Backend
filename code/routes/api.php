@@ -1,6 +1,4 @@
 <?php
-    const middlewareSanctum = 'auth:sanctum';
-
     // account
     require_once 'api/accountAPI.php';
 
