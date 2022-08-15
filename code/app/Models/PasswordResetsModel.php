@@ -1,30 +1,25 @@
 <?php
     namespace App\Models;
 
-    // use Illuminate\Contracts\Auth\MustVerifyEmail;
     use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-    use Illuminate\Foundation\Auth\User
-        as Authenticatable;
-
     use Illuminate\Notifications\Notifiable;
+    use Illuminate\Database\Eloquent\Model;
+
     use Laravel\Sanctum\HasApiTokens;
 
 
-    class User
-        extends Authenticatable
+    class PasswordResetsModel
+        extends Model
     {
-        use HasApiTokens,
-            HasFactory,
-            Notifiable;
+        use HasFactory;
 
 
         protected $fillable =
         [
-            'name',
-            'username',
-            'password',
-            'email_verified_at'
+             'email',
+             'token',
+             'created_at'
         ];
 
 
