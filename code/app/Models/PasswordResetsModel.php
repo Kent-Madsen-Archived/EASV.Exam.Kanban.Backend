@@ -13,13 +13,15 @@
         extends Model
     {
         use HasFactory;
+        protected $table = '';
 
 
         protected $fillable =
         [
-             'email',
-             'token',
-             'created_at'
+            'identity',
+            'email',
+            'token',
+            'created_at'
         ];
 
 

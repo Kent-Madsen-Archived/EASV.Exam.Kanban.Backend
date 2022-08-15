@@ -17,10 +17,12 @@
         use HasApiTokens,
             HasFactory,
             Notifiable;
-
+        
+        protected $table = '';
 
         protected $fillable =
         [
+            'identity',
             'name',
             'username',
             'password',

@@ -9,10 +9,11 @@
         extends Model
     {
         use HasFactory;
+        protected $table = '';
 
         protected $fillable =
         [
-
+            'identity'
         ];
 
 
