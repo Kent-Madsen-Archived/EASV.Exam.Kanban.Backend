@@ -17,7 +17,7 @@
         use HasApiTokens,
             HasFactory,
             Notifiable;
-        
+
         protected $table = '';
 
         protected $fillable =
