@@ -10,6 +10,13 @@
         public function up()
         {
             //
+            Schema::create('teamMembers',
+                function( Blueprint $table )
+                {
+                    $table->id();
+                    $table->timestamps();
+                }
+            );
         }
 
 
