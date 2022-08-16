@@ -1,9 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\TeamMemberOptionsModel;
-    use App\Http\Requests\StoreTeamMemberOptionModelRequest;
-    use App\Http\Requests\UpdateTeamMemberOptionsModelRequest;
+    use App\Http\Requests\store\StoreTeamMemberOptionModelRequest;use App\Http\Requests\update\UpdateTeamMemberOptionsModelRequest;use App\Models\TeamMemberOptionsModel;
 
 
     class TeamMemberOptionsController

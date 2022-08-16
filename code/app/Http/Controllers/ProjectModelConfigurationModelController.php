@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProjectModelConfigurationModelRequest;
-use App\Http\Requests\UpdateProjectModelConfigurationModelRequest;
-use App\Models\ProjectModelConfigurationModel;
+use App\Http\Requests\store\StoreProjectModelConfigurationModelRequest;use App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest;use App\Models\ProjectModelConfigurationModel;
 
 class ProjectModelConfigurationModelController extends Controller
 {
@@ -21,7 +19,7 @@ class ProjectModelConfigurationModelController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProjectModelConfigurationModelRequest  $request
+     * @param  \App\Http\Requests\store\StoreProjectModelConfigurationModelRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProjectModelConfigurationModelRequest $request)
@@ -43,7 +41,7 @@ class ProjectModelConfigurationModelController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProjectModelConfigurationModelRequest  $request
+     * @param  \App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest  $request
      * @param  \App\Models\ProjectModelConfigurationModel  $projectModelConfigurationModel
      * @return \Illuminate\Http\Response
      */

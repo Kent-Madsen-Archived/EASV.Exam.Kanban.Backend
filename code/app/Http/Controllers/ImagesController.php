@@ -1,9 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Models\ImageModel;
-    use App\Http\Requests\StoreImageModelRequest;
-    use App\Http\Requests\UpdateImageModelRequest;
+    use App\Http\Requests\store\StoreImageModelRequest;use App\Http\Requests\update\UpdateImageModelRequest;use App\Models\ImageModel;
 
 
     class ImagesController
