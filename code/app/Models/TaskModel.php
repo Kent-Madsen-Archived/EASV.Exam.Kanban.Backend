@@ -9,5 +9,26 @@
         extends Model
     {
         use HasFactory;
+
+        protected $table = 'tasks';
+
+        public $timestamps = false;
+
+        protected $fillable =
+        [
+            'identity'
+        ];
+
+
+        protected $hidden =
+        [
+
+        ];
+
+
+        protected $casts =
+        [
+
+        ];
     }
 ?>
