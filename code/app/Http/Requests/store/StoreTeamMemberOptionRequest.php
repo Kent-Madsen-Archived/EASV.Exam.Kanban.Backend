@@ -1,12 +1,13 @@
 <?php
-    namespace App\Http\Requests;
+    namespace App\Http\Requests\store;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateTeamMemberOptionsModelRequest
+    class StoreTeamMemberOptionRequest
         extends FormRequest
     {
+
         public function authorize()
         {
             return false;

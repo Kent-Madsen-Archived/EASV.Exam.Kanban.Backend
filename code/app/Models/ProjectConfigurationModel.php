@@ -5,12 +5,12 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class TaskGroupModel
+    class ProjectConfigurationModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = '';
+        protected $table = 'project_configuration';
         public $timestamps = false;
 
         protected $fillable =

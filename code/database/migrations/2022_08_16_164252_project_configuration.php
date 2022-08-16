@@ -6,24 +6,23 @@
 
     return new class extends Migration
     {
-        /**
-         * Run the migrations.
-         *
-         * @return void
-         */
         public function up()
         {
             //
+            Schema::create( 'project_configurations',
+                function( Blueprint $table )
+                {
+                    $table->id();
+                    $table->timestamps();
+                }
+            );
         }
 
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
+
         public function down()
         {
             //
+            Schema::dropIfExists( 'project_configurations' );
         }
     };
 ?>
