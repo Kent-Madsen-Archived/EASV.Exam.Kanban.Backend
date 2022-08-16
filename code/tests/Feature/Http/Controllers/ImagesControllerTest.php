@@ -1,22 +1,19 @@
 <?php
+    namespace Tests\Feature\Http\Controllers;
 
-namespace Tests\Feature\Http\Controllers;
+    use Illuminate\Foundation\Testing\RefreshDatabase;
+    use Illuminate\Foundation\Testing\WithFaker;
+    use Tests\TestCase;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 
-class ImagesControllerTest extends TestCase
-{
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    class ImagesControllerTest
+        extends TestCase
     {
-        $response = $this->get('/');
+        public function test_example()
+        {
+            $response = $this->get('/');
 
-        $response->assertStatus(200);
+            $response->assertStatus(200);
+        }
     }
-}
+?>
