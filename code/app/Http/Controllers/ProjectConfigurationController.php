@@ -3,7 +3,7 @@
 
     use App\Http\Requests\store\StoreProjectConfigurationRequest;
     use App\Http\Requests\update\UpdateProjectConfigurationRequest;
-    use App\Models\ProjectModelConfigurationModel;
+    use App\Models\ProjectConfigurationModel;
 
 
     class ProjectConfigurationController
@@ -19,20 +19,20 @@
             //
         }
 
-        public function show( ProjectModelConfigurationModel $projectModelConfigurationModel )
+        public function show( ProjectConfigurationModel $projectModelConfigurationModel )
         {
             //
         }
 
 
         public function update( UpdateProjectConfigurationRequest $request,
-                                ProjectModelConfigurationModel $projectModelConfigurationModel )
+                                ProjectConfigurationModel $projectModelConfigurationModel )
         {
             //
         }
 
 
-        public function destroy( ProjectModelConfigurationModel $projectModelConfigurationModel )
+        public function destroy( ProjectConfigurationModel $projectModelConfigurationModel )
         {
             //
         }
