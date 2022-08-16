@@ -1,7 +1,9 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreSettingModelRequest;use App\Http\Requests\update\UpdateSettingModelRequest;use App\Models\SettingModel;
+    use App\Http\Requests\store\StoreSettingModelRequest;
+    use App\Http\Requests\update\UpdateSettingModelRequest;
+    use App\Models\SettingModel;
 
 
     class SettingController
