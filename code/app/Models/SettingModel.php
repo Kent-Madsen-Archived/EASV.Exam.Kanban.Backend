@@ -9,6 +9,7 @@
         extends Model
     {
         use HasFactory;
+
         protected $table = '';
         public $timestamps = false;
 
