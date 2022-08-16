@@ -10,5 +10,24 @@
     {
         use HasFactory;
 
+        protected $table = 'projects';
+        public $timestamps = false;
+
+        protected $fillable =
+        [
+            'identity'
+        ];
+
+
+        protected $hidden =
+        [
+
+        ];
+
+
+        protected $casts =
+        [
+
+        ];
     }
 ?>

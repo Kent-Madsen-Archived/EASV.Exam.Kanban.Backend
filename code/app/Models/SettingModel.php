@@ -6,8 +6,28 @@
 
 
     class SettingModel
-       extends Model
+        extends Model
     {
         use HasFactory;
+
+        protected $table = 'settings';
+        public $timestamps = false;
+
+        protected $fillable =
+        [
+            'identity'
+        ];
+
+
+        protected $hidden =
+        [
+
+        ];
+
+
+        protected $casts =
+        [
+
+        ];
     }
 ?>

@@ -2,7 +2,7 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\TeamMemberOptionsController
+    use App\Http\Controllers\TeamMemberOptionController
             as TeamMemberOptionsController;
 
     use App\cfg;
@@ -10,18 +10,18 @@
 
 
     Route::middleware( $secure )->get( '/team/member/options/{id}',
-        [TeamMemberOptionsController::class, 'show']
+        [TeamMemberOptionController::class, 'show']
     );
 
     Route::middleware( $secure )->post( '/team/member/options/create',
-        [TeamMemberOptionsController::class, 'store']
+        [TeamMemberOptionController::class, 'store']
     );
 
     Route::middleware( $secure )->patch( '/team/member/options/update',
-        [TeamMemberOptionsController::class, 'update']
+        [TeamMemberOptionController::class, 'update']
     );
 
     Route::middleware( $secure )->delete( '/team/member/options/delete/{id}',
-        [TeamMemberOptionsController::class, 'destroy']
+        [TeamMemberOptionController::class, 'destroy']
     );
 ?>
