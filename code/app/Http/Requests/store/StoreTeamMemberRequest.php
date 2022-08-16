@@ -4,7 +4,7 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class StoreTeamMemberOptionModelRequest
+    class StoreTeamMemberRequest
         extends FormRequest
     {
 

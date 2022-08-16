@@ -10,7 +10,7 @@
     {
         use HasFactory;
 
-        protected $table = '';
+        protected $table = 'projects';
         public $timestamps = false;
 
         protected $fillable =

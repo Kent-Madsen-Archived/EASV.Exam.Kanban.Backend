@@ -1,10 +1,10 @@
 <?php
-    namespace App\Http\Requests\update;
+    namespace App\Http\Requests\store;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateImageModelRequest
+    class StoreProjectRequest
         extends FormRequest
     {
 

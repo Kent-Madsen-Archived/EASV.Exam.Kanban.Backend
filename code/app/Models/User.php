@@ -18,7 +18,7 @@
             HasFactory,
             Notifiable;
 
-        protected $table = '';
+        protected $table = 'users';
 
         protected $fillable =
         [

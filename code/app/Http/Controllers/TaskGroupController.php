@@ -1,8 +1,8 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreTaskGroupModelRequest;
-    use App\Http\Requests\update\UpdateTaskGroupModelRequest;
+    use App\Http\Requests\store\StoreTaskGroupRequest;
+    use App\Http\Requests\update\UpdateTaskGroupRequest;
     use App\Models\TaskGroupModel;
 
 
@@ -15,7 +15,7 @@
             //
         }
 
-        public function store( StoreTaskGroupModelRequest $request )
+        public function store( StoreTaskGroupRequest $request )
         {
             //
         }
@@ -27,7 +27,7 @@
         }
 
 
-        public function update( UpdateTaskGroupModelRequest $request,
+        public function update( UpdateTaskGroupRequest $request,
                                 TaskGroupModel $taskGroupModel )
         {
             //

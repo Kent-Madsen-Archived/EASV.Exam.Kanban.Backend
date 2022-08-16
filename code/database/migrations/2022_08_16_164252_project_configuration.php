@@ -6,11 +6,10 @@
 
     return new class extends Migration
     {
-
         public function up()
         {
             //
-            Schema::create( 'settings',
+            Schema::create( 'project_configurations',
                 function( Blueprint $table )
                 {
                     $table->id();
@@ -23,7 +22,7 @@
         public function down()
         {
             //
-            Schema::dropIfExists( 'settings' );
+            Schema::dropIfExists( 'project_configurations' );
         }
     };
 ?>

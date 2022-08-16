@@ -1,10 +1,10 @@
 <?php
-    namespace App\Http\Requests\store;
+    namespace App\Http\Requests\update;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class StoreTaskModelRequest
+    class UpdateTaskGroupRequest
         extends FormRequest
     {
 

@@ -1,8 +1,8 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreTeamMemberModelRequest;
-    use App\Http\Requests\update\UpdateTeamMemberModelRequest;
+    use App\Http\Requests\store\StoreTeamMemberRequest;
+    use App\Http\Requests\update\UpdateTeamMemberRequest;
     use App\Models\TeamMemberModel;
 
 
@@ -16,7 +16,7 @@
         }
 
 
-        public function store( StoreTeamMemberModelRequest $request )
+        public function store( StoreTeamMemberRequest $request )
         {
             //
         }
@@ -28,7 +28,7 @@
         }
 
 
-        public function update( UpdateTeamMemberModelRequest $request,
+        public function update( UpdateTeamMemberRequest $request,
                                 TeamMemberModel $teamMemberModel )
         {
             //

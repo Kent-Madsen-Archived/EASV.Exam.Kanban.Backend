@@ -1,8 +1,8 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreImageModelRequest;
-    use App\Http\Requests\update\UpdateImageModelRequest;
+    use App\Http\Requests\store\StoreImageRequest;
+    use App\Http\Requests\update\UpdateImageRequest;
     use App\Models\ImageModel;
 
 
@@ -14,7 +14,7 @@
             //
         }
 
-        public function store( StoreImageModelRequest $request )
+        public function store( StoreImageRequest $request )
         {
             //
         }
@@ -25,7 +25,7 @@
         }
 
 
-        public function update( UpdateImageModelRequest $request,
+        public function update( UpdateImageRequest $request,
                                 ImageModel $imageModel )
         {
             //

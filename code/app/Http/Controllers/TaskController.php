@@ -1,8 +1,8 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreTaskModelRequest;
-    use App\Http\Requests\update\UpdateTaskModelRequest;
+    use App\Http\Requests\store\StoreTaskRequest;
+    use App\Http\Requests\update\UpdateTaskRequest;
     use App\Models\TaskModel;
 
 
@@ -15,7 +15,7 @@
             //
         }
 
-        public function store( StoreTaskModelRequest $request )
+        public function store( StoreTaskRequest $request )
         {
             //
         }
@@ -25,7 +25,7 @@
             //
         }
 
-        public function update( UpdateTaskModelRequest $request,
+        public function update( UpdateTaskRequest $request,
                                 TaskModel $taskModel )
         {
             //

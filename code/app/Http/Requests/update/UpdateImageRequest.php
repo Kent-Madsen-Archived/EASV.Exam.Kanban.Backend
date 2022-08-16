@@ -4,7 +4,7 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateTeamMemberModelRequest
+    class UpdateImageRequest
         extends FormRequest
     {
 

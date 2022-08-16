@@ -4,9 +4,10 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateTeamMemberOptionsModelRequest
+    class UpdateSettingRequest
         extends FormRequest
     {
+
         public function authorize()
         {
             return false;
