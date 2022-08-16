@@ -1,7 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreSettingModelRequest;
+    use App\Http\Requests\store\StoreSettingRequest;
     use App\Http\Requests\update\UpdateSettingModelRequest;
     use App\Models\SettingModel;
 
@@ -15,7 +15,7 @@
             //
         }
 
-        public function store( StoreSettingModelRequest $request )
+        public function store( StoreSettingRequest $request )
         {
             //
         }

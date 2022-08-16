@@ -1,12 +1,12 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreTeamMemberOptionModelRequest;
+    use App\Http\Requests\store\StoreTeamMemberOptionRequest;
     use App\Http\Requests\update\UpdateTeamMemberOptionsModelRequest;
     use App\Models\TeamMemberOptionsModel;
 
 
-    class TeamMemberOptionsController
+    class TeamMemberOptionController
         extends Controller
     {
 
@@ -16,7 +16,7 @@
         }
 
 
-        public function store( StoreTeamMemberOptionModelRequest $request )
+        public function store( StoreTeamMemberOptionRequest $request )
         {
             //
         }

@@ -1,11 +1,12 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreProjectModelConfigurationModelRequest;
-    use App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest;
+    use App\Http\Requests\store\StoreProjectConfigurationRequest;
+    use App\Http\Requests\update\UpdateProjectConfigurationRequest;
     use App\Models\ProjectModelConfigurationModel;
 
-    class ProjectModelConfigurationModelController
+
+    class ProjectConfigurationController
         extends Controller
     {
         public function index()
@@ -13,7 +14,7 @@
             //
         }
 
-        public function store( StoreProjectModelConfigurationModelRequest $request )
+        public function store( StoreProjectConfigurationRequest $request )
         {
             //
         }
@@ -24,7 +25,7 @@
         }
 
 
-        public function update( UpdateProjectModelConfigurationModelRequest $request,
+        public function update( UpdateProjectConfigurationRequest $request,
                                 ProjectModelConfigurationModel $projectModelConfigurationModel )
         {
             //

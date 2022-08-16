@@ -4,7 +4,7 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class StoreSettingModelRequest
+    class StoreSettingRequest
         extends FormRequest
     {
 
