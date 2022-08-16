@@ -1,9 +1,9 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\store\StoreTaskModelRequest;
+    use App\Http\Requests\update\UpdateTaskModelRequest;
     use App\Models\TaskModel;
-    use App\Http\Requests\StoreTaskModelRequest;
-    use App\Http\Requests\UpdateTaskModelRequest;
 
 
     class TaskController
@@ -36,5 +36,5 @@
         {
             //
         }
-}
+    }
 ?>

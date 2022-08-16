@@ -1,9 +1,9 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\store\StoreTaskGroupModelRequest;
+    use App\Http\Requests\update\UpdateTaskGroupModelRequest;
     use App\Models\TaskGroupModel;
-    use App\Http\Requests\StoreTaskGroupModelRequest;
-    use App\Http\Requests\UpdateTaskGroupModelRequest;
 
 
     class TaskGroupController
