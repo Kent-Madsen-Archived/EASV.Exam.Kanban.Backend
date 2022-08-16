@@ -22,8 +22,6 @@
 
     $kernel->terminate( $request, $response );
 ?>
-
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YKLR7Y3GH">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
