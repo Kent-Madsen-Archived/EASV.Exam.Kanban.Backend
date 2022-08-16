@@ -9,7 +9,7 @@
         public function up()
         {
             //
-            Schema::create( 'project_configuration',
+            Schema::create( 'project_configurations',
                 function( Blueprint $table )
                 {
                     $table->id();
@@ -22,7 +22,7 @@
         public function down()
         {
             //
-            Schema::dropIfExists( 'project_configuration' );
+            Schema::dropIfExists( 'project_configurations' );
         }
     };
 ?>
