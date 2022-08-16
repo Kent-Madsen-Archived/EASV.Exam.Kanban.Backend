@@ -3,25 +3,25 @@
     use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\TeamMemberOptionController
-            as TeamMemberOptionsController;
+            as TeamMemberOptionController;
 
     use App\cfg;
     $secure = cfg::$secure;
 
 
-    Route::middleware( $secure )->get( '/team/member/options/{id}',
+    Route::middleware( $secure )->get( '/teams/members/options/{id}',
         [TeamMemberOptionController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/team/member/options/create',
+    Route::middleware( $secure )->post( '/teams/members/options/create',
         [TeamMemberOptionController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/team/member/options/update',
+    Route::middleware( $secure )->patch( '/teams/members/options/update',
         [TeamMemberOptionController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/team/member/options/delete/{id}',
+    Route::middleware( $secure )->delete( '/teams/members/options/delete/{id}',
         [TeamMemberOptionController::class, 'destroy']
     );
 ?>

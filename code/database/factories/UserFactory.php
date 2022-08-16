@@ -8,9 +8,7 @@
     class UserFactory
         extends Factory
     {
-        /**
-          * @return array|mixed[]
-          */
+
         public function definition()
         {
             return
