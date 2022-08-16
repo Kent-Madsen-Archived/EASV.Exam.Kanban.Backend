@@ -8,19 +8,20 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( '/team/member/{id}',
+
+    Route::middleware( $secure )->get( '/teams/members/{id}',
         [TeamMemberController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/team/member/create',
+    Route::middleware( $secure )->post( '/teams/members/create',
         [TeamMemberController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/team/member/update',
+    Route::middleware( $secure )->patch( '/teams/members/update',
         [TeamMemberController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/team/member/delete/{id}',
+    Route::middleware( $secure )->delete( '/teams/members/delete/{id}',
         [TeamMemberController::class, 'destroy']
     );
 ?>

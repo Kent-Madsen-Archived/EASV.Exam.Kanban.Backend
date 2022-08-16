@@ -1,4 +1,5 @@
 <?php
+    // $request->header('version')
     namespace App\Http\Controllers;
 
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -17,6 +18,7 @@
         use AuthorizesRequests,
             DispatchesJobs,
             ValidatesRequests;
+
 
         public function index( Request $request )
         {
