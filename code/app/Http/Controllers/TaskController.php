@@ -2,7 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\store\StoreTaskRequest;
-    use App\Http\Requests\update\UpdateTaskModelRequest;
+    use App\Http\Requests\update\UpdateTaskRequest;
     use App\Models\TaskModel;
 
 
@@ -25,7 +25,7 @@
             //
         }
 
-        public function update( UpdateTaskModelRequest $request,
+        public function update( UpdateTaskRequest $request,
                                 TaskModel $taskModel )
         {
             //

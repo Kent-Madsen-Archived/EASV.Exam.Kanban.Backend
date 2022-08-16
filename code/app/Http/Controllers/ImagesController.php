@@ -2,7 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\store\StoreImageRequest;
-    use App\Http\Requests\update\UpdateImageModelRequest;
+    use App\Http\Requests\update\UpdateImageRequest;
     use App\Models\ImageModel;
 
 
@@ -25,7 +25,7 @@
         }
 
 
-        public function update( UpdateImageModelRequest $request,
+        public function update( UpdateImageRequest $request,
                                 ImageModel $imageModel )
         {
             //

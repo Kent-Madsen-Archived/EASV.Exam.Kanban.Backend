@@ -4,7 +4,7 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateSettingModelRequest
+    class UpdateProjectRequest
         extends FormRequest
     {
 

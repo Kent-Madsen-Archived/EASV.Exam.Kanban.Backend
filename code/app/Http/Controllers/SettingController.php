@@ -2,7 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\store\StoreSettingRequest;
-    use App\Http\Requests\update\UpdateSettingModelRequest;
+    use App\Http\Requests\update\UpdateSettingRequest;
     use App\Models\SettingModel;
 
 
@@ -26,7 +26,7 @@
             //
         }
 
-        public function update( UpdateSettingModelRequest $request,
+        public function update( UpdateSettingRequest $request,
                                 SettingModel $settingsModel )
         {
             //

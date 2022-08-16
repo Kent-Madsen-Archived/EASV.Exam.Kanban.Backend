@@ -4,7 +4,7 @@
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateProjectModelRequest
+    class UpdateTaskGroupRequest
         extends FormRequest
     {
 

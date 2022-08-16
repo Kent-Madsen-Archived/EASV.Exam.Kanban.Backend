@@ -2,7 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\store\StoreTeamMemberOptionRequest;
-    use App\Http\Requests\update\UpdateTeamMemberOptionsModelRequest;
+    use App\Http\Requests\update\UpdateTeamMemberOptionRequest;
     use App\Models\TeamMemberOptionsModel;
 
 
@@ -28,7 +28,7 @@
         }
 
 
-        public function update( UpdateTeamMemberOptionsModelRequest $request,
+        public function update( UpdateTeamMemberOptionRequest $request,
                                 TeamMemberOptionsModel $teamMemberOptionsModel )
         {
             //

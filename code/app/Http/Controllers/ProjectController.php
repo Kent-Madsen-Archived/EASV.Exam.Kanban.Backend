@@ -2,7 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\store\StoreProjectRequest;
-    use App\Http\Requests\update\UpdateProjectModelRequest;
+    use App\Http\Requests\update\UpdateProjectRequest;
     use App\Models\ProjectModel;
 
 
@@ -25,7 +25,7 @@
             //
         }
 
-        public function update( UpdateProjectModelRequest $request,
+        public function update( UpdateProjectRequest $request,
                                 ProjectModel $projectModel )
         {
             //
