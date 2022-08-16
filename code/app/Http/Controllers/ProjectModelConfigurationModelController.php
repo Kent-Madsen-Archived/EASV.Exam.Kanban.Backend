@@ -1,63 +1,39 @@
 <?php
+    namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
+    use App\Http\Requests\store\StoreProjectModelConfigurationModelRequest;
+    use App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest;
+    use App\Models\ProjectModelConfigurationModel;
 
-use App\Http\Requests\store\StoreProjectModelConfigurationModelRequest;use App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest;use App\Models\ProjectModelConfigurationModel;
-
-class ProjectModelConfigurationModelController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    class ProjectModelConfigurationModelController
+        extends Controller
     {
-        //
-    }
+        public function index()
+        {
+            //
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\store\StoreProjectModelConfigurationModelRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreProjectModelConfigurationModelRequest $request)
-    {
-        //
-    }
+        public function store( StoreProjectModelConfigurationModelRequest $request )
+        {
+            //
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ProjectModelConfigurationModel  $projectModelConfigurationModel
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ProjectModelConfigurationModel $projectModelConfigurationModel)
-    {
-        //
-    }
+        public function show( ProjectModelConfigurationModel $projectModelConfigurationModel )
+        {
+            //
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\update\UpdateProjectModelConfigurationModelRequest  $request
-     * @param  \App\Models\ProjectModelConfigurationModel  $projectModelConfigurationModel
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateProjectModelConfigurationModelRequest $request, ProjectModelConfigurationModel $projectModelConfigurationModel)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ProjectModelConfigurationModel  $projectModelConfigurationModel
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ProjectModelConfigurationModel $projectModelConfigurationModel)
-    {
-        //
+        public function update( UpdateProjectModelConfigurationModelRequest $request,
+                                ProjectModelConfigurationModel $projectModelConfigurationModel )
+        {
+            //
+        }
+
+
+        public function destroy( ProjectModelConfigurationModel $projectModelConfigurationModel )
+        {
+            //
+        }
     }
-}
+?>

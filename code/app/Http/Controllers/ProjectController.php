@@ -1,7 +1,9 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreProjectModelRequest;use App\Http\Requests\update\UpdateProjectModelRequest;use App\Models\ProjectModel;
+    use App\Http\Requests\store\StoreProjectModelRequest;
+    use App\Http\Requests\update\UpdateProjectModelRequest;
+    use App\Models\ProjectModel;
 
 
     class ProjectController
