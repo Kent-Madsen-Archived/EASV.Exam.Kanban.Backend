@@ -22,10 +22,23 @@
 
     $kernel->terminate( $request, $response );
 ?>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7YKLR7Y3GH">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQNHF6ZWB6"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-7YKLR7Y3GH');
+  gtag('config', 'G-WQNHF6ZWB6');
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VM1ZPKDB1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2VM1ZPKDB1');
+</script>
+
+
