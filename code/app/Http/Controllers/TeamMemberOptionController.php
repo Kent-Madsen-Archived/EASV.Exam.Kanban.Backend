@@ -1,43 +1,48 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessTeamMemberOptionRequest;
     use App\Http\Requests\store\StoreTeamMemberOptionRequest;
     use App\Http\Requests\update\UpdateTeamMemberOptionRequest;
-    use App\Models\TeamMemberOptionsModel;
+    use Illuminate\Http\JsonResponse;
 
 
     class TeamMemberOptionController
         extends Controller
     {
 
-        public function index()
+        public function index( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function store( StoreTeamMemberOptionRequest $request )
+        public function store( StoreTeamMemberOptionRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function show( TeamMemberOptionsModel $teamMemberOptionsModel )
+        public function show( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function update( UpdateTeamMemberOptionRequest $request,
-                                TeamMemberOptionsModel $teamMemberOptionsModel )
+        public function update( UpdateTeamMemberOptionRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function destroy( TeamMemberOptionsModel $teamMemberOptionsModel )
+        public function destroy( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
     }
 ?>

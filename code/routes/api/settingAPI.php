@@ -8,19 +8,19 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( '/settings/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/settings/{id}',
         [SettingController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/settings/create',
+    Route::middleware( $secure )->post( cfg::versions['v1'] . '/settings/create',
         [SettingController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/settings/update',
+    Route::middleware( $secure )->patch( cfg::versions['v1'] . '/settings/update',
         [SettingController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/settings/delete/{id}',
+    Route::middleware( $secure )->delete( cfg::versions['v1'] . '/settings/delete/{id}',
         [SettingController::class, 'destroy']
     );
 ?>

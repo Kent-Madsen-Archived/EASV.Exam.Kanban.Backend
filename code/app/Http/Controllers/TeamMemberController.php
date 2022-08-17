@@ -1,44 +1,49 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessTeamMemberRequest;
     use App\Http\Requests\store\StoreTeamMemberRequest;
     use App\Http\Requests\update\UpdateTeamMemberRequest;
-    use App\Models\TeamMemberModel;
+    use Illuminate\Http\JsonResponse;
 
 
     class TeamMemberController
         extends Controller
     {
 
-        public function index()
+        public function index( AccessTeamMemberRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function store( StoreTeamMemberRequest $request )
+        public function store( StoreTeamMemberRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function show( TeamMemberModel $teamMemberModel )
+        public function show( AccessTeamMemberRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
-        public function update( UpdateTeamMemberRequest $request,
-                                TeamMemberModel $teamMemberModel )
+        public function update( UpdateTeamMemberRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
 
 
-        public function destroy( TeamMemberModel $teamMemberModel )
+        public function destroy( AccessTeamMemberRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
     }
 ?>

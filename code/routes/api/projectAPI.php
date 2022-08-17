@@ -8,20 +8,23 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-
-    Route::middleware( $secure )->get( '/projects/{id}',
+    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::urls[ 'id' ];
+    Route::middleware( $secure )->get( $retrievePath,
         [ProjectController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/projects/create',
+    $createPath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::actions[ 'c' ];
+    Route::middleware( $secure )->post( $createPath,
         [ProjectController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/projects/update',
+    $updatePath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::actions[ 'u' ];
+    Route::middleware( $secure )->patch( $updatePath,
         [ProjectController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/projects/delete/{id}',
+    $deletePath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::actions[ 'd' ] . '/' . cfg::urls[ 'id' ];
+    Route::middleware( $secure )->delete( $deletePath,
         [ProjectController::class, 'destroy']
     );
 ?>
