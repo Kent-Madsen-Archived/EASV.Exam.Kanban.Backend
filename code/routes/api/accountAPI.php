@@ -49,7 +49,7 @@
                 [AccountController::class, 'update']
             );
 
-            $deletePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ] . '/{id}';
+            $deletePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
 
             Route::delete( $deletePath,
                 [AccountController::class, 'delete']

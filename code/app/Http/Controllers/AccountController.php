@@ -32,7 +32,7 @@
             ValidatesRequests;
 
 
-        public final  function index( AccessAccountRequest $request ): JsonResponse
+        public final function index( AccessAccountRequest $request ): JsonResponse
         {
 
 
@@ -41,8 +41,19 @@
 
         public final function me( Request $request ): JsonResponse
         {
-            return response()->json('test');
+            $resp =
+            [
+                'identity' => $request->user()->id,
+                'name' => $request->user()->name,
+                'email' => $request->user()->email,
+                'username' => $request->user()->username,
+                'created_at' => $request->user()->created_at,
+                'updated_at' => $request->user()->updated_at
+            ];
+
+            return response()->json( $resp );
         }
+
 
         public final function login( StoreAccountRequest $request ): JsonResponse
         {
@@ -63,6 +74,7 @@
             return response()->json('error: wrong input');
         }
 
+
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
             $passwd = $request->all()['security']['password'];
@@ -80,24 +92,79 @@
             return response()->json( [ 'bearer_token' => $bearerToken ] );
         }
 
+
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
+            $find = Account::where('id', '=', $request->id )->firstOrFail();
 
-            return response()->json('testShow');
+            $response =
+            [
+                'name' => $find->name,
+                'username' => $find->username,
+                'updated_at' => $find->updated_at
+            ];
+
+            return response()->json( $response );
         }
+
 
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
+            $inp = $request->all();
 
+            $user = $request->user();
+            $loginRequired = Hash::check( $inp['security']['old'], $user->password );
 
-            return response()->json('testUpdate');
+            if( $loginRequired )
+            {
+                $indicateChange = false;
+
+                if( $request->has('email' ) )
+                {
+                    $user->email = $inp['email'];
+                    $indicateChange = true;
+                }
+
+                if( $request->has('security.password' ) )
+                {
+                    $newPasswd = Hash::make( $inp['security']['password'] );
+                    $user->password = $newPasswd;
+                    $indicateChange = true;
+                }
+
+                if( $indicateChange )
+                {
+                    $user->save();
+                    return response()->json('successful');
+                }
+            }
+
+            return response()->json($inp);
         }
+
 
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {
+            $inp = $request->all();
+
+            $loginRequired = Hash::check( $inp[ 'security' ][ 'password' ],
+                                          $request->user()->password );
+
+            if( $loginRequired )
+            {
+                $request->user()->delete();
+                return response()->json( 'Successful' );
+            }
+
+            return response()->json( 'Nothing' );
+        }
 
 
-            return response()->json('testDelete');
+        public final function logout( AccessAccountRequest $request ): JsonResponse
+        {
+
+
+            return response()->json();
         }
     }
 ?>
