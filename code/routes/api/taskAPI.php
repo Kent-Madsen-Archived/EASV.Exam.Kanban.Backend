@@ -8,19 +8,19 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( '/tasks/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/{id}',
         [TaskController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/tasks/create',
+    Route::middleware( $secure )->post( cfg::versions['v1'] . '/tasks/create',
         [TaskController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/tasks/update',
+    Route::middleware( $secure )->patch( cfg::versions['v1'] . '/tasks/update',
         [TaskController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/tasks/delete/{id}',
+    Route::middleware( $secure )->delete( cfg::versions['v1'] . '/tasks/delete/{id}',
         [TaskController::class, 'destroy']
     );
 ?>

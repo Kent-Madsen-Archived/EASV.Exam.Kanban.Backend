@@ -9,19 +9,19 @@
     $secure = cfg::$secure;
 
 
-    Route::middleware( $secure )->get( '/teams/members/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/teams/members/{id}',
         [TeamMemberController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/teams/members/create',
+    Route::middleware( $secure )->post( cfg::versions['v1'] . '/teams/members/create',
         [TeamMemberController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/teams/members/update',
+    Route::middleware( $secure )->patch( cfg::versions['v1'] . '/teams/members/update',
         [TeamMemberController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/teams/members/delete/{id}',
+    Route::middleware( $secure )->delete( cfg::versions['v1'] . '/teams/members/delete/{id}',
         [TeamMemberController::class, 'destroy']
     );
 ?>

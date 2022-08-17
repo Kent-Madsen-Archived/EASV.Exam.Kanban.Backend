@@ -2,7 +2,7 @@
     // $request->header('version')
     namespace App\Http\Controllers;
 
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use App\Models\User;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -43,7 +43,8 @@
 
         }
 
-        public function update( UpdateAccountRequest $request )
+        public function update( UpdateAccountRequest $request,
+                                User $user )
         {
 
         }
