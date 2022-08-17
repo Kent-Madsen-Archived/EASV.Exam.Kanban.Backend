@@ -21,5 +21,10 @@
             'ta' => 'tasks',
             'te' => 'teams'
         ];
+
+        public const urls =
+        [
+            'id' => '{id}'
+        ];
     }
 ?>
