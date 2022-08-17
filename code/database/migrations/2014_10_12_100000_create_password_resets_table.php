@@ -11,6 +11,8 @@
             Schema::create('password_resets',
                 function( Blueprint $table )
                 {
+                    $table->id();
+
                     $table->string( 'email' )
                           ->index();
 

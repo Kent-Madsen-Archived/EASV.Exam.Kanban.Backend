@@ -13,6 +13,11 @@
         [AccountController::class, 'show']
     );
 
+    $loginPath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/login';
+    Route::post( $loginPath,
+        [AccountController::class, 'login']
+    );
+
     $mePath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/me';
     Route::middleware( $secure )->get( $mePath,
         [AccountController::class, 'me']

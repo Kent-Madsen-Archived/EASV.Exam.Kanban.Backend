@@ -1,12 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\access\AccessAccountRequest;
-
-    use App\Models\User
-        as Account;
-
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use http\Env\Response;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -15,8 +10,17 @@
     use Illuminate\Routing\Controller
         as BaseController;
 
+    use Illuminate\Support\Facades\Hash;
+    use Jenssegers\Agent\Agent;
+
+    use App\Http\Requests\access\AccessAccountRequest;
+
+    use App\Models\User
+        as Account;
+
     use App\Http\Requests\store\StoreAccountRequest;
     use App\Http\Requests\update\UpdateAccountRequest;
+
 
 
     class AccountController
@@ -31,14 +35,26 @@
         {
 
 
-            return response()->json('');
+            return response()->json('' );
         }
 
         public function login( StoreAccountRequest $request ): JsonResponse
         {
+            $in = $request->all();
 
+            $requestEmail = $in[ 'email' ];
+            $requestPassword = $in[ 'security' ][ 'password' ];
 
-            return response()->json('');
+            $user = Account::where( 'email', '=', $requestEmail )->firstOrFail();
+            $login = Hash::check( $requestPassword, $user->password );
+
+            if( $login )
+            {
+                $bearerToken = $user->createToken( 'api' )->plainTextToken;
+                return response()->json( $bearerToken );
+            }
+
+            return response()->json('error: wrong input');
         }
 
         public function store( StoreAccountRequest $request ): JsonResponse
@@ -50,7 +66,7 @@
                   'name' => $request->get( 'name' ),
                   'username' => $request->get('username'),
                   'email' => $request->get( 'email' ),
-                  'password' => $passwd
+                  'password' => Hash::make( $passwd )
                 ]
             );
 
