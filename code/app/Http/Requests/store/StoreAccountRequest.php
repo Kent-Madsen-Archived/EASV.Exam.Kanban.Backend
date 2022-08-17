@@ -10,7 +10,7 @@
 
         public function authorize(): bool
         {
-            return true;
+            return !is_null( $this->bearerToken() );
         }
 
 
