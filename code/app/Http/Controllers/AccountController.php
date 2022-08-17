@@ -11,6 +11,9 @@
     use Illuminate\Routing\Controller
         as BaseController;
 
+    use App\Http\Requests\store\StoreAccountRequest;
+    use App\Http\Requests\update\UpdateAccountRequest;
+
 
     class AccountController
         extends BaseController
@@ -25,7 +28,7 @@
 
         }
 
-        public function store( Request $request )
+        public function store( StoreAccountRequest $request )
         {
             return ;
         }
@@ -40,7 +43,7 @@
 
         }
 
-        public function update( Request $request )
+        public function update( UpdateAccountRequest $request )
         {
 
         }
