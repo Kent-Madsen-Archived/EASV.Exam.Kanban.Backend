@@ -1,10 +1,10 @@
 <?php
-    namespace App\Http\Requests\store;
+    namespace App\Http\Requests\access;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class StoreSettingRequest
+    class AccessSettingRequest
         extends FormRequest
     {
 
