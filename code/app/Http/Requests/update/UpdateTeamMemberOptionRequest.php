@@ -2,6 +2,7 @@
     namespace App\Http\Requests\update;
 
     use Illuminate\Foundation\Http\FormRequest;
+    use Illuminate\Support\Facades\Auth;
 
 
     class UpdateTeamMemberOptionRequest
@@ -9,7 +10,7 @@
     {
         public function authorize(): bool
         {
-            return false;
+            return Auth::check();
         }
 
 

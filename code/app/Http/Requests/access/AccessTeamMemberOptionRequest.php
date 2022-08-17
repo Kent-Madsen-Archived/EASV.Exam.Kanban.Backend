@@ -2,6 +2,7 @@
     namespace App\Http\Requests\access;
 
     use Illuminate\Foundation\Http\FormRequest;
+    use Illuminate\Support\Facades\Auth;
 
 
     class AccessTeamMemberOptionRequest
@@ -10,7 +11,7 @@
 
         public function authorize(): bool
         {
-            return false;
+            return Auth::check();
         }
 
 
