@@ -11,7 +11,7 @@
             Schema::create('users',
                 function ( Blueprint $table )
                 {
-                    $table->id( 'identity' );
+                    $table->id();
 
                     $table->string( 'name' );
 
