@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessTaskGroupRequest;
     use App\Http\Requests\store\StoreTaskGroupRequest;
     use App\Http\Requests\update\UpdateTaskGroupRequest;
     use App\Models\TaskGroupModel;
@@ -10,7 +11,7 @@
         extends Controller
     {
 
-        public function index()
+        public function index( AccessTaskGroupRequest $request )
         {
             //
         }
@@ -21,7 +22,8 @@
         }
 
 
-        public function show( TaskGroupModel $taskGroupModel )
+        public function show( AccessTaskGroupRequest $request,
+                              TaskGroupModel $taskGroupModel )
         {
             //
         }
@@ -34,7 +36,8 @@
         }
 
 
-        public function destroy( TaskGroupModel $taskGroupModel )
+        public function destroy( AccessTaskGroupRequest $request,
+                                 TaskGroupModel $taskGroupModel )
         {
             //
         }

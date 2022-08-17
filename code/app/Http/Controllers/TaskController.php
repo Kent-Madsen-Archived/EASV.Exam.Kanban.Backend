@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
     use App\Models\TaskModel;
@@ -10,7 +11,7 @@
         extends Controller
     {
 
-        public function index()
+        public function index( AccessTaskRequest $request )
         {
             //
         }
@@ -20,7 +21,8 @@
             //
         }
 
-        public function show( TaskModel $taskModel )
+        public function show( AccessTaskRequest $request,
+                              TaskModel $taskModel )
         {
             //
         }
@@ -32,7 +34,8 @@
         }
 
 
-        public function destroy( TaskModel $taskModel )
+        public function destroy( AccessTaskRequest $request,
+                                 TaskModel $taskModel )
         {
             //
         }

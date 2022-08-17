@@ -1,7 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
-    use App\Http\Requests\store\StoreTeamMemberOptionRequest;
+    use App\Http\Requests\access\AccessTeamMemberOptionRequest;use App\Http\Requests\store\StoreTeamMemberOptionRequest;
     use App\Http\Requests\update\UpdateTeamMemberOptionRequest;
     use App\Models\TeamMemberOptionsModel;
 
@@ -10,7 +10,7 @@
         extends Controller
     {
 
-        public function index()
+        public function index(AccessTeamMemberOptionRequest $request)
         {
             //
         }
@@ -22,7 +22,8 @@
         }
 
 
-        public function show( TeamMemberOptionsModel $teamMemberOptionsModel )
+        public function show( AccessTeamMemberOptionRequest $request,
+                              TeamMemberOptionsModel $teamMemberOptionsModel )
         {
             //
         }
@@ -35,7 +36,8 @@
         }
 
 
-        public function destroy( TeamMemberOptionsModel $teamMemberOptionsModel )
+        public function destroy( AccessTeamMemberOptionRequest $request,
+                                 TeamMemberOptionsModel $teamMemberOptionsModel )
         {
             //
         }

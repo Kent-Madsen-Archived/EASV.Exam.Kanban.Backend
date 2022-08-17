@@ -1,8 +1,10 @@
 <?php
-    // $request->header('version')
     namespace App\Http\Controllers;
 
-    use App\Models\User;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use App\Http\Requests\access\AccessAccountRequest;
+    use App\Models\User;
+
+    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -23,7 +25,7 @@
             ValidatesRequests;
 
 
-        public function index( Request $request )
+        public function index( AccessAccountRequest $request )
         {
 
         }
@@ -33,12 +35,13 @@
 
         }
 
-        public function show( Request $request )
+        public function show( AccessAccountRequest $request,
+                              User $user )
         {
 
         }
 
-        public function me( Request $request )
+        public function me( AccessAccountRequest $request )
         {
 
         }
@@ -49,7 +52,8 @@
 
         }
 
-        public function delete( Request $request )
+        public function delete( AccessAccountRequest $request,
+                                User $user )
         {
 
         }

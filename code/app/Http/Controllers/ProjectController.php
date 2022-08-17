@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessProjectRequest;
     use App\Http\Requests\store\StoreProjectRequest;
     use App\Http\Requests\update\UpdateProjectRequest;
     use App\Models\ProjectModel;
@@ -10,7 +11,7 @@
         extends Controller
     {
 
-        public function index()
+        public function index( AccessProjectRequest $request )
         {
             //
         }
@@ -20,7 +21,8 @@
             //
         }
 
-        public function show( ProjectModel $projectModel )
+        public function show( AccessProjectRequest $request,
+                              ProjectModel $projectModel )
         {
             //
         }
