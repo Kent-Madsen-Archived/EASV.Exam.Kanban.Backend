@@ -8,7 +8,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::urls[ 'id' ];
+    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/identity/' . cfg::urls[ 'id' ];
     Route::middleware( $secure )->get( $retrievePath,
         [ProjectController::class, 'show']
     );

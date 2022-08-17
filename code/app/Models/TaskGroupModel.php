@@ -10,7 +10,7 @@
     {
         use HasFactory;
 
-        protected $table = '';
+        protected $table = 'task_groups';
         public $timestamps = false;
 
         protected $fillable =

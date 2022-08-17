@@ -8,7 +8,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/identity/{id}',
         [TaskController::class, 'show']
     );
 
