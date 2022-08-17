@@ -4,36 +4,47 @@
     use App\Http\Requests\access\AccessProjectConfigurationRequest;
     use App\Http\Requests\store\StoreProjectConfigurationRequest;
     use App\Http\Requests\update\UpdateProjectConfigurationRequest;
+    use Illuminate\Http\JsonResponse;
 
 
     class ProjectConfigurationController
         extends Controller
     {
-        public function index( AccessProjectConfigurationRequest $request )
+        public function index( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
-        public function store( StoreProjectConfigurationRequest $request )
+        public function store( StoreProjectConfigurationRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
-        public function show( AccessProjectConfigurationRequest $request )
+        public function show( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
 
-        public function update( UpdateProjectConfigurationRequest $request )
+        public function update( UpdateProjectConfigurationRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
 
-        public function destroy( AccessProjectConfigurationRequest $request )
+        public function destroy( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
     }
 ?>

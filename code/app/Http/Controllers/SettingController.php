@@ -4,37 +4,48 @@
     use App\Http\Requests\access\AccessSettingRequest;
     use App\Http\Requests\store\StoreSettingRequest;
     use App\Http\Requests\update\UpdateSettingRequest;
+    use Illuminate\Http\JsonResponse;
 
 
     class SettingController
         extends Controller
     {
 
-        public function index( AccessSettingRequest $request )
+        public function index( AccessSettingRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
-        public function store( StoreSettingRequest $request )
+        public function store( StoreSettingRequest $request ): JsonResponse
         {
             //
-        }
 
-
-        public function show( AccessSettingRequest $request )
-        {
-            //
-        }
-
-        public function update( UpdateSettingRequest $request )
-        {
-            //
+            return response()->json('');
         }
 
 
-        public function destroy( AccessSettingRequest $request )
+        public function show( AccessSettingRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
+        }
+
+        public function update( UpdateSettingRequest $request ): JsonResponse
+        {
+            //
+
+            return response()->json('');
+        }
+
+
+        public function destroy( AccessSettingRequest $request ): JsonResponse
+        {
+            //
+
+            return response()->json('');
         }
     }
 ?>
