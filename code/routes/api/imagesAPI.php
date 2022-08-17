@@ -8,20 +8,23 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-
-    Route::get( '/resources/images/{id}',
+    $retrievePath = cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/' . cfg::urls[ 'id' ];
+    Route::get( $retrievePath,
         [ImageController::class, 'show']
     );
 
-    Route::middleware( $secure )->post( '/resources/images/create',
+    $createPath = cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/' . cfg::actions[ 'c' ];
+    Route::middleware( $secure )->post( $createPath,
         [ImageController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/resources/images/update',
+    $updatePath = cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/' . cfg::actions[ 'u' ];
+    Route::middleware( $secure )->patch( $updatePath,
         [ImageController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/resources/images/delete/{id}',
+    $deletePath = cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/' . cfg::actions[ 'd' ] . '/' . cfg::urls[ 'id' ];
+    Route::middleware( $secure )->delete( $deletePath,
         [ImageController::class, 'destroy']
     );
 ?>

@@ -22,6 +22,11 @@
             'te' => 'teams'
         ];
 
+        public const resources =
+        [
+            'img' => 'images'
+        ];
+
         public const urls =
         [
             'id' => '{id}'
