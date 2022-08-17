@@ -43,7 +43,8 @@
                 ]
             );
 
-            return response()->json( $newAccount );
+            $bearerToken = $newAccount->createToken( 'api' )->plainTextToken;
+            return response()->json( [ 'bearer_token' => $bearerToken ] );
         }
 
         public function show( AccessAccountRequest $request )
