@@ -11,10 +11,12 @@
             Schema::create('users',
                 function ( Blueprint $table )
                 {
-                    $table->id();
+                    $table->id( 'identity' );
 
                     $table->string( 'name' );
 
+                    $table->string( 'username' )
+                          ->unique();
 
                     $table->string( 'email' )
                           ->unique();

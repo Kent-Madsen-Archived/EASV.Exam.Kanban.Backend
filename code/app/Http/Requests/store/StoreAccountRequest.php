@@ -1,16 +1,16 @@
 <?php
-    namespace App\Http\Requests\update;
+    namespace App\Http\Requests\store;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateSettingRequest
+    class StoreAccountRequest
         extends FormRequest
     {
 
         public function authorize(): bool
         {
-            return false;
+            return true;
         }
 
 
