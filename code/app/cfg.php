@@ -21,5 +21,20 @@
             'ta' => 'tasks',
             'te' => 'teams'
         ];
+
+        public const resources =
+        [
+            'img' => 'images'
+        ];
+
+        public const urls =
+        [
+            'id' => '{id}'
+        ];
+
+        public const versions =
+        [
+            'v1' => '1.0.0'
+        ];
     }
 ?>

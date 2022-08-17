@@ -1,40 +1,49 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
-    use App\Models\TaskModel;
+    use Illuminate\Http\JsonResponse;
 
 
     class TaskController
         extends Controller
     {
 
-        public function index()
+        public function index( AccessTaskRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
-        public function store( StoreTaskRequest $request )
+        public function store( StoreTaskRequest $request ): JsonResponse
         {
             //
+            return response()->json('');
         }
 
-        public function show( TaskModel $taskModel )
+        public function show( AccessTaskRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
-        public function update( UpdateTaskRequest $request,
-                                TaskModel $taskModel )
+        public function update( UpdateTaskRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
 
 
-        public function destroy( TaskModel $taskModel )
+        public function destroy( AccessTaskRequest $request ): JsonResponse
         {
             //
+
+            return response()->json('');
         }
     }
 ?>
