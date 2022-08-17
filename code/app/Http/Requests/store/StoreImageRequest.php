@@ -8,13 +8,13 @@
         extends FormRequest
     {
 
-        public function authorize()
+        public function authorize(): bool
         {
             return false;
         }
 
 
-        public function rules()
+        public function rules(): array
         {
             return
             [

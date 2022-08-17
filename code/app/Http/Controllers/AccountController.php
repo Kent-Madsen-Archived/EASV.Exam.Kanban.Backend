@@ -30,7 +30,7 @@
 
         public function store( StoreAccountRequest $request )
         {
-            return ;
+
         }
 
         public function show( Request $request )
