@@ -20,22 +20,19 @@
             //
         }
 
-        public function show( AccessImageRequest $request,
-                              ImageModel $imageModel )
+        public function show( AccessImageRequest $request )
         {
             //
         }
 
 
-        public function update( UpdateImageRequest $request,
-                                ImageModel $imageModel )
+        public function update( UpdateImageRequest $request )
         {
             //
         }
 
 
-        public function destroy( AccessImageRequest $request,
-                                 ImageModel $imageModel )
+        public function destroy( AccessImageRequest $request )
         {
             //
         }

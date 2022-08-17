@@ -4,7 +4,6 @@
     use App\Http\Requests\access\AccessTaskGroupRequest;
     use App\Http\Requests\store\StoreTaskGroupRequest;
     use App\Http\Requests\update\UpdateTaskGroupRequest;
-    use App\Models\TaskGroupModel;
 
 
     class TaskGroupController
@@ -22,22 +21,19 @@
         }
 
 
-        public function show( AccessTaskGroupRequest $request,
-                              TaskGroupModel $taskGroupModel )
+        public function show( AccessTaskGroupRequest $request )
         {
             //
         }
 
 
-        public function update( UpdateTaskGroupRequest $request,
-                                TaskGroupModel $taskGroupModel )
+        public function update( UpdateTaskGroupRequest $request )
         {
             //
         }
 
 
-        public function destroy( AccessTaskGroupRequest $request,
-                                 TaskGroupModel $taskGroupModel )
+        public function destroy( AccessTaskGroupRequest $request )
         {
             //
         }

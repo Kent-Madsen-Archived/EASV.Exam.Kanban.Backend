@@ -4,7 +4,6 @@
     use App\Http\Requests\access\AccessTeamMemberRequest;
     use App\Http\Requests\store\StoreTeamMemberRequest;
     use App\Http\Requests\update\UpdateTeamMemberRequest;
-    use App\Models\TeamMemberModel;
 
 
     class TeamMemberController
@@ -23,23 +22,20 @@
         }
 
 
-        public function show( AccessTeamMemberRequest $request,
-                              TeamMemberModel $teamMemberModel )
+        public function show( AccessTeamMemberRequest $request )
         {
             //
         }
 
 
-        public function update( UpdateTeamMemberRequest $request,
-                                TeamMemberModel $teamMemberModel )
+        public function update( UpdateTeamMemberRequest $request )
         {
             //
         }
 
 
 
-        public function destroy( AccessTeamMemberRequest $request,
-                                 TeamMemberModel $teamMemberModel )
+        public function destroy( AccessTeamMemberRequest $request )
         {
             //
         }

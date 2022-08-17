@@ -4,7 +4,6 @@
     use App\Http\Requests\access\AccessProjectRequest;
     use App\Http\Requests\store\StoreProjectRequest;
     use App\Http\Requests\update\UpdateProjectRequest;
-    use App\Models\ProjectModel;
 
 
     class ProjectController
@@ -21,19 +20,17 @@
             //
         }
 
-        public function show( AccessProjectRequest $request,
-                              ProjectModel $projectModel )
+        public function show( AccessProjectRequest $request )
         {
             //
         }
 
-        public function update( UpdateProjectRequest $request,
-                                ProjectModel $projectModel )
+        public function update( UpdateProjectRequest $request )
         {
             //
         }
 
-        public function destroy( ProjectModel $projectModel )
+        public function destroy( AccessProjectRequest $request )
         {
             //
         }
