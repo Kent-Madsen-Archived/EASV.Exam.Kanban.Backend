@@ -27,7 +27,7 @@
 
         public function store( Request $request )
         {
-
+            return ;
         }
 
         public function show( Request $request )
