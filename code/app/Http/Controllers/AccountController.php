@@ -14,8 +14,8 @@
 
     use Illuminate\Support\Facades\Hash;
 
-    use App\Http\Requests\access\AccessAccountRequest;
 
+    use App\Http\Requests\access\AccessAccountRequest;
     use App\Models\User
         as Account;
 
@@ -35,7 +35,6 @@
         public final function index( AccessAccountRequest $request ): JsonResponse
         {
 
-
             return response()->json('testIndex' );
         }
 
@@ -45,8 +44,10 @@
             [
                 'identity' => $request->user()->id,
                 'name' => $request->user()->name,
+
                 'email' => $request->user()->email,
                 'username' => $request->user()->username,
+
                 'created_at' => $request->user()->created_at,
                 'updated_at' => $request->user()->updated_at
             ];
@@ -77,7 +78,7 @@
 
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
-            $passwd = $request->all()['security']['password'];
+            $passwd = $request->all()[ 'security' ][ 'password' ];
 
             $newAccount = Account::create(
                 [
@@ -95,7 +96,7 @@
 
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
-            $find = Account::where('id', '=', $request->id )->firstOrFail();
+            $find = Account::where( 'id', '=', $request->id )->firstOrFail();
 
             $response =
             [
@@ -113,21 +114,21 @@
             $inp = $request->all();
 
             $user = $request->user();
-            $loginRequired = Hash::check( $inp['security']['old'], $user->password );
+            $loginRequired = Hash::check( $inp[ 'security' ][ 'old' ], $user->password );
 
             if( $loginRequired )
             {
                 $indicateChange = false;
 
-                if( $request->has('email' ) )
+                if( $request->has( 'email' ) )
                 {
-                    $user->email = $inp['email'];
+                    $user->email = $inp[ 'email' ];
                     $indicateChange = true;
                 }
 
-                if( $request->has('security.password' ) )
+                if( $request->has( 'security.password' ) )
                 {
-                    $newPasswd = Hash::make( $inp['security']['password'] );
+                    $newPasswd = Hash::make( $inp[ 'security' ][ 'password' ] );
                     $user->password = $newPasswd;
                     $indicateChange = true;
                 }
@@ -135,11 +136,11 @@
                 if( $indicateChange )
                 {
                     $user->save();
-                    return response()->json('successful');
+                    return response()->json( 'successful' );
                 }
             }
 
-            return response()->json($inp);
+            return response()->json( $inp );
         }
 
 

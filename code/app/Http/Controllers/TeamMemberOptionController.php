@@ -1,10 +1,11 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Illuminate\Http\JsonResponse;
+
     use App\Http\Requests\access\AccessTeamMemberOptionRequest;
     use App\Http\Requests\store\StoreTeamMemberOptionRequest;
     use App\Http\Requests\update\UpdateTeamMemberOptionRequest;
-    use Illuminate\Http\JsonResponse;
 
 
     class TeamMemberOptionController
