@@ -1,17 +1,18 @@
 <?php
     namespace App\Http\Controllers;
 
-    use http\Env\Response;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
 
     use Illuminate\Http\JsonResponse;
 
+    use Illuminate\Http\Request;
+
     use Illuminate\Routing\Controller
         as BaseController;
 
     use Illuminate\Support\Facades\Hash;
-    use Jenssegers\Agent\Agent;
 
     use App\Http\Requests\access\AccessAccountRequest;
 
@@ -31,14 +32,19 @@
             ValidatesRequests;
 
 
-        public function index( AccessAccountRequest $request ): JsonResponse
+        public final  function index( AccessAccountRequest $request ): JsonResponse
         {
 
 
-            return response()->json('' );
+            return response()->json('testIndex' );
         }
 
-        public function login( StoreAccountRequest $request ): JsonResponse
+        public final function me( Request $request ): JsonResponse
+        {
+            return response()->json('test');
+        }
+
+        public final function login( StoreAccountRequest $request ): JsonResponse
         {
             $in = $request->all();
 
@@ -57,7 +63,7 @@
             return response()->json('error: wrong input');
         }
 
-        public function store( StoreAccountRequest $request ): JsonResponse
+        public final function store( StoreAccountRequest $request ): JsonResponse
         {
             $passwd = $request->all()['security']['password'];
 
@@ -74,31 +80,24 @@
             return response()->json( [ 'bearer_token' => $bearerToken ] );
         }
 
-        public function show( AccessAccountRequest $request ): JsonResponse
+        public final function show( AccessAccountRequest $request ): JsonResponse
         {
 
-            return response()->json('');
+            return response()->json('testShow');
         }
 
-        public function me( AccessAccountRequest $request ): JsonResponse
+        public final function update( UpdateAccountRequest $request ): JsonResponse
         {
 
 
-            return response()->json('');
+            return response()->json('testUpdate');
         }
 
-        public function update( UpdateAccountRequest $request ): JsonResponse
+        public final function delete( AccessAccountRequest $request ): JsonResponse
         {
 
 
-            return response()->json('');
-        }
-
-        public function delete( AccessAccountRequest $request ): JsonResponse
-        {
-
-
-            return response()->json('');
+            return response()->json('testDelete');
         }
     }
 ?>
