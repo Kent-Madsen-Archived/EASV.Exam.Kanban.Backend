@@ -3,7 +3,7 @@
     use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\TeamMemberOptionController
-            as TeamMemberOptionController;
+        as TeamMemberOptionController;
 
     use App\cfg;
     $secure = cfg::$secure;

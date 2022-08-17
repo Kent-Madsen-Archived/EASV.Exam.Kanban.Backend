@@ -3,7 +3,7 @@
     use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\TaskGroupController
-            as TaskGroupController;
+        as TaskGroupController;
 
     use App\cfg;
     $secure = cfg::$secure;
