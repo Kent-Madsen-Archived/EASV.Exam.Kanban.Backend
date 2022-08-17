@@ -8,24 +8,28 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-
-    Route::get( '/accounts/{id}',
+    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/{id}';
+    Route::get( $retrievePath,
         [AccountController::class, 'show']
     );
 
-    Route::middleware( $secure )->get( '/accounts/me',
+    $mePath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/me';
+    Route::middleware( $secure )->get( $mePath,
         [AccountController::class, 'me']
     );
 
-    Route::post( '/accounts/create',
+    $createPath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'c' ];
+    Route::post( $createPath,
         [AccountController::class, 'store']
     );
 
-    Route::middleware( $secure )->patch( '/accounts/update',
+    $updatePath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'u' ];
+    Route::middleware( $secure )->patch( $updatePath,
         [AccountController::class, 'update']
     );
 
-    Route::middleware( $secure )->delete( '/accounts/delete/{id}',
+    $deletePath = cfg::versions['v1'] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'd' ] . '/{id}';
+    Route::middleware( $secure )->delete( $deletePath,
         [AccountController::class, 'delete']
     );
 ?>

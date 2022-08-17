@@ -1,10 +1,10 @@
 <?php
-    namespace App\Http\Requests\update;
+    namespace App\Http\Requests\access;
 
     use Illuminate\Foundation\Http\FormRequest;
 
 
-    class UpdateSettingRequest
+    class AccessTaskRequest
         extends FormRequest
     {
 
@@ -14,7 +14,7 @@
         }
 
 
-        public function rules(): array
+        public function rules()
         {
             return
             [
