@@ -9,7 +9,7 @@
     $secure = cfg::$secure;
 
 
-    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/groups/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/groups/identity/{id}',
         [TaskGroupController::class, 'show']
     );
 

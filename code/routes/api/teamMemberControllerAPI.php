@@ -9,7 +9,7 @@
     $secure = cfg::$secure;
 
 
-    Route::middleware( $secure )->get( cfg::versions['v1'] . '/teams/members/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/teams/members/identity/{id}',
         [TeamMemberController::class, 'show']
     );
 

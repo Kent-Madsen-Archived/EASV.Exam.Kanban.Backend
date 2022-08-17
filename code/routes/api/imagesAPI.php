@@ -8,7 +8,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/' . cfg::urls[ 'id' ];
+    $retrievePath = cfg::versions['v1'] . '/' . cfg::names[ 're' ] . '/' . cfg::resources[ 'img' ] . '/identity/' . cfg::urls[ 'id' ];
     Route::get( $retrievePath,
         [ImageController::class, 'show']
     );
