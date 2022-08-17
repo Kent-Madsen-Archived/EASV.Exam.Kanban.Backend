@@ -3,6 +3,9 @@
 
     use App\Http\Requests\access\AccessAccountRequest;
 
+    use App\Models\User
+        as Account;
+
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -29,7 +32,18 @@
 
         public function store( StoreAccountRequest $request )
         {
+            $passwd = $request->all()['security']['password'];
 
+            $newAccount = Account::create(
+                [
+                  'name' => $request->get( 'name' ),
+                  'username' => $request->get('username'),
+                  'email' => $request->get( 'email' ),
+                  'password' => $passwd
+                ]
+            );
+
+            return response()->json( $newAccount );
         }
 
         public function show( AccessAccountRequest $request )
