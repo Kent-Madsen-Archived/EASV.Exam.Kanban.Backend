@@ -14,13 +14,13 @@
     {
         use HasFactory;
 
-        protected $table = '';
+        protected $table = 'password_resets';
         public $timestamps = false;
 
 
         protected $fillable =
         [
-            'identity',
+            'id',
             'email',
             'token',
             'created_at'

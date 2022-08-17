@@ -8,7 +8,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( cfg::versions['v1'] . '/settings/{id}',
+    Route::middleware( $secure )->get( cfg::versions['v1'] . '/settings/identity/{id}',
         [SettingController::class, 'show']
     );
 

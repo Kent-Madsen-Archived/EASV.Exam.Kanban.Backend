@@ -22,7 +22,8 @@
 
         protected $fillable =
         [
-            'identity',
+            'id',
+
             'name',
             'email',
             'username',
@@ -33,7 +34,9 @@
 
         protected $hidden =
         [
+            'id',
             'password',
+            'remember_token',
             'email',
             'created_at',
             'email_verified_at'
@@ -49,6 +52,7 @@
             'name' => 'string',
             'email' => 'string',
             'username' => 'string',
+            'remember_token' => 'string'
         ];
     }
 ?>
