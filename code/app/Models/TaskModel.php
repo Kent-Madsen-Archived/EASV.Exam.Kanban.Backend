@@ -21,6 +21,7 @@
             'description',
 
             'author_id',
+            'prooject_id',
 
             'created_at',
             'updated_at',
@@ -30,6 +31,7 @@
         protected $hidden =
         [
             'author_id',
+            'project_id',
 
             'created_at',
             'updated_at'
@@ -39,6 +41,7 @@
         protected $casts =
         [
             'id' => 'integer',
+            'project_id' => 'integer',
 
             'title' => 'string',
             'description' => 'string',
