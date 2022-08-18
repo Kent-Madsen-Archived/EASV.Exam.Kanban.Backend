@@ -65,7 +65,7 @@
                 }
             );
 
-            Schema::create( 'image_preview',
+            Schema::create( 'image_previews',
                 function( Blueprint $table )
                 {
                     $table->id();
@@ -90,7 +90,7 @@
         public function down()
         {
             //
-            Schema::dropIfExists( 'image_preview' );
+            Schema::dropIfExists( 'image_previews' );
             Schema::dropIfExists( 'image_resources' );
             Schema::dropIfExists( 'images' );
         }
