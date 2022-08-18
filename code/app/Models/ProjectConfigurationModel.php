@@ -10,12 +10,18 @@
     {
         use HasFactory;
 
-        protected $table = 'project_configuration';
-        public $timestamps = false;
+        protected $table = 'project_configurations';
+        public $timestamps = true;
 
         protected $fillable =
         [
-            'id'
+            'id',
+
+            'project_id',
+            'attributes',
+
+            'created_at',
+            'updated_at'
         ];
 
 
@@ -27,7 +33,13 @@
 
         protected $casts =
         [
+            'id' => 'integer',
 
+            'project_id' => 'integer',
+            'attributes' => 'collection',
+
+            'created_at' => 'datetime:Y-m-d',
+            'updated_at' => 'datetime:Y-m-d'
         ];
     }
 ?>

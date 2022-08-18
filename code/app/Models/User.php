@@ -18,6 +18,7 @@
             HasFactory,
             Notifiable;
 
+        public $timestamps = true;
         protected $table = 'users';
 
         protected $fillable =

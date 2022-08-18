@@ -35,7 +35,10 @@
 
         protected $casts =
         [
-
+            'id' => 'integer',
+            'email' => 'string',
+            'token' => 'string',
+            'created_at' => 'timestamp'
         ];
     }
 ?>
