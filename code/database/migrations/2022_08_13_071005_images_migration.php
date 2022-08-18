@@ -16,7 +16,13 @@
                     $table->id();
 
                     $table->bigInteger('original_owner_id' )
-                          ->unsigned();
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
+                    $table->bigInteger( 'project_id' )
+                          ->unsigned()
+                          ->index();
 
                     $table->text('origin_url' );
 
@@ -31,6 +37,10 @@
                     $table->foreign( 'original_owner_id' )
                           ->references( 'id' )
                           ->on( 'users' );
+
+                    $table->foreign('project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
                 }
             );
 
