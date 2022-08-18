@@ -1,10 +1,11 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Illuminate\Http\JsonResponse;
+
     use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
-    use Illuminate\Http\JsonResponse;
 
 
     class TaskController

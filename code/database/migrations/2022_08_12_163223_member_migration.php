@@ -14,7 +14,24 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->bigInteger( 'account_id' )
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
+                    $table->bigInteger('project_id' )
+                          ->unsigned();
+
                     $table->timestamps();
+
+                    $table->foreign( 'account_id' )
+                          ->references( 'id' )
+                          ->on( 'users' );
+
+                    $table->foreign( 'project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
                 }
             );
         }

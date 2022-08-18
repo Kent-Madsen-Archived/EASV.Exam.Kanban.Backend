@@ -11,11 +11,23 @@
         use HasFactory;
 
         protected $table = 'images';
-        public $timestamps = false;
+        public $timestamps = true;
 
         protected $fillable =
         [
-            'identity'
+            'id',
+
+            'original_owner_id',
+            'origin_url',
+
+            'width',
+            'height',
+
+            'alt',
+            'attributes',
+
+            'created_at',
+            'updated_at'
         ];
 
 

@@ -11,11 +11,17 @@
         use HasFactory;
 
         protected $table = 'team_members';
-        public $timestamps = false;
+        public $timestamps = true;
 
         protected $fillable =
         [
-            'identity'
+            'id',
+
+            'account_id',
+            'project_id',
+
+            'created_at',
+            'updated_at'
         ];
 
 
