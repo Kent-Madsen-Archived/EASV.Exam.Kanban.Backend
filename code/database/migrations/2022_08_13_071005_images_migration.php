@@ -64,12 +64,33 @@
                           ->on( 'images' );
                 }
             );
+
+            Schema::create( 'image_preview',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->text( 'url' );
+
+                    $table->bigInteger( 'image_id' )
+                          ->unsigned()
+                          ->index();
+
+                    $table->integer( 'width' );
+                    $table->integer( 'height' );
+
+                    $table->foreign( 'image_id' )
+                          ->references( 'id' )
+                          ->on( 'images' );
+                }
+            );
         }
 
 
         public function down()
         {
             //
+            Schema::dropIfExists( 'image_preview' );
             Schema::dropIfExists( 'image_resources' );
             Schema::dropIfExists( 'images' );
         }

@@ -10,7 +10,9 @@
     {
         use HasFactory;
 
-        protected $table = 'images';
+        protected $table = 'images_resources';
+        public $timestamps = false;
+
 
         protected $fillable =
         [
@@ -20,7 +22,9 @@
             'image_id',
 
             'width',
-            'height'
+            'height',
+
+            'type'
         ];
 
 
