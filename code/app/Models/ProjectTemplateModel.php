@@ -35,7 +35,15 @@
 
         protected $casts =
         [
+            'id' => 'integer',
 
+            'title' => 'string',
+            'description' => 'string',
+
+            'implementation' => 'collection',
+
+            'created_at' => 'datetime:Y-m-d',
+            'updated_at' => 'datetime:Y-m-d'
         ];
     }
 ?>

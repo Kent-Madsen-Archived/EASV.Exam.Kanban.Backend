@@ -37,6 +37,11 @@
                     $table->mediumText( 'description' )
                           ->nullable();
 
+                    $table->bigInteger('creator_id')
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
                     $table->json( 'attributes' )
                           ->nullable();
 
@@ -50,6 +55,10 @@
                     $table->foreign( 'template_id' )
                           ->references( 'id' )
                           ->on( 'project_templates' );
+
+                    $table->foreign( 'creator_id' )
+                          ->references( 'id' )
+                          ->on( 'users' );
                 }
             );
 
