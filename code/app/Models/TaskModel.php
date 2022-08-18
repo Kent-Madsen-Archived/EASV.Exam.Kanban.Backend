@@ -11,18 +11,28 @@
         use HasFactory;
 
         protected $table = 'tasks';
-
-        public $timestamps = false;
+        public $timestamps = true;
 
         protected $fillable =
         [
-            'identity'
+            'id',
+
+            'title',
+            'description',
+
+            'author_id',
+
+            'created_at',
+            'updated_at',
         ];
 
 
         protected $hidden =
         [
+            'author_id',
 
+            'created_at',
+            'updated_at'
         ];
 
 

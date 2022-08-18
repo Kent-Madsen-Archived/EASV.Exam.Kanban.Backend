@@ -14,7 +14,74 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->bigInteger('original_owner_id' )
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
+                    $table->bigInteger( 'project_id' )
+                          ->unsigned()
+                          ->index();
+
+                    $table->text('origin_url' );
+
+                    $table->integer( 'width' );
+                    $table->integer( 'height' );
+
+                    $table->text( 'alt' );
+                    $table->json( 'attributes' );
+
                     $table->timestamps();
+
+                    $table->foreign( 'original_owner_id' )
+                          ->references( 'id' )
+                          ->on( 'users' );
+
+                    $table->foreign('project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
+                }
+            );
+
+            Schema::create( 'image_resources',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->text( 'url' );
+
+                    $table->bigInteger( 'image_id' )
+                          ->unsigned();
+
+                    $table->integer( 'width' );
+                    $table->integer( 'height' );
+
+                    $table->text( 'type' );
+
+                    $table->foreign( 'image_id' )
+                          ->references( 'id' )
+                          ->on( 'images' );
+                }
+            );
+
+            Schema::create( 'image_preview',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->text( 'url' );
+
+                    $table->bigInteger( 'image_id' )
+                          ->unsigned()
+                          ->index();
+
+                    $table->integer( 'width' );
+                    $table->integer( 'height' );
+
+                    $table->foreign( 'image_id' )
+                          ->references( 'id' )
+                          ->on( 'images' );
                 }
             );
         }
@@ -23,6 +90,8 @@
         public function down()
         {
             //
+            Schema::dropIfExists( 'image_preview' );
+            Schema::dropIfExists( 'image_resources' );
             Schema::dropIfExists( 'images' );
         }
     };

@@ -14,7 +14,18 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->bigInteger('account_id')
+                          ->unsigned();
+
+                    $table->text( 'category' );
+                    $table->json( 'attributes' );
+
                     $table->timestamps();
+
+                    $table->foreign( 'account_id' )
+                          ->references( 'id' )
+                          ->on( 'users' );
                 }
             );
         }

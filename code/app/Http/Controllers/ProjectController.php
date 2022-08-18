@@ -1,10 +1,12 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Illuminate\Http\JsonResponse;
+
     use App\Http\Requests\access\AccessProjectRequest;
     use App\Http\Requests\store\StoreProjectRequest;
     use App\Http\Requests\update\UpdateProjectRequest;
-    use Illuminate\Http\JsonResponse;
+
 
 
     class ProjectController
