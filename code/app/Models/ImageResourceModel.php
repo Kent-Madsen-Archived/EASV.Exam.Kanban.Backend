@@ -5,29 +5,22 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class ImageModel
+    class ImageResourceModel
         extends Model
     {
         use HasFactory;
 
         protected $table = 'images';
-        public $timestamps = true;
 
         protected $fillable =
         [
             'id',
 
-            'original_owner_id',
-            'origin_url',
+            'url',
+            'image_id',
 
             'width',
-            'height',
-
-            'alt',
-            'attributes',
-
-            'created_at',
-            'updated_at'
+            'height'
         ];
 
 

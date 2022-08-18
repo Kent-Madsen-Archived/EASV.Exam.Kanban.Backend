@@ -11,7 +11,7 @@
         use HasFactory;
 
         protected $table = 'task_member_options';
-        public $timestamps = false;
+        public $timestamps = true;
 
         protected $fillable =
         [
