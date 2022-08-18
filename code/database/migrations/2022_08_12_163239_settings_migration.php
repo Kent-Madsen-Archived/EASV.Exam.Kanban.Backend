@@ -19,7 +19,7 @@
                           ->unsigned()
                           ->index();
 
-                    $table->text( 'category' )
+                    $table->string( 'category' )
                           ->index();
 
                     $table->json( 'attributes' );
