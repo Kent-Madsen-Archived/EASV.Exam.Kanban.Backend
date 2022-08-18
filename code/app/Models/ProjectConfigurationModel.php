@@ -15,7 +15,7 @@
 
         protected $fillable =
         [
-            'identity'
+            'id'
         ];
 
 

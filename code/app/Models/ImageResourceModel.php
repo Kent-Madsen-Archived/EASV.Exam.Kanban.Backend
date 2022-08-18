@@ -5,26 +5,26 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class ProjectModel
+    class ImageResourceModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'projects';
-        public $timestamps = true;
+        protected $table = 'images_resources';
+        public $timestamps = false;
+
 
         protected $fillable =
         [
             'id',
 
-            'title',
-            'description',
-            'attributes',
+            'url',
+            'image_id',
 
-            'template_id',
+            'width',
+            'height',
 
-            'created_at',
-            'updated_at'
+            'type'
         ];
 
 

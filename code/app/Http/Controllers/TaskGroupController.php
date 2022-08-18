@@ -1,10 +1,11 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Illuminate\Http\JsonResponse;
+
     use App\Http\Requests\access\AccessTaskGroupRequest;
     use App\Http\Requests\store\StoreTaskGroupRequest;
     use App\Http\Requests\update\UpdateTaskGroupRequest;
-    use Illuminate\Http\JsonResponse;
 
 
     class TaskGroupController
