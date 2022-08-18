@@ -2,12 +2,13 @@
     namespace App\Http\Controllers;
 
     use Illuminate\Support\Carbon;
+    use Illuminate\Http\JsonResponse;
+    use Illuminate\Support\Str;
 
     use App\Models\TaskModel;
-    use Illuminate\Http\JsonResponse;
     use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
-    use App\Http\Requests\update\UpdateTaskRequest;use Illuminate\Support\Str;
+    use App\Http\Requests\update\UpdateTaskRequest;
 
 
     class TaskController
@@ -46,6 +47,7 @@
             return response()->json( $res );
         }
 
+
         public function store( StoreTaskRequest $request ): JsonResponse
         {
             //
@@ -65,6 +67,7 @@
             return response()->json( $model );
         }
 
+
         public function show( AccessTaskRequest $request ): JsonResponse
         {
             $model = TaskModel::where( 'id', '=', $request->id )->firstOrFail();
@@ -72,11 +75,39 @@
             return response()->json( $model );
         }
 
+
         public function update( UpdateTaskRequest $request ): JsonResponse
         {
             //
+            $inpKeys = $request->all();
+            $onChange = false;
 
-            return response()->json('');
+            $model = TaskModel::where( 'id', '=', $inpKeys[ 'id' ] )->firstOrFail();
+
+            if($request->has('title')&& isset($inpKeys['title']))
+            {
+                $model->title = $inpKeys['title'];
+                $onChange = true;
+            }
+
+            if($request->has('description')&& isset($inpKeys['description']))
+            {
+                $model->title = $inpKeys['description'];
+                $onChange = true;
+            }
+
+            if($request->has('deadline') && isset($inpKeys['deadline']))
+            {
+                $model->title = $inpKeys['deadline'];
+                $onChange = true;
+            }
+
+            if( $onChange )
+            {
+                $model->save();
+            }
+
+            return response()->json( $model );
         }
 
 
