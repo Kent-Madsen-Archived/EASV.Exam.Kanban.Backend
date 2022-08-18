@@ -17,7 +17,16 @@
                     $table->text( 'title' );
                     $table->mediumText( 'description' );
 
+                    $table->bigInteger('author_id' )
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
                     $table->timestamps();
+
+                    $table->foreign( 'author_id' )
+                          ->references( 'id' )
+                          ->on( 'users' );
                 }
             );
         }
