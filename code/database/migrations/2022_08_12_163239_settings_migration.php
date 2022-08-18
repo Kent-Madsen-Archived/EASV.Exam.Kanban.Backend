@@ -15,10 +15,13 @@
                 {
                     $table->id();
 
-                    $table->bigInteger('account_id')
-                          ->unsigned();
+                    $table->bigInteger( 'account_id' )
+                          ->unsigned()
+                          ->index();
 
-                    $table->text( 'category' );
+                    $table->text( 'category' )
+                          ->index();
+
                     $table->json( 'attributes' );
 
                     $table->timestamps();

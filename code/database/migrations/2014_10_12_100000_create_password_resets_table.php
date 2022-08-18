@@ -8,7 +8,7 @@
     {
         public function up()
         {
-            Schema::create('password_resets',
+            Schema::create( 'password_resets',
                 function( Blueprint $table )
                 {
                     $table->id();
