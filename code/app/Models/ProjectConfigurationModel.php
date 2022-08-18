@@ -16,8 +16,10 @@
         protected $fillable =
         [
             'id',
+
             'project_id',
             'attributes',
+
             'created_at',
             'updated_at'
         ];
