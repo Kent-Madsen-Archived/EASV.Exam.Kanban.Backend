@@ -48,8 +48,8 @@
 
             'template_id' => 'integer',
 
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime'
+            'created_at' => 'datetime:Y-m-d',
+            'updated_at' => 'datetime:Y-m-d'
         ];
     }
 ?>

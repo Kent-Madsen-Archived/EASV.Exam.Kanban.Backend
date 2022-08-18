@@ -38,7 +38,7 @@
             'id' => 'integer',
             'email' => 'string',
             'token' => 'string',
-            'created_at' => 'datetime'
+            'created_at' => 'timestamp'
         ];
     }
 ?>
