@@ -16,7 +16,13 @@
                     $table->id();
 
                     $table->bigInteger('original_owner_id' )
-                          ->unsigned();
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
+                    $table->bigInteger( 'project_id' )
+                          ->unsigned()
+                          ->index();
 
                     $table->text('origin_url' );
 
@@ -31,6 +37,10 @@
                     $table->foreign( 'original_owner_id' )
                           ->references( 'id' )
                           ->on( 'users' );
+
+                    $table->foreign('project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
                 }
             );
 
@@ -54,12 +64,33 @@
                           ->on( 'images' );
                 }
             );
+
+            Schema::create( 'image_preview',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->text( 'url' );
+
+                    $table->bigInteger( 'image_id' )
+                          ->unsigned()
+                          ->index();
+
+                    $table->integer( 'width' );
+                    $table->integer( 'height' );
+
+                    $table->foreign( 'image_id' )
+                          ->references( 'id' )
+                          ->on( 'images' );
+                }
+            );
         }
 
 
         public function down()
         {
             //
+            Schema::dropIfExists( 'image_preview' );
             Schema::dropIfExists( 'image_resources' );
             Schema::dropIfExists( 'images' );
         }
