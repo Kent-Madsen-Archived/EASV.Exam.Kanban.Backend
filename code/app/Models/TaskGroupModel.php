@@ -15,13 +15,19 @@
 
         protected $fillable =
         [
-            'id'
+            'id',
+            'group_name',
+
+            'created_at',
+            'updated_at'
         ];
 
 
         protected $hidden =
         [
-
+            'id',
+            'created_at',
+            'updated_at'
         ];
 
 

@@ -13,6 +13,10 @@
                     function( Blueprint $table )
                     {
                         $table->id();
+
+                        $table->string( 'group_name' )
+                              ->index();
+
                         $table->timestamps();
                     }
                 );
