@@ -5,12 +5,12 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class ProjectModel
+    class ProjectTemplateModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'projects';
+        protected $table = 'project_templates';
         public $timestamps = true;
 
         protected $fillable =
@@ -18,10 +18,9 @@
             'id',
 
             'title',
-            'description',
-            'attributes',
 
-            'template_id',
+            'description',
+            'implementation',
 
             'created_at',
             'updated_at'
