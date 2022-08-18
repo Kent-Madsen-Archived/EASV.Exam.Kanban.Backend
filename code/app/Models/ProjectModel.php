@@ -15,7 +15,10 @@
 
         protected $fillable =
         [
-            'identity'
+            'id',
+            'title',
+            'description',
+            'attributes'
         ];
 
 

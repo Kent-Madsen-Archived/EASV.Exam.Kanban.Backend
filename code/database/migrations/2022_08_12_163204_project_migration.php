@@ -14,6 +14,15 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->text( 'title' );
+
+                    $table->mediumText( 'description' )
+                          ->nullable();
+
+                    $table->json( 'attributes' )
+                          ->nullable();
+
                     $table->timestamps();
                 }
             );
@@ -22,7 +31,6 @@
 
         public function down()
         {
-            //
             Schema::dropIfExists( 'projects' );
         }
     };

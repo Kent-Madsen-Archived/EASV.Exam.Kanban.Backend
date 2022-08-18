@@ -13,6 +13,10 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->text( 'title' );
+                    $table->mediumText( 'description' );
+
                     $table->timestamps();
                 }
             );

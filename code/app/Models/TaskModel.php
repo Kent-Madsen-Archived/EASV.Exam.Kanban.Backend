@@ -11,7 +11,6 @@
         use HasFactory;
 
         protected $table = 'tasks';
-
         public $timestamps = false;
 
         protected $fillable =
