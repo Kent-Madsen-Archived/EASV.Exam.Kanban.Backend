@@ -8,7 +8,7 @@
     {
         public function up()
         {
-            Schema::create('users',
+            Schema::create( 'users',
                 function ( Blueprint $table )
                 {
                     $table->id();

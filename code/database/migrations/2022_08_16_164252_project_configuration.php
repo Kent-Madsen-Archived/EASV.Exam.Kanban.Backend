@@ -13,6 +13,18 @@
                 function( Blueprint $table )
                 {
                     $table->id();
+
+                    $table->bigInteger('project_id' )
+                          ->unsigned()
+                          ->index();
+
+                    $table->json( 'attributes' )
+                          ->nullable();
+
+                    $table->foreign( 'project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
+
                     $table->timestamps();
                 }
             );
