@@ -39,7 +39,19 @@
 
         protected $casts =
         [
+            'id' => 'integer',
 
+            'original_owner_id' => 'integer',
+            'origin_url' => 'string',
+
+            'width' => 'integer',
+            'height' => 'integer',
+
+            'alt' => 'string',
+            'attributes' => 'collection',
+
+            'created_at' => 'datetime:Y-m-d',
+            'updated_at' => 'datetime:Y-m-d'
         ];
     }
 ?>
