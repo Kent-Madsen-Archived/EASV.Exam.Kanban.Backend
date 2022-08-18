@@ -33,7 +33,13 @@
 
         protected $casts =
         [
+            'id' => 'integer',
 
+            'project_id' => 'integer',
+            'attributes' => 'collection',
+
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime'
         ];
     }
 ?>
