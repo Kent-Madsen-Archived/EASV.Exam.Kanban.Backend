@@ -1,12 +1,13 @@
 <?php
     namespace App\Http\Controllers;
 
+    use Illuminate\Http\JsonResponse;
+
     use App\Http\Requests\access\AccessImageRequest;
     use App\Http\Requests\store\StoreImageRequest;
     use App\Http\Requests\update\UpdateImageRequest;
-    use App\Models\ImageModel;
-    use Illuminate\Http\JsonResponse;
 
+    use App\Models\ImageModel;
 
     class ImagesController
         extends Controller

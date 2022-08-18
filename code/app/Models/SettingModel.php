@@ -15,7 +15,14 @@
 
         protected $fillable =
         [
-            'identity'
+            'id',
+
+            'account_id',
+            'category',
+            'attributes',
+
+            'created_at',
+            'updated_at'
         ];
 
 
