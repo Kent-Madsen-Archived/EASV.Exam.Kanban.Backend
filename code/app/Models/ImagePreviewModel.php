@@ -33,7 +33,13 @@
 
         protected $casts =
         [
+            'id' => 'integer',
+            'url' => 'string',
 
+            'image_id' => 'integer',
+
+            'width' => 'integer',
+            'height' => 'integer'
         ];
     }
 ?>
