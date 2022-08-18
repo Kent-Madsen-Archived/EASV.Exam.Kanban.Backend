@@ -18,9 +18,34 @@
 
         public function index( AccessProjectRequest $request ): JsonResponse
         {
-            //
+            $projects = ProjectModel::where( 'creator_id', '=',  $request->user()->id )->get();
 
-            return response()->json('');
+            $resp = [];
+
+            $length = count( $projects );
+
+            if( $length > 0 )
+            {
+                $idx = null;
+
+                for( $idx = 0;
+                     $idx < $length;
+                     $idx++)
+                {
+                    $project = $projects[ $idx ];
+
+                    $sorted =
+                    [
+                        "id" => $project->id,
+                        "title" => $project->title,
+                        "attributes" => $project->attributes
+                    ];
+
+                    array_push( $resp, $sorted );
+                }
+            }
+
+            return response()->json( $resp );
         }
 
 
