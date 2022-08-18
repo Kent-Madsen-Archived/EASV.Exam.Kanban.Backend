@@ -29,12 +29,34 @@
                           ->on( 'users' );
                 }
             );
+
+            Schema::create('task_associates',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->bigInteger( 'task_id' )
+                          ->unsigned();
+
+                    $table->bigInteger( 'task_group_id' )
+                          ->unsigned();
+
+                    $table->foreign( 'task_id' )
+                          ->references( 'id' )
+                          ->on( 'tasks' );
+
+                    $table->foreign( 'task_group_id' )
+                          ->references( 'id' )
+                          ->on( 'task_groups' );
+                }
+            );
         }
 
 
         public function down()
         {
             //
+            Schema::dropIfExists( 'task_associates' );
             Schema::dropIfExists( 'tasks' );
         }
     };
