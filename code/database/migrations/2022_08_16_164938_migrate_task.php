@@ -17,12 +17,19 @@
                     $table->text( 'title' );
                     $table->mediumText( 'description' );
 
+
                     $table->bigInteger('author_id' )
                           ->unsigned()
                           ->nullable()
                           ->index();
 
+                    
+                    $table->timestamp('deadline')
+                          ->nullable()
+                          ->index();
+
                     $table->timestamps();
+
 
                     $table->foreign( 'author_id' )
                           ->references( 'id' )
