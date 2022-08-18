@@ -21,7 +21,9 @@
             'description',
 
             'author_id',
-            'prooject_id',
+            'project_id',
+
+            'deadline',
 
             'created_at',
             'updated_at',
@@ -45,6 +47,8 @@
 
             'title' => 'string',
             'description' => 'string',
+
+            'deadline' => 'datetime:Y-m-d',
 
             'author_id' => 'integer',
 
