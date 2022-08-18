@@ -5,40 +5,41 @@
     use Illuminate\Database\Eloquent\Model;
 
 
-    class TaskGroupModel
+    class ImagePreviewModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'task_groups';
-        public $timestamps = true;
+        protected $table = 'images_previews';
+        public $timestamps = false;
 
         protected $fillable =
         [
             'id',
-            'group_name',
+            'url',
 
-            'created_at',
-            'updated_at'
+            'image_id',
+
+            'width',
+            'height'
         ];
 
 
         protected $hidden =
         [
-            'id',
 
-            'created_at',
-            'updated_at'
         ];
 
 
         protected $casts =
         [
             'id' => 'integer',
-            'group_name' => 'integer',
+            'url' => 'string',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            'image_id' => 'integer',
+
+            'width' => 'integer',
+            'height' => 'integer'
         ];
     }
 ?>
