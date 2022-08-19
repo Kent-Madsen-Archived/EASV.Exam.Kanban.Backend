@@ -20,7 +20,7 @@
     class ProjectController
         extends Controller
     {
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/projects/index',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -58,7 +58,7 @@
         }
 
 
-        #[OA\Post( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/projects/create',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -100,7 +100,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/projects/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -112,7 +112,7 @@
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/projects/update',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -155,7 +155,7 @@
         }
 
 
-        #[OA\Delete( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/projects/delete/{id}',
                      tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
