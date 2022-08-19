@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Kanban Exam Project",
+        "contact": {
+            "name": "kent vejrup madsen",
+            "url": "https://github.com/KentVejrupMadsen",
+            "email": "kent.vejrup.madsen@protonmail.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://backend-exam-zu4kv.ondigitalocean.app/1.0.0/",
+            "description": "public available server"
+        },
+        {
+            "url": "http://127.0.0.1/api/1.0.0/",
+            "description": "local development server"
+        }
+    ],
+    "paths": {
+        "/api/1.0.0/": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "ed9af5a6cb1bf4a56098a083649af318"
+            },
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "9cea3237f1f1a330fb681b7d7b2d0034"
+            },
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "9d521b41f6fd17cf7e1a03ad193cd39b",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "b66c2675daefa48d2ba4fc4c0c42b899",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AccountController": {
+                "title": "Account Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "ImagesController": {
+                "title": "Image Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "ProjectConfigurationController": {
+                "title": "Project Configuration Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "ProjectController": {
+                "title": "Project Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "SettingController": {
+                "title": "Setting Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "TaskController": {
+                "title": "Task Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "TaskGroupController": {
+                "title": "Task Group Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "TeamMemberController": {
+                "title": "Team Member Controller",
+                "description": "",
+                "type": "controller"
+            },
+            "TeamMemberOptionController": {
+                "title": "Team Member Option Controller",
+                "description": "",
+                "type": "controller"
+            }
+        }
+    }
+}

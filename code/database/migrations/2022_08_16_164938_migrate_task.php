@@ -23,6 +23,10 @@
                           ->nullable()
                           ->index();
 
+                    $table->bigInteger('project_id' )
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
 
                     $table->timestamp('deadline')
                           ->nullable()
@@ -34,6 +38,10 @@
                     $table->foreign( 'author_id' )
                           ->references( 'id' )
                           ->on( 'users' );
+
+                    $table->foreign( 'project_id' )
+                          ->references( 'id' )
+                          ->on( 'projects' );
                 }
             );
 

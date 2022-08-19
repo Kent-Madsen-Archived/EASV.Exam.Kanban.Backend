@@ -7,11 +7,21 @@
     use App\Http\Requests\store\StoreSettingRequest;
     use App\Http\Requests\update\UpdateSettingRequest;
 
+    use OpenApi\Attributes
+      	as OA;
 
+
+    #[OA\Schema( title: 'Setting Controller',
+                 description: '',
+                 type: 'controller' )]
     class SettingController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function index( AccessSettingRequest $request ): JsonResponse
         {
             //
@@ -19,6 +29,12 @@
             return response()->json('');
         }
 
+
+        #[OA\Post( path: '/api/1.0.0/',
+                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreSettingRequest $request ): JsonResponse
         {
             //
@@ -27,6 +43,11 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function show( AccessSettingRequest $request ): JsonResponse
         {
             //
@@ -34,6 +55,12 @@
             return response()->json('');
         }
 
+
+        #[OA\Patch( path: '/api/1.0.0/',
+                    tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateSettingRequest $request ): JsonResponse
         {
             //
@@ -42,6 +69,11 @@
         }
 
 
+        #[OA\Delete( path: '/api/1.0.0/',
+                     tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessSettingRequest $request ): JsonResponse
         {
             //
