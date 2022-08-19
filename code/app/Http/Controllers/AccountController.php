@@ -48,10 +48,28 @@
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/me',
+                  security: [new OA\SecurityScheme('bearerToken')],
                   tags: [ '1.0.0', '' ] )]
-        #[OA\Parameter( name:'Authorization',
-                        description: 'bearer token - has to be included in the header of the request',
-                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(
+
+                               example: "<<<JSON \r\n" .
+                                        "{ \r\n" .
+                                         	"'identity': id, \r\n" .
+                                         	"'name': 'person name', \r\n".
+                                         	"'email': 'person email', \r\n" .
+                                         	"'username': 'my username', \r\n" .
+                                         	"'created_at': 'creation date', \r\n".
+                                         	"'updated_at': 'last updated at' \r\n" .
+                                        "} \r\n"
+                           ),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function me( Request $request ): JsonResponse
         {
             $resp =
@@ -71,7 +89,20 @@
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/login',
-                  tags: [ '1.0.0', '' ] )]
+                  tags: [ '1.0.0', '' ]
+        )]
+        #[OA\RequestBody(
+                  content: new OA\JsonContent(example: "")
+        )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON"),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function login( StoreAccountRequest $request ): JsonResponse
         {
             $in = $request->all();
@@ -94,6 +125,18 @@
 
         #[OA\Post( path: '/api/1.0.0/accounts/create',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\RequestBody(
+                  content: new OA\JsonContent( example: "" )
+        )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON")
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
             $passwd = $request->all()[ 'security' ][ 'password' ];
@@ -117,6 +160,15 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON")
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
             $find = Account::where( 'id', '=', $request->id )->firstOrFail();
@@ -137,6 +189,18 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
+        #[OA\RequestBody(
+                  content: new OA\JsonContent(example: "")
+        )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON")
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -177,6 +241,18 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
+        #[OA\RequestBody(
+                  content: new OA\JsonContent(example: "")
+        )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON"),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -196,6 +272,18 @@
 
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent(example: "<<<JSON"),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function logout( AccessAccountRequest $request ): JsonResponse
         {
 
