@@ -7,7 +7,13 @@
     use App\Http\Requests\store\StoreTeamMemberRequest;
     use App\Http\Requests\update\UpdateTeamMemberRequest;
 
+    use OpenApi\Attributes
+        as OA;
 
+
+    #[OA\Schema( title: 'Team Member Controller',
+                 description: '',
+                 type: 'controller' )]
     class TeamMemberController
         extends Controller
     {

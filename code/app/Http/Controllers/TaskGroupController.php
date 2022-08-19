@@ -7,7 +7,13 @@
     use App\Http\Requests\store\StoreTaskGroupRequest;
     use App\Http\Requests\update\UpdateTaskGroupRequest;
 
+    use OpenApi\Attributes
+        as OA;
 
+
+    #[OA\Schema( title: 'Task Group Controller',
+                 description: '',
+                 type: 'controller' )]
     class TaskGroupController
         extends Controller
     {

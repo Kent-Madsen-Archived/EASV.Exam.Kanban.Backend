@@ -6,8 +6,13 @@
     use App\Http\Requests\access\AccessSettingRequest;
     use App\Http\Requests\store\StoreSettingRequest;
     use App\Http\Requests\update\UpdateSettingRequest;
+    use OpenApi\Attributes
+      	as OA;
 
 
+    #[OA\Schema( title: 'Setting Controller',
+                 description: '',
+                 type: 'controller' )]
     class SettingController
         extends Controller
     {

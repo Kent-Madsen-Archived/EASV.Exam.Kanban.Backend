@@ -10,7 +10,12 @@
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
 
+    use OpenApi\Attributes
+        as OA;
 
+    #[OA\Schema( title: 'Task Controller',
+                 description: '',
+                 type: 'controller' )]
     class TaskController
         extends Controller
     {

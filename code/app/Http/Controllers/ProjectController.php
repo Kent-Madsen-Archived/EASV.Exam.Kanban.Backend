@@ -10,8 +10,13 @@
     use App\Http\Requests\store\StoreProjectRequest;
     use App\Http\Requests\update\UpdateProjectRequest;
 
+    use OpenApi\Attributes
+        as OA;
 
 
+    #[OA\Schema( title: 'Project Controller',
+                 description: '',
+                 type: 'controller' )]
     class ProjectController
         extends Controller
     {

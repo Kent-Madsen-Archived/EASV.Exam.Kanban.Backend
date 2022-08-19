@@ -6,7 +6,13 @@
     use App\Http\Requests\update\UpdateProjectConfigurationRequest;
     use Illuminate\Http\JsonResponse;
 
+    use OpenApi\Attributes
+        as OA;
 
+
+    #[OA\Schema( title: 'Project Configuration Controller',
+                 description: '',
+                 type: 'controller' )]
     class ProjectConfigurationController
         extends Controller
     {

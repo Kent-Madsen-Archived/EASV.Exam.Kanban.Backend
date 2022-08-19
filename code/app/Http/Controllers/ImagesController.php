@@ -9,6 +9,12 @@
 
     use App\Models\ImageModel;
 
+    use OpenApi\Attributes
+        as OA;
+
+    #[OA\Schema( title: 'Image Controller',
+                 description: '',
+                 type: 'controller' )]
     class ImagesController
         extends Controller
     {

@@ -23,8 +23,13 @@
     use App\Http\Requests\store\StoreAccountRequest;
     use App\Http\Requests\update\UpdateAccountRequest;
 
+    use OpenApi\Attributes
+        	as OA;
 
 
+    #[OA\Schema( title: 'Account Controller',
+                 description: '',
+                 type: 'controller' )]
     class AccountController
         extends BaseController
     {
