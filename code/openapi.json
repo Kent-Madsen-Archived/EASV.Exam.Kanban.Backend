@@ -37,14 +37,14 @@
                     "1.0.0",
                     ""
                 ],
-                "operationId": "9cea3237f1f1a330fb681b7d7b2d0034"
+                "operationId": "d4dab295237b1fc67a0930a10ae06a56"
             },
             "delete": {
                 "tags": [
                     "1.0.0",
                     ""
                 ],
-                "operationId": "9d521b41f6fd17cf7e1a03ad193cd39b",
+                "operationId": "29116f974712eca3aac4b77f87a2b91f",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -58,7 +58,89 @@
                     "1.0.0",
                     ""
                 ],
-                "operationId": "b66c2675daefa48d2ba4fc4c0c42b899",
+                "operationId": "8dc2a161c84314e960d863ee5756cfaf",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/me": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "ab58ab040388c6b5b42888f9f406124b",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/login": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "089028180ac190a7bcff755401a05ddb"
+            }
+        },
+        "/api/1.0.0/accounts/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "fe9c802e2373851fea0bf593e203b946"
+            }
+        },
+        "/api/1.0.0/accounts/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "7466328d5e942f5af3e1c09535a13d49",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "8ed16155f97ed9c366dd3a17991a7d88",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/delete": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "cff604b900cd83c00d5307e4b84d915d",
                 "parameters": [
                     {
                         "name": "Authorization",
