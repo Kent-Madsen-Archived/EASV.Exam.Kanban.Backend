@@ -10,20 +10,59 @@
     use App\Http\Requests\store\StoreProjectRequest;
     use App\Http\Requests\update\UpdateProjectRequest;
 
+    use OpenApi\Attributes
+        as OA;
 
 
+    #[OA\Schema( title: 'Project Controller',
+                 description: '',
+                 type: 'controller' )]
     class ProjectController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function index( AccessProjectRequest $request ): JsonResponse
         {
-            //
+            $projects = ProjectModel::where( 'creator_id', '=',  $request->user()->id )->get();
 
-            return response()->json('');
+            $resp = [];
+
+            $length = count( $projects );
+
+            if( $length > 0 )
+            {
+                $idx = null;
+
+                for( $idx = 0;
+                     $idx < $length;
+                     $idx++)
+                {
+                    $project = $projects[ $idx ];
+
+                    $sorted =
+                    [
+                        "id" => $project->id,
+                        "title" => $project->title,
+                        "attributes" => $project->attributes
+                    ];
+
+                    array_push( $resp, $sorted );
+                }
+            }
+
+            return response()->json( $resp );
         }
 
 
+        #[OA\Post( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -61,6 +100,11 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function show( AccessProjectRequest $request ): JsonResponse
         {
             $project = ProjectModel::where( 'id', '=',  $request->id )->firstOrFail();
@@ -68,6 +112,11 @@
         }
 
 
+        #[OA\Patch( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -106,6 +155,11 @@
         }
 
 
+        #[OA\Delete( path: '/api/1.0.0/',
+                     tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessProjectRequest $request ): JsonResponse
         {
             $isYes = $request->has( 'delete' );

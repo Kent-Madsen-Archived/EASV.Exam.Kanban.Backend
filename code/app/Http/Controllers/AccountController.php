@@ -23,8 +23,13 @@
     use App\Http\Requests\store\StoreAccountRequest;
     use App\Http\Requests\update\UpdateAccountRequest;
 
+    use OpenApi\Attributes
+        	as OA;
 
 
+    #[OA\Schema( title: 'Account Controller',
+                 description: '',
+                 type: 'controller' )]
     class AccountController
         extends BaseController
     {
@@ -33,12 +38,20 @@
             ValidatesRequests;
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function index( AccessAccountRequest $request ): JsonResponse
         {
 
             return response()->json('testIndex' );
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function me( Request $request ): JsonResponse
         {
             $resp =
@@ -57,6 +70,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function login( StoreAccountRequest $request ): JsonResponse
         {
             $in = $request->all();
@@ -77,6 +92,8 @@
         }
 
 
+        #[OA\Post( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
             $passwd = $request->all()[ 'security' ][ 'password' ];
@@ -95,6 +112,11 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
             $find = Account::where( 'id', '=', $request->id )->firstOrFail();
@@ -110,6 +132,11 @@
         }
 
 
+        #[OA\Patch( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -145,6 +172,11 @@
         }
 
 
+        #[OA\Delete( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -162,6 +194,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function logout( AccessAccountRequest $request ): JsonResponse
         {
 

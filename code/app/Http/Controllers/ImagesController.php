@@ -9,9 +9,17 @@
 
     use App\Models\ImageModel;
 
+    use OpenApi\Attributes
+        as OA;
+
+    #[OA\Schema( title: 'Image Controller',
+                 description: '',
+                 type: 'controller' )]
     class ImagesController
         extends Controller
     {
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessImageRequest $request ): JsonResponse
         {
             //
@@ -19,6 +27,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Post( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreImageRequest $request ): JsonResponse
         {
             //
@@ -26,6 +37,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessImageRequest $request ): JsonResponse
         {
             //
@@ -34,6 +48,11 @@
         }
 
 
+        #[OA\Patch( path: '/api/1.0.0/',
+                    tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateImageRequest $request ): JsonResponse
         {
             //
@@ -42,6 +61,11 @@
         }
 
 
+        #[OA\Delete( path: '/api/1.0.0/',
+                     tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessImageRequest $request ): JsonResponse
         {
             //
