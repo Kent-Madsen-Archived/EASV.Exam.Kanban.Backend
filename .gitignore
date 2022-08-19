@@ -7,3 +7,6 @@
 *.tar.gz
 
 .editorconfig
+
+*.ca
+*.bck

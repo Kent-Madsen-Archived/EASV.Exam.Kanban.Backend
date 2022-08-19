@@ -13,6 +13,11 @@
         [ProjectController::class, 'show']
     );
 
+    $indexPath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/index';
+    Route::middleware( $secure )->get( $indexPath,
+            [ProjectController::class, 'index']
+    );
+
     $createPath = cfg::versions['v1'] . '/' . cfg::names[ "pj" ] . '/' . cfg::actions[ 'c' ];
     Route::middleware( $secure )->post( $createPath,
         [ProjectController::class, 'store']

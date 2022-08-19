@@ -8,9 +8,14 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    Route::middleware( $secure )->get( cfg::versions['v1'] . '/tasks/identity/{id}',
+    Route::middleware( $secure )->get( cfg::versions[ 'v1' ] . '/tasks/index',
+        [TaskController::class, 'index']
+    );
+
+    Route::middleware( $secure )->get( cfg::versions[ 'v1' ] . '/tasks/identity/{id}',
         [TaskController::class, 'show']
     );
+
 
     Route::middleware( $secure )->post( cfg::versions['v1'] . '/tasks/create',
         [TaskController::class, 'store']

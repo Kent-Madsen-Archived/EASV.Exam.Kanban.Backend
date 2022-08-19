@@ -6,10 +6,21 @@
     use App\Http\Requests\update\UpdateProjectConfigurationRequest;
     use Illuminate\Http\JsonResponse;
 
+    use OpenApi\Attributes
+        as OA;
 
+
+    #[OA\Schema( title: 'Project Configuration Controller',
+                 description: '',
+                 type: 'controller' )]
     class ProjectConfigurationController
         extends Controller
     {
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function index( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -17,6 +28,12 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -24,6 +41,12 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function show( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -32,6 +55,11 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -40,6 +68,11 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
