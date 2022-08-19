@@ -229,6 +229,86 @@
                     }
                 ]
             }
+        },
+        "/api/1.0.0/tasks/index": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "cc7571e907bb446dc94f29b09c3f7fb5",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "79ab373e4dc777413730ab69b3bd6433",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "fe10f0c486d921f6d12ba21c29833e78",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "abe57dc4f7c7004b7d6961bc2146056c",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "2b2cfb62efae2cef52cf0ec865d2e197",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
         }
     },
     "components": {
