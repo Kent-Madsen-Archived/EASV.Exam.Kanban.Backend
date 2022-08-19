@@ -49,6 +49,9 @@
 
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function me( Request $request ): JsonResponse
         {
             $resp =
@@ -111,6 +114,9 @@
 
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
             $find = Account::where( 'id', '=', $request->id )->firstOrFail();
@@ -128,6 +134,9 @@
 
         #[OA\Patch( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -165,6 +174,9 @@
 
         #[OA\Delete( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();

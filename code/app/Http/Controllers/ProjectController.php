@@ -22,6 +22,9 @@
     {
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function index( AccessProjectRequest $request ): JsonResponse
         {
             $projects = ProjectModel::where( 'creator_id', '=',  $request->user()->id )->get();
@@ -57,6 +60,9 @@
 
         #[OA\Post( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -96,6 +102,9 @@
 
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function show( AccessProjectRequest $request ): JsonResponse
         {
             $project = ProjectModel::where( 'id', '=',  $request->id )->firstOrFail();
@@ -105,6 +114,9 @@
 
         #[OA\Patch( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -145,6 +157,9 @@
 
         #[OA\Delete( path: '/api/1.0.0/',
                      tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessProjectRequest $request ): JsonResponse
         {
             $isYes = $request->has( 'delete' );

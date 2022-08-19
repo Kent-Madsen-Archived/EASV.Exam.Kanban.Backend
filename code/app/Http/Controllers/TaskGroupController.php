@@ -19,6 +19,9 @@
     {
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function index( AccessTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -28,6 +31,9 @@
 
         #[OA\Post( path: '/api/1.0.0/',
                    tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -37,6 +43,9 @@
 
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function show( AccessTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -46,6 +55,9 @@
 
         #[OA\Patch( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function update( UpdateTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -55,6 +67,9 @@
 
         #[OA\Delete( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
         public function destroy( AccessTaskGroupRequest $request )
         {
             //
