@@ -89,7 +89,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
@@ -126,7 +126,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
@@ -163,7 +163,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {

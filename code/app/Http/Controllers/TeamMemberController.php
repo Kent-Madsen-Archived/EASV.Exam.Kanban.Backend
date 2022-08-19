@@ -26,7 +26,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public function store( StoreTeamMemberRequest $request ): JsonResponse
         {
@@ -44,7 +44,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public function update( UpdateTeamMemberRequest $request ): JsonResponse
         {
@@ -53,7 +53,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public function destroy( AccessTeamMemberRequest $request ): JsonResponse
         {

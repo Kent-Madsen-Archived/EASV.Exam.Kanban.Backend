@@ -54,8 +54,8 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
-                  tags: [ '1.0.0', '' ] )]
+        #[OA\Post( path: '/api/1.0.0/',
+                   tags: [ '1.0.0', '' ] )]
         public function store( StoreTaskRequest $request ): JsonResponse
         {
             //
@@ -86,8 +86,8 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
-                  tags: [ '1.0.0', '' ] )]
+        #[OA\Patch( path: '/api/1.0.0/',
+                    tags: [ '1.0.0', '' ] )]
         public function update( UpdateTaskRequest $request ): JsonResponse
         {
             //
@@ -123,7 +123,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         public function destroy( AccessTaskRequest $request ): JsonResponse
         {
