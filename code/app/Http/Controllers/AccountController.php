@@ -50,7 +50,7 @@
         #[OA\Get( path: '/api/1.0.0/accounts/me',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public final function me( Request $request ): JsonResponse
         {
@@ -115,7 +115,7 @@
         #[OA\Get( path: '/api/1.0.0/accounts/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
@@ -135,7 +135,7 @@
         #[OA\Patch( path: '/api/1.0.0/accounts/update',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
@@ -175,7 +175,7 @@
         #[OA\Delete( path: '/api/1.0.0/accounts/delete',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {

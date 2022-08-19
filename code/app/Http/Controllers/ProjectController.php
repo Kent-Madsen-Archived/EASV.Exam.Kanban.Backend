@@ -23,7 +23,7 @@
         #[OA\Get( path: '/api/1.0.0/projects/index',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function index( AccessProjectRequest $request ): JsonResponse
         {
@@ -61,7 +61,7 @@
         #[OA\Post( path: '/api/1.0.0/projects/create',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function store( StoreProjectRequest $request ): JsonResponse
         {
@@ -103,7 +103,7 @@
         #[OA\Get( path: '/api/1.0.0/projects/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function show( AccessProjectRequest $request ): JsonResponse
         {
@@ -115,7 +115,7 @@
         #[OA\Patch( path: '/api/1.0.0/projects/update',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function update( UpdateProjectRequest $request ): JsonResponse
         {
@@ -158,7 +158,7 @@
         #[OA\Delete( path: '/api/1.0.0/projects/delete/{id}',
                      tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function destroy( AccessProjectRequest $request ): JsonResponse
         {
