@@ -15,11 +15,11 @@
     },
     "servers": [
         {
-            "url": "https://backend-exam-zu4kv.ondigitalocean.app/1.0.0/",
+            "url": "https://backend-exam-zu4kv.ondigitalocean.app",
             "description": "public available server"
         },
         {
-            "url": "http://127.0.0.1/api/1.0.0/",
+            "url": "http://127.0.0.1",
             "description": "local development server"
         }
     ],
@@ -37,14 +37,21 @@
                     "1.0.0",
                     ""
                 ],
-                "operationId": "9cea3237f1f1a330fb681b7d7b2d0034"
+                "operationId": "2669bb496860468a32e332acacd5d298",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
             },
             "delete": {
                 "tags": [
                     "1.0.0",
                     ""
                 ],
-                "operationId": "9d521b41f6fd17cf7e1a03ad193cd39b",
+                "operationId": "76f1efec43b7e2dec146813bfca97a0c",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -58,7 +65,507 @@
                     "1.0.0",
                     ""
                 ],
-                "operationId": "b66c2675daefa48d2ba4fc4c0c42b899",
+                "operationId": "58a70fd5ee40aa97ef500b698e09f71c",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/me": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "ab58ab040388c6b5b42888f9f406124b",
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON \r\n{ \r\n'identity': id, \r\n'name': 'person name', \r\n'email': 'person email', \r\n'username': 'my username', \r\n'created_at': 'creation date', \r\n'updated_at': 'last updated at' \r\n} \r\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                },
+                "security": [
+                    {
+                        "$ref": "bearerToken"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/accounts/login": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "089028180ac190a7bcff755401a05ddb",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": ""
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                }
+            }
+        },
+        "/api/1.0.0/accounts/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "fe9c802e2373851fea0bf593e203b946",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": ""
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                }
+            }
+        },
+        "/api/1.0.0/accounts/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "7466328d5e942f5af3e1c09535a13d49",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                }
+            }
+        },
+        "/api/1.0.0/accounts/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "8ed16155f97ed9c366dd3a17991a7d88",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": ""
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                }
+            }
+        },
+        "/api/1.0.0/accounts/delete": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "cff604b900cd83c00d5307e4b84d915d",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": ""
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": "<<<JSON"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "content not found"
+                    }
+                }
+            }
+        },
+        "/api/1.0.0/resources/images/index": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "84bd76b48113760ac66651c49cdfb434"
+            }
+        },
+        "/api/1.0.0/resources/images/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "e9b935956e8fb24b59e55b72c021730f",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/resources/images/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "e1a4d36d86a57eb38dbc706b51f7b51e"
+            }
+        },
+        "/api/1.0.0/resources/images/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "cf349aec98897e739de1236e8a250688",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/resources/images/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "5bd66af2d308ea7a5d53526cbef63214",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/projects/index": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "76c363f388e6b410083e2b91f4512a55",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/projects/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "58dd211c3b5ad05a867b654356d03003",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/projects/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "599fc568d8f335b93210d6534e217bc0",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/projects/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "454dad21c41b007ccdbbe88cef30c429",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/projects/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "6eac15d3737b1adae6bfa807fc4f7ac4",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/index": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "cc7571e907bb446dc94f29b09c3f7fb5",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "79ab373e4dc777413730ab69b3bd6433",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "fe10f0c486d921f6d12ba21c29833e78",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/update": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "0b89577c1c8ccf916478acde2b8a8c75",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "abe57dc4f7c7004b7d6961bc2146056c",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/tasks/groups/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "2b2cfb62efae2cef52cf0ec865d2e197",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "bearer token - has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/teams/members/create": {
+            "post": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "f077cc36f79c417c6a03f7a097043966",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/teams/members/identity/{id}": {
+            "get": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "45e1df6ccc27a4440c4253955d48a923",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/teams/members/update": {
+            "patch": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "58aadec1cea8b272dd325212262c2fa2",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "has to be included in the header of the request"
+                    }
+                ]
+            }
+        },
+        "/api/1.0.0/teams/members/delete": {
+            "delete": {
+                "tags": [
+                    "1.0.0",
+                    ""
+                ],
+                "operationId": "3bffacc327157ddb83cff473bbdf47f6",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -115,6 +622,16 @@
                 "title": "Team Member Option Controller",
                 "description": "",
                 "type": "controller"
+            }
+        },
+        "securitySchemes": {
+            "bearerToken": {
+                "type": "http",
+                "description": "bearer token - has to be included in the header of the request",
+                "name": "bearer authorization",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
             }
         }
     }

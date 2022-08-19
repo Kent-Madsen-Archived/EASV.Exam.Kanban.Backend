@@ -15,11 +15,19 @@
     #[OA\License( name: 'MIT License',
                   url: 'https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md' )]
 
-    #[OA\Server( url: 'https://backend-exam-zu4kv.ondigitalocean.app/1.0.0/',
+    #[OA\Server( url: 'https://backend-exam-zu4kv.ondigitalocean.app',
                  description: 'public available server' )]
 
-    #[OA\Server( url: 'http://127.0.0.1/api/1.0.0/',
+    #[OA\Server( url: 'http://127.0.0.1',
                  description: 'local development server' )]
+
+    #[OA\SecurityScheme( securityScheme: 'bearerToken',
+                         type: 'http',
+                         description: 'bearer token - has to be included in the header of the request',
+                         name: 'bearer authorization',
+                         in: 'header',
+                         bearerFormat: 'JWT',
+                         scheme: 'bearer' )]
 
     final class OpenApi
     {

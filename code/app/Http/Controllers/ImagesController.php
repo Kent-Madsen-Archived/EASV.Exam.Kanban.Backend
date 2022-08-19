@@ -18,7 +18,7 @@
     class ImagesController
         extends Controller
     {
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/resources/images/index',
                   tags: [ '1.0.0', '' ] )]
         public function index( AccessImageRequest $request ): JsonResponse
         {
@@ -28,8 +28,11 @@
         }
 
 
-        #[OA\Post( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/resources/images/create',
                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
         public function store( StoreImageRequest $request ): JsonResponse
         {
             //
@@ -38,7 +41,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/resources/images/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         public function show( AccessImageRequest $request ): JsonResponse
         {
@@ -48,10 +51,10 @@
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/resources/images/update',
                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function update( UpdateImageRequest $request ): JsonResponse
         {
@@ -61,10 +64,10 @@
         }
 
 
-        #[OA\Delete( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/resources/images/delete/{id}',
                      tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function destroy( AccessImageRequest $request ): JsonResponse
         {

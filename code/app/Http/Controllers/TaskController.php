@@ -19,10 +19,10 @@
     class TaskController
         extends Controller
     {
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/tasks/index',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function index( AccessTaskRequest $request ): JsonResponse
         {
@@ -57,10 +57,10 @@
         }
 
 
-        #[OA\Post( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/tasks/create',
                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function store( StoreTaskRequest $request ): JsonResponse
         {
@@ -82,10 +82,10 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/tasks/groups/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function show( AccessTaskRequest $request ): JsonResponse
         {
@@ -95,10 +95,10 @@
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/tasks/groups/update',
                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function update( UpdateTaskRequest $request ): JsonResponse
         {
@@ -135,10 +135,10 @@
         }
 
 
-        #[OA\Delete( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/tasks/groups/delete/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
+                        description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         public function destroy( AccessTaskRequest $request ): JsonResponse
         {
