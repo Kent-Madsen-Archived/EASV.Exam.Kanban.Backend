@@ -47,7 +47,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/accounts/me',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -70,7 +70,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/accounts/login',
                   tags: [ '1.0.0', '' ] )]
         public final function login( StoreAccountRequest $request ): JsonResponse
         {
@@ -92,7 +92,7 @@
         }
 
 
-        #[OA\Post( path: '/api/1.0.0/',
+        #[OA\Post( path: '/api/1.0.0/accounts/create',
                   tags: [ '1.0.0', '' ] )]
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
@@ -112,7 +112,7 @@
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/',
+        #[OA\Get( path: '/api/1.0.0/accounts/identity/{id}',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -132,7 +132,7 @@
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/',
+        #[OA\Patch( path: '/api/1.0.0/accounts/update',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
@@ -172,7 +172,7 @@
         }
 
 
-        #[OA\Delete( path: '/api/1.0.0/',
+        #[OA\Delete( path: '/api/1.0.0/accounts/delete',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
