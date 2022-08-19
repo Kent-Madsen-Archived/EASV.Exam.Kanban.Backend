@@ -16,6 +16,8 @@
     class ProjectConfigurationController
         extends Controller
     {
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -23,6 +25,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -30,6 +35,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -38,6 +46,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateProjectConfigurationRequest $request ): JsonResponse
         {
             //
@@ -46,6 +56,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //

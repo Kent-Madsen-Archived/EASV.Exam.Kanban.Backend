@@ -17,7 +17,8 @@
     class TeamMemberOptionController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //
@@ -25,6 +26,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreTeamMemberOptionRequest $request ): JsonResponse
         {
             //
@@ -32,6 +35,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //
@@ -39,6 +44,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateTeamMemberOptionRequest $request ): JsonResponse
         {
             //
@@ -46,6 +53,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessTeamMemberOptionRequest $request ): JsonResponse
         {
             //

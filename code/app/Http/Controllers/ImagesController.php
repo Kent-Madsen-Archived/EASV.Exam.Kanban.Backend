@@ -18,6 +18,8 @@
     class ImagesController
         extends Controller
     {
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessImageRequest $request ): JsonResponse
         {
             //
@@ -25,6 +27,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreImageRequest $request ): JsonResponse
         {
             //
@@ -32,6 +37,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessImageRequest $request ): JsonResponse
         {
             //
@@ -40,6 +48,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateImageRequest $request ): JsonResponse
         {
             //
@@ -48,6 +58,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessImageRequest $request ): JsonResponse
         {
             //

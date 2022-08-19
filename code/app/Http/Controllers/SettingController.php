@@ -16,7 +16,8 @@
     class SettingController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessSettingRequest $request ): JsonResponse
         {
             //
@@ -24,6 +25,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreSettingRequest $request ): JsonResponse
         {
             //
@@ -32,6 +36,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessSettingRequest $request ): JsonResponse
         {
             //
@@ -39,6 +45,9 @@
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateSettingRequest $request ): JsonResponse
         {
             //
@@ -47,6 +56,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessSettingRequest $request ): JsonResponse
         {
             //

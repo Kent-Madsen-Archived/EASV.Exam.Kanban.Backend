@@ -17,13 +17,17 @@
     class TaskGroupController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessTaskGroupRequest $request ): JsonResponse
         {
             //
             return response()->json('');
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -31,6 +35,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -38,6 +44,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateTaskGroupRequest $request ): JsonResponse
         {
             //
@@ -45,6 +53,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessTaskGroupRequest $request )
         {
             //

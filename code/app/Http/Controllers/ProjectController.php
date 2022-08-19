@@ -20,7 +20,8 @@
     class ProjectController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessProjectRequest $request ): JsonResponse
         {
             $projects = ProjectModel::where( 'creator_id', '=',  $request->user()->id )->get();
@@ -54,6 +55,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -91,6 +94,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessProjectRequest $request ): JsonResponse
         {
             $project = ProjectModel::where( 'id', '=',  $request->id )->firstOrFail();
@@ -98,6 +103,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateProjectRequest $request ): JsonResponse
         {
             $inpKeys = $request->all();
@@ -136,6 +143,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessProjectRequest $request ): JsonResponse
         {
             $isYes = $request->has( 'delete' );

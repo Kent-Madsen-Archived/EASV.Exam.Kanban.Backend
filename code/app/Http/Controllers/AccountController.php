@@ -38,12 +38,17 @@
             ValidatesRequests;
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function index( AccessAccountRequest $request ): JsonResponse
         {
 
             return response()->json('testIndex' );
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function me( Request $request ): JsonResponse
         {
             $resp =
@@ -62,6 +67,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function login( StoreAccountRequest $request ): JsonResponse
         {
             $in = $request->all();
@@ -82,6 +89,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function store( StoreAccountRequest $request ): JsonResponse
         {
             $passwd = $request->all()[ 'security' ][ 'password' ];
@@ -100,6 +109,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function show( AccessAccountRequest $request ): JsonResponse
         {
             $find = Account::where( 'id', '=', $request->id )->firstOrFail();
@@ -115,6 +126,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function update( UpdateAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -150,6 +163,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function delete( AccessAccountRequest $request ): JsonResponse
         {
             $inp = $request->all();
@@ -167,6 +182,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public final function logout( AccessAccountRequest $request ): JsonResponse
         {
 

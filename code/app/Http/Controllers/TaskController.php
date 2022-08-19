@@ -19,7 +19,8 @@
     class TaskController
         extends Controller
     {
-
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function index( AccessTaskRequest $request ): JsonResponse
         {
             //
@@ -53,6 +54,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function store( StoreTaskRequest $request ): JsonResponse
         {
             //
@@ -73,6 +76,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function show( AccessTaskRequest $request ): JsonResponse
         {
             $model = TaskModel::where( 'id', '=', $request->id )->firstOrFail();
@@ -81,6 +86,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function update( UpdateTaskRequest $request ): JsonResponse
         {
             //
@@ -116,6 +123,8 @@
         }
 
 
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         public function destroy( AccessTaskRequest $request ): JsonResponse
         {
             //
