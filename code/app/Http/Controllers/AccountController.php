@@ -1,5 +1,16 @@
 <?php
+    /**
+     * Author: Kent Madsen
+     * Version: 1.0.0
+     * Copyright: 2022, Kent vejrup Madsen
+     *
+     * Contact: Kent.vejrup.madsen@protonmail.com
+     * Code of Conduct: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/code_of_conduct.md
+     *
+     * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
+     */
     namespace App\Http\Controllers;
+
 
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,6 +27,7 @@
 
 
     use App\Http\Requests\access\AccessAccountRequest;
+    use App\Http\Requests\access\global\AccessPublicRequest;
 
     use App\Models\User
         as Account;
@@ -24,7 +36,7 @@
     use App\Http\Requests\update\UpdateAccountRequest;
 
     use OpenApi\Attributes
-        	as OA;
+        as OA;
 
 
     #[OA\Schema( title: 'Account Controller',
@@ -33,23 +45,49 @@
     class AccountController
         extends BaseController
     {
+        private const field_identity = 'identity';
+        private const field_name = 'name';
+
+        private const field_username = 'username';
+        private const field_password = 'password';
+
+        private const field_updated_at = 'updated_at';
+        private const field_created_at = 'created_at';
+
+        private const field_email = 'email';
+
+
+
         use AuthorizesRequests,
             DispatchesJobs,
             ValidatesRequests;
 
 
-        #[OA\Get( path: '/api/1.0.0/',
-                  tags: [ '1.0.0', '' ] )]
-        public final function index( AccessAccountRequest $request ): JsonResponse
+        #[OA\Get( path: '/api/1.0.0/accounts/index',
+                  tags: [ '1.0.0', 'index' ] )]
+        public final function index( AccessPublicRequest $request ): JsonResponse
         {
+            $response = array();
 
-            return response()->json('testIndex' );
+            foreach( Account::all()
+                        as $current_account )
+            {
+                $result =
+                [
+                    self::field_identity => $current_account->id,
+                    self::field_username => $current_account->username
+                ];
+
+                array_push($response, $result );
+            }
+
+            return response()->json( $response );
         }
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/me',
-                  security: [new OA\SecurityScheme('bearerToken')],
-                  tags: [ '1.0.0', '' ] )]
+                  security: [ new OA\SecurityScheme( 'bearerToken' ) ],
+                  tags: [ '1.0.0', 'me' ] )]
         #[OA\Response( response: '200',
                        description: 'The data',
                        content:
@@ -74,14 +112,14 @@
         {
             $resp =
             [
-                'identity' => $request->user()->id,
-                'name' => $request->user()->name,
+                self::field_identity => $request->user()->id,
+                self::field_name     => $request->user()->name,
 
-                'email' => $request->user()->email,
-                'username' => $request->user()->username,
+                self::field_email    => $request->user()->email,
+                self::field_username => $request->user()->username,
 
-                'created_at' => $request->user()->created_at,
-                'updated_at' => $request->user()->updated_at
+                self::field_created_at => $request->user()->created_at,
+                self::field_updated_at => $request->user()->updated_at
             ];
 
             return response()->json( $resp );
@@ -143,10 +181,10 @@
 
             $newAccount = Account::create(
                 [
-                  'name' => $request->get( 'name' ),
-                  'username' => $request->get('username'),
-                  'email' => $request->get( 'email' ),
-                  'password' => Hash::make( $passwd )
+                  self::field_name      => $request->get( 'name' ),
+                  self::field_username  => $request->get('username'),
+                  self::field_email     => $request->get( 'email' ),
+                  self::field_password  => Hash::make( $passwd )
                 ]
             );
 
@@ -175,9 +213,9 @@
 
             $response =
             [
-                'name' => $find->name,
-                'username' => $find->username,
-                'updated_at' => $find->updated_at
+                self::field_name        => $find->name,
+                self::field_username    => $find->username,
+                self::field_updated_at  => $find->updated_at
             ];
 
             return response()->json( $response );
@@ -286,9 +324,43 @@
                        description: 'content not found' )]
         public final function logout( AccessAccountRequest $request ): JsonResponse
         {
+            $request->user()
+                    ->currentAccessToken()
+                    ->delete();
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
+        }
 
 
-            return response()->json();
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
+        public final function resetTokens( AccessAccountRequest $request ): JsonResponse
+        {
+            $request->user()
+                    ->tokens()
+                    ->delete();
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
         }
     }
 ?>

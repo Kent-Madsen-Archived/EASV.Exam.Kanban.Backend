@@ -9,22 +9,28 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace Tests\Feature\Http\Controllers;
+    namespace App\Http\Requests\access\global;
 
-    use Illuminate\Foundation\Testing\RefreshDatabase;
-    use Illuminate\Foundation\Testing\WithFaker;
-    use Tests\TestCase;
+    use Illuminate\Foundation\Http\FormRequest;
+    use Illuminate\Support\Facades\Auth;
 
 
-    class TaskTest
-        extends TestCase
+    class AccessPublicRequest
+        extends FormRequest
     {
 
-        public function test_example()
+        public function authorize(): bool
         {
-            $response = $this->get('/');
+            return true;
+        }
 
-            $response->assertStatus(200);
+
+        public function rules(): array
+        {
+            return
+            [
+                //
+            ];
         }
     }
 ?>
