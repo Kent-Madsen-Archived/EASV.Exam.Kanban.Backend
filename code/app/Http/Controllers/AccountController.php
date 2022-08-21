@@ -11,6 +11,7 @@
      */
     namespace App\Http\Controllers;
 
+
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -26,6 +27,7 @@
 
 
     use App\Http\Requests\access\AccessAccountRequest;
+    use App\Http\Requests\access\global\AccessPublicRequest;
 
     use App\Models\User
         as Account;
@@ -34,7 +36,7 @@
     use App\Http\Requests\update\UpdateAccountRequest;
 
     use OpenApi\Attributes
-        	as OA;
+        as OA;
 
 
     #[OA\Schema( title: 'Account Controller',
@@ -48,18 +50,30 @@
             ValidatesRequests;
 
 
-        #[OA\Get( path: '/api/1.0.0/',
-                  tags: [ '1.0.0', '' ] )]
-        public final function index( AccessAccountRequest $request ): JsonResponse
+        #[OA\Get( path: '/api/1.0.0/accounts/index',
+                  tags: [ '1.0.0', 'index' ] )]
+        public final function index( AccessPublicRequest $request ): JsonResponse
         {
+            $response = array();
 
-            return response()->json('testIndex' );
+            foreach( Account::all() as $current_account )
+            {
+                $result =
+                [
+                    'identity' => $current_account->id,
+                    'username' => $current_account->username
+                ];
+
+                array_push($response, $result );
+            }
+
+            return response()->json( $response );
         }
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/me',
-                  security: [new OA\SecurityScheme('bearerToken')],
-                  tags: [ '1.0.0', '' ] )]
+                  security: [ new OA\SecurityScheme( 'bearerToken' ) ],
+                  tags: [ '1.0.0', 'me' ] )]
         #[OA\Response( response: '200',
                        description: 'The data',
                        content:
@@ -85,9 +99,9 @@
             $resp =
             [
                 'identity' => $request->user()->id,
-                'name' => $request->user()->name,
+                'name'     => $request->user()->name,
 
-                'email' => $request->user()->email,
+                'email'    => $request->user()->email,
                 'username' => $request->user()->username,
 
                 'created_at' => $request->user()->created_at,
