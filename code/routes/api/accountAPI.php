@@ -18,6 +18,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
+    
     Route::prefix( cfg::versions[ 'v1' ] )->group(
         function()
         {
@@ -26,17 +27,17 @@
     );
 
 
-    $indexPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/index';
+    $indexPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/index';
         Route::get( $indexPath,
                     [ AccountController::class, 'index' ]
     );
 
-    $retrievePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/identity/{id}';
+    $retrievePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/identity/{id}';
     Route::get( $retrievePath,
                 [ AccountController::class, 'show' ]
     );
 
-    $loginPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/login';
+    $loginPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/login';
     Route::post( $loginPath,
                  [ AccountController::class, 'login' ]
     );
@@ -55,22 +56,32 @@
                 [ AccountController::class, 'me' ]
             );
 
-            $updatePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'u' ];
+            $updatePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'u' ];
             Route::patch( $updatePath,
                 [ AccountController::class, 'update' ]
             );
 
-            $deletePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
+            $deletePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
             Route::delete( $deletePath,
                 [ AccountController::class, 'delete' ]
             );
 
-            $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/logout';
+            $verifyPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/verify/request';
+            Route::post( $verifyPath,
+                         [ AccountController::class, 'verify' ]
+            );
+
+            $verifyPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/verify/now';
+            Route::post( $verifyPath,
+                        [ AccountController::class, 'verify_now' ]
+            );
+
+            $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/logout';
             Route::post( $logoutPath,
                          [ AccountController::class, 'logout' ]
             );
 
-            $resetPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/reset_tokens';
+            $resetPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/reset_tokens';
             Route::post( $resetPath,
                         [ AccountController::class, 'resetTokens' ]
             );
