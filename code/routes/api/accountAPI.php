@@ -28,12 +28,12 @@
 
     $indexPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/index';
         Route::get( $indexPath,
-            [ AccountController::class, 'index' ]
+                    [ AccountController::class, 'index' ]
     );
 
     $retrievePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/identity/{id}';
     Route::get( $retrievePath,
-        [ AccountController::class, 'show' ]
+                [ AccountController::class, 'show' ]
     );
 
     $loginPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/login';
@@ -49,28 +49,25 @@
     $createPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'c' ];
 
     Route::post( $createPath,
-        [AccountController::class, 'store']
+        [ AccountController::class, 'store' ]
     );
 
     Route::middleware( $secure )->group(
         function()
         {
             $whoAmIPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/me';
-
             Route::get( $whoAmIPath,
-                [AccountController::class, 'me']
+                [ AccountController::class, 'me' ]
             );
 
             $updatePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'u' ];
-
             Route::patch( $updatePath,
-                [AccountController::class, 'update']
+                [ AccountController::class, 'update' ]
             );
 
             $deletePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
-
             Route::delete( $deletePath,
-                [AccountController::class, 'delete']
+                [ AccountController::class, 'delete' ]
             );
         }
     );
