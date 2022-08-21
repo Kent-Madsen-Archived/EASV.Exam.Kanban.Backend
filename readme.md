@@ -8,6 +8,7 @@
 | [![CodeScene Code Health](https://codescene.io/projects/28547/status-badges/code-health)](https://codescene.io/projects/28547) |
 | [![CodeScene System Mastery](https://codescene.io/projects/28547/status-badges/system-mastery)](https://codescene.io/projects/28547) |
 
+* [Open API: Get an overview of the api](https://app.swaggerhub.com/apis/Goal-Pioneers/kanban-exam_project/1.0.0)
 
 ## Content
 * [Contribute](contributing.md)
