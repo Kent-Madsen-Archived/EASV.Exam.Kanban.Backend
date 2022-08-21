@@ -1,20 +1,19 @@
 <?php
+    /**
+     * Author: Kent Madsen
+     * Version: 1.0.0
+     * Copyright: 2022, Kent vejrup Madsen
+     *
+     * Contact: Kent.vejrup.madsen@protonmail.com
+     * Code of Conduct: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/code_of_conduct.md
+     *
+     * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
+     */
 
-return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
-];
+    return
+    [
+        'failed'   => 'These credentials do not match our records.',
+        'password' => 'The provided password is incorrect.',
+        'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    ];
+?>
