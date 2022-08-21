@@ -115,11 +115,11 @@
                 self::field_identity => $request->user()->id,
                 self::field_name     => $request->user()->name,
 
-                'email'    => $request->user()->email,
-                'username' => $request->user()->username,
+                self::field_email    => $request->user()->email,
+                self::field_username => $request->user()->username,
 
-                'created_at' => $request->user()->created_at,
-                'updated_at' => $request->user()->updated_at
+                self::field_created_at => $request->user()->created_at,
+                self::field_updated_at => $request->user()->updated_at
             ];
 
             return response()->json( $resp );
@@ -181,10 +181,10 @@
 
             $newAccount = Account::create(
                 [
-                  'name' => $request->get( 'name' ),
-                  'username' => $request->get('username'),
-                  'email' => $request->get( 'email' ),
-                  'password' => Hash::make( $passwd )
+                  self::field_name      => $request->get( 'name' ),
+                  self::field_username  => $request->get('username'),
+                  self::field_email     => $request->get( 'email' ),
+                  self::field_password  => Hash::make( $passwd )
                 ]
             );
 
@@ -213,9 +213,9 @@
 
             $response =
             [
-                'name' => $find->name,
-                'username' => $find->username,
-                'updated_at' => $find->updated_at
+                self::field_name        => $find->name,
+                self::field_username    => $find->username,
+                self::field_updated_at  => $find->updated_at
             ];
 
             return response()->json( $response );

@@ -28,19 +28,23 @@
 
     $indexPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/index';
         Route::get( $indexPath,
-            [AccountController::class, 'index']
+            [ AccountController::class, 'index' ]
     );
 
     $retrievePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/identity/{id}';
     Route::get( $retrievePath,
-        [AccountController::class, 'show']
+        [ AccountController::class, 'show' ]
     );
 
     $loginPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/login';
     Route::post( $loginPath,
-        [AccountController::class, 'login']
+                 [ AccountController::class, 'login' ]
     );
 
+    $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/logout';
+    Route::post( $loginPath,
+                 [ AccountController::class, 'logout' ]
+    );
 
     $createPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'c' ];
 
