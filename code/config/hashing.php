@@ -1,53 +1,30 @@
 <?php
+    /**
+     * Author: Kent Madsen
+     * Version: 1.0.0
+     * Copyright: 2022, Kent vejrup Madsen
+     *
+     * Contact: Kent.vejrup.madsen@protonmail.com
+     * Code of Conduct: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/code_of_conduct.md
+     *
+     * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
+     */
 
-    return [
 
-        /*
-        |--------------------------------------------------------------------------
-        | Default Hash Driver
-        |--------------------------------------------------------------------------
-        |
-        | This option controls the default hash driver that will be used to hash
-        | passwords for your application. By default, the bcrypt algorithm is
-        | used; however, you remain free to modify this option if you wish.
-        |
-        | Supported: "bcrypt", "argon", "argon2id"
-        |
-        */
+    return
+    [
+        'driver' => 'argon',
 
-        'driver' => 'bcrypt',
-
-        /*
-        |--------------------------------------------------------------------------
-        | Bcrypt Options
-        |--------------------------------------------------------------------------
-        |
-        | Here you may specify the configuration options that should be used when
-        | passwords are hashed using the Bcrypt algorithm. This will allow you
-        | to control the amount of time it takes to hash the given password.
-        |
-        */
-
-        'bcrypt' => [
+        'bcrypt' =>
+        [
             'rounds' => env('BCRYPT_ROUNDS', 10),
         ],
 
-        /*
-        |--------------------------------------------------------------------------
-        | Argon Options
-        |--------------------------------------------------------------------------
-        |
-        | Here you may specify the configuration options that should be used when
-        | passwords are hashed using the Argon algorithm. These will allow you
-        | to control the amount of time it takes to hash the given password.
-        |
-        */
-
-        'argon' => [
+        'argon' =>
+        [
             'memory' => 65536,
-            'threads' => 1,
+            'threads' => 2,
             'time' => 4,
         ],
-
     ];
 ?>

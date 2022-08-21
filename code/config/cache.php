@@ -1,24 +1,30 @@
 <?php
+    /**
+     * Author: Kent Madsen
+     * Version: 1.0.0
+     * Copyright: 2022, Kent vejrup Madsen
+     *
+     * Contact: Kent.vejrup.madsen@protonmail.com
+     * Code of Conduct: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/code_of_conduct.md
+     *
+     * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
+     */
     use Illuminate\Support\Str;
 
     return
     [
         'default' => env('CACHE_DRIVER', 'file'),
-
-        'stores' =>
+        'stores'  =>
         [
-
             'apc' =>
             [
                 'driver' => 'apc',
             ],
-
             'array' =>
             [
                 'driver' => 'array',
                 'serialize' => false,
             ],
-
             'database' =>
             [
                 'driver' => 'database',
@@ -26,13 +32,11 @@
                 'connection' => null,
                 'lock_connection' => null,
             ],
-
             'file' =>
             [
                 'driver' => 'file',
                 'path' => storage_path('framework/cache/data'),
             ],
-
             'memcached' =>
             [
                 'driver' => 'memcached',
@@ -55,14 +59,12 @@
                     ],
                 ],
             ],
-
             'redis' =>
             [
                 'driver' => 'redis',
                 'connection' => 'cache',
                 'lock_connection' => 'default',
             ],
-
             'dynamodb' =>
             [
                 'driver' => 'dynamodb',
@@ -72,15 +74,11 @@
                 'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
                 'endpoint' => env('DYNAMODB_ENDPOINT'),
             ],
-
             'octane' =>
             [
                 'driver' => 'octane',
             ],
-
         ],
-
         'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
-
     ];
 ?>
