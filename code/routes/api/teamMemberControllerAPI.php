@@ -36,7 +36,7 @@
         [ TeamMemberController::class, 'update' ]
     );
 
-    
+
     Route::middleware( $secure )->delete(
         cfg::versions[ 'v1' ] . '/teams/members/delete/{id}',
         [ TeamMemberController::class, 'destroy' ]

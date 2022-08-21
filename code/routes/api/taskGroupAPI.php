@@ -32,7 +32,7 @@
 
 
     Route::middleware( $secure )->patch(
-        cfg::versions['v1'] . '/tasks/groups/update',
+        cfg::versions[ 'v1' ] . '/tasks/groups/update',
         [  TaskGroupController::class, 'update' ]
     );
 

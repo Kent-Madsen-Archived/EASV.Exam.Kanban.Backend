@@ -27,26 +27,35 @@
     );
 
 
-    $indexPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/index';
+    $indexPath = cfg::versions[ 'v1' ] . '/' .
+                 cfg::names[ 'ac' ] . '/index';
         Route::get( $indexPath,
                     [ AccountController::class, 'index' ]
     );
 
-    $retrievePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/identity/{id}';
+
+    $retrievePath = cfg::versions[ 'v1' ] . '/' .
+                    cfg::names[ 'ac' ] . '/identity/{id}';
     Route::get( $retrievePath,
                 [ AccountController::class, 'show' ]
     );
 
-    $loginPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/login';
+
+    $loginPath = cfg::versions[ 'v1' ] . '/' .
+                 cfg::names[ 'ac' ] . '/login';
     Route::post( $loginPath,
                  [ AccountController::class, 'login' ]
     );
 
-    $createPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'c' ];
+
+    $createPath = cfg::versions[ 'v1' ] . '/' .
+                  cfg::names[ 'ac' ] . '/' .
+                  cfg::actions[ 'c' ];
 
     Route::post( $createPath,
         [ AccountController::class, 'store' ]
     );
+
 
     Route::middleware( $secure )->group(
         function()
