@@ -45,6 +45,19 @@
     class AccountController
         extends BaseController
     {
+        private const field_identity = 'identity';
+        private const field_name = 'name';
+
+        private const field_username = 'username';
+        private const field_password = 'password';
+
+        private const field_updated_at = 'updated_at';
+        private const field_created_at = 'created_at';
+
+        private const field_email = 'email';
+
+
+
         use AuthorizesRequests,
             DispatchesJobs,
             ValidatesRequests;
@@ -56,12 +69,13 @@
         {
             $response = array();
 
-            foreach( Account::all() as $current_account )
+            foreach( Account::all()
+                        as $current_account )
             {
                 $result =
                 [
-                    'identity' => $current_account->id,
-                    'username' => $current_account->username
+                    self::field_identity => $current_account->id,
+                    self::field_username => $current_account->username
                 ];
 
                 array_push($response, $result );
@@ -98,8 +112,8 @@
         {
             $resp =
             [
-                'identity' => $request->user()->id,
-                'name'     => $request->user()->name,
+                self::field_identity => $request->user()->id,
+                self::field_name     => $request->user()->name,
 
                 'email'    => $request->user()->email,
                 'username' => $request->user()->username,
