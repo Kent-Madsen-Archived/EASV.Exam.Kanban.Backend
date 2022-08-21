@@ -324,9 +324,43 @@
                        description: 'content not found' )]
         public final function logout( AccessAccountRequest $request ): JsonResponse
         {
+            $request->user()
+                    ->currentAccessToken()
+                    ->delete();
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
+        }
 
 
-            return response()->json();
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
+        public final function resetTokens( AccessAccountRequest $request ): JsonResponse
+        {
+            $request->user()
+                    ->tokens()
+                    ->delete();
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
         }
     }
 ?>

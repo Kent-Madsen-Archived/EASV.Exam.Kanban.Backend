@@ -41,11 +41,6 @@
                  [ AccountController::class, 'login' ]
     );
 
-    $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/logout';
-    Route::post( $loginPath,
-                 [ AccountController::class, 'logout' ]
-    );
-
     $createPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/' . cfg::actions[ 'c' ];
 
     Route::post( $createPath,
@@ -68,6 +63,16 @@
             $deletePath = cfg::versions['v1'] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
             Route::delete( $deletePath,
                 [ AccountController::class, 'delete' ]
+            );
+
+            $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/logout';
+            Route::post( $logoutPath,
+                         [ AccountController::class, 'logout' ]
+            );
+
+            $resetPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ "ac" ] . '/reset_tokens';
+            Route::post( $resetPath,
+                        [ AccountController::class, 'resetTokens' ]
             );
         }
     );
