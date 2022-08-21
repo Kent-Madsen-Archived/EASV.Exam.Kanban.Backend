@@ -18,7 +18,7 @@
     use App\cfg;
     $secure = cfg::$secure;
 
-    
+
     Route::prefix( cfg::versions[ 'v1' ] )->group(
         function()
         {
