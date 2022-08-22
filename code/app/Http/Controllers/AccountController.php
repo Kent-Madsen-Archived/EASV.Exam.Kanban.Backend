@@ -29,7 +29,7 @@
     use App\Http\Requests\access\AccessAccountRequest;
     use App\Http\Requests\access\global\AccessPublicRequest;
 
-    use App\Models\User
+    use App\Models\Account
         as Account;
 
     use App\Http\Requests\store\StoreAccountRequest;
