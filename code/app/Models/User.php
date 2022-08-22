@@ -87,8 +87,8 @@
 
             self::column_remember_token => 'string',
 
-            self::column_email_verified_at => 'datetime:Y-m-d',
             self::column_created_at        => 'datetime:Y-m-d',
+            self::column_email_verified_at => 'datetime:Y-m-d',
             self::column_updated_at        => 'datetime:Y-m-d'
         ];
     }
