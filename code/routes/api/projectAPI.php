@@ -15,44 +15,44 @@
     use App\Http\Controllers\ProjectController
         as ProjectController;
 
-    use App\cfg;
-    $secure = cfg::$secure;
+    use App\Configuration;
+    $secure = Configuration::$secure;
 
-    $retrievePath = cfg::versions[ 'v1' ] . '/' .
-                    cfg::names[ 'pj' ] . '/identity/' .
-                    cfg::urls[ 'id' ];
+    $retrievePath = Configuration::versions[ 'v1' ] . '/' .
+                    Configuration::names[ 'pj' ] . '/identity/' .
+                    Configuration::urls[ 'id' ];
     Route::middleware( $secure )->get( $retrievePath,
                                        [ ProjectController::class, 'show' ]
     );
 
 
-    $indexPath = cfg::versions[ 'v1' ] . '/' .
-                 cfg::names[ 'pj' ] . '/index';
+    $indexPath = Configuration::versions[ 'v1' ] . '/' .
+                 Configuration::names[ 'pj' ] . '/index';
     Route::middleware( $secure )->get( $indexPath,
                                        [ ProjectController::class, 'index' ]
     );
 
 
-    $createPath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 'pj' ] . '/' .
-                  cfg::actions[ 'c' ];
+    $createPath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 'pj' ] . '/' .
+                  Configuration::actions[ 'c' ];
     Route::middleware( $secure )->post( $createPath,
                                         [ ProjectController::class, 'store' ]
     );
 
 
-    $updatePath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 'pj' ] . '/' .
-                  cfg::actions[ 'u' ];
+    $updatePath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 'pj' ] . '/' .
+                  Configuration::actions[ 'u' ];
     Route::middleware( $secure )->patch( $updatePath,
                                         [ ProjectController::class, 'update' ]
     );
 
 
-    $deletePath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 'pj' ] . '/' .
-                  cfg::actions[ 'd' ] . '/' .
-                  cfg::urls[ 'id' ];
+    $deletePath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 'pj' ] . '/' .
+                  Configuration::actions[ 'd' ] . '/' .
+                  Configuration::urls[ 'id' ];
     Route::middleware( $secure )->delete( $deletePath,
                                           [ ProjectController::class, 'destroy' ]
     );
