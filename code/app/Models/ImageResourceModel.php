@@ -23,23 +23,35 @@
         protected $table = 'images_resources';
         public $timestamps = false;
 
+        private const column_id = 'id';
+
+        private const column_url = 'url';
+        private const column_image_id = 'image_id';
+
+        private const column_width = 'width';
+        private const column_height = 'height';
+
+        private const column_type = 'type';
+
 
         protected $fillable =
         [
-            'id',
+            self::column_id,
 
-            'url',
-            'image_id',
+            self::column_url,
+            self::column_image_id,
 
-            'width',
-            'height',
+            self::column_width,
+            self::column_height,
 
-            'type'
+            self::column_type
         ];
 
 
         protected $hidden =
         [
+            self::column_id,
+
 
         ];
 

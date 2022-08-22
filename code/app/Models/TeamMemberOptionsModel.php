@@ -23,9 +23,12 @@
         protected $table = 'task_member_options';
         public $timestamps = true;
 
+        private const column_id = 'id';
+
+
         protected $fillable =
         [
-            'id'
+            self::column_id
         ];
 
 

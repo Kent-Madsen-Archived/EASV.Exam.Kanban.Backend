@@ -23,6 +23,8 @@
         protected $table = 'settings';
         public $timestamps = false;
 
+        private const column_id = 'id';
+
         protected $fillable =
         [
             'id',

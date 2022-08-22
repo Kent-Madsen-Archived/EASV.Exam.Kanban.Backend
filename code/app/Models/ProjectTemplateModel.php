@@ -23,17 +23,27 @@
         protected $table = 'project_templates';
         public $timestamps = true;
 
+        private const column_id = 'id';
+
+        private const column_title = 'title';
+        private const column_description = 'description';
+        private const column_implementation = 'implementation';
+
+        private const column_created_at = 'created_at';
+        private const column_updated_at = 'updated_at';
+
+
         protected $fillable =
         [
-            'id',
+            self::column_id,
 
-            'title',
+            self::column_title,
 
-            'description',
-            'implementation',
+            self::column_description,
+            self::column_implementation,
 
-            'created_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 

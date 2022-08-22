@@ -23,6 +23,8 @@
         protected $table = 'project_configurations';
         public $timestamps = true;
 
+        private const column_id = 'id';
+
         protected $fillable =
         [
             'id',

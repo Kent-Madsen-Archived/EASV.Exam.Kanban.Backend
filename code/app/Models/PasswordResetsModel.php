@@ -27,13 +27,19 @@
         protected $table = 'password_resets';
         public $timestamps = false;
 
+        private const column_id = 'id';
+
+        private const column_email = 'email';
+        private const column_token = 'token';
+
+        private const column_created_at = 'created_at';
 
         protected $fillable =
         [
-            'id',
-            'email',
-            'token',
-            'created_at'
+            self::column_id,
+            self::column_email,
+            self::column_token,
+            self::column_created_at
         ];
 
 
