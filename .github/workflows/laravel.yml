@@ -2,10 +2,13 @@ name: Laravel PHP Unit test
 
 on:
   push:
-    branches: [ "development", "prototype" ]
+    branches: [ "prototype" ]
 
   pull_request:
-    branches: [ "publish", "test", "main" ]
+    branches: [ "publish", \
+                "test",    \
+                "main",    \
+                "development" ]
 
 jobs:
   laravel-tests:
