@@ -47,19 +47,22 @@
 
         protected $hidden =
         [
+            self::column_id,
 
+            self::column_account_id,
+            self::column_project_id,
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id => 'integer',
 
-            'account_id' => 'integer',
-            'project_id' => 'integer',
+            self::column_account_id => 'integer',
+            self::column_project_id => 'integer',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            self::column_created_at => 'datetime:Y-m-d',
+            self::column_updated_at => 'datetime:Y-m-d'
         ];
     }
 ?>
