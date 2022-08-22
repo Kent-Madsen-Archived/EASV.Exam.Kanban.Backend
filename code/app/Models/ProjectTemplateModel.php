@@ -49,21 +49,24 @@
 
         protected $hidden =
         [
+            self::column_implementation,
 
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id => 'integer',
 
-            'title' => 'string',
-            'description' => 'string',
+            self::column_title       => 'string',
+            self::column_description => 'string',
 
-            'implementation' => 'collection',
+            self::column_implementation => 'collection',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            self::column_created_at => 'datetime:Y-m-d',
+            self::column_updated_at => 'datetime:Y-m-d'
         ];
     }
 ?>
