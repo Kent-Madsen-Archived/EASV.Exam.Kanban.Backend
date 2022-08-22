@@ -362,5 +362,46 @@
                 ]
             );
         }
+
+
+        #[OA\Get( path: '/api/1.0.0/',
+                          tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                                description: 'bearer token - has to be included in the header of the request',
+                                in: 'header' )]
+        #[OA\Response( response: '200',
+                               description: 'The data',
+                               content:
+                               [
+                                   new OA\JsonContent( example: "<<<JSON" ),
+                               ]
+        )]
+        #[OA\Response( response: '404',
+                               description: 'content not found' )]
+        public final function verify( AccessAccountRequest $request ): JsonResponse
+        {
+
+
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
+        }
+
+        public final function verify_now( AccessAccountRequest $request ): JsonResponse
+        {
+
+
+
+            return response()->json(
+                [
+                    'status' => 'successful'
+                ]
+            );
+        }
+
+
     }
 ?>

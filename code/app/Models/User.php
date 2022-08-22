@@ -31,50 +31,65 @@
         public $timestamps = true;
         protected $table = 'users';
 
+        private const column_id = 'id';
+
+        private const column_name = 'name';
+        private const column_email = 'email';
+
+        private const column_username = 'username';
+        private const column_password = 'password';
+
+        private const column_created_at = 'created_at';
+        private const column_email_verified_at = 'email_verified_at';
+        private const column_updated_at = 'updated_at';
+
+        private const column_remember_token = 'remember_token';
+
+
         protected $fillable =
         [
-            'id',
+            self::column_id,
 
-            'name',
-            'email',
+            self::column_name,
+            self::column_email,
 
-            'username',
-            'password',
+            self::column_username,
+            self::column_password,
 
-            'created_at',
-            'email_verified_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_email_verified_at,
+            self::column_updated_at
         ];
 
 
         protected $hidden =
         [
-            'id',
+            self::column_id,
 
-            'email',
+            self::column_email,
 
-            'password',
-            'remember_token',
+            self::column_password,
+            self::column_remember_token,
 
-            'created_at',
-            'email_verified_at'
+            self::column_created_at,
+            self::column_email_verified_at
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id => 'integer',
 
-            'username' => 'string',
-            'name' => 'string',
-            'email' => 'string',
+            self::column_username => 'string',
+            self::column_name => 'string',
+            self::column_email => 'string',
 
 
-            'remember_token' => 'string',
+            self::column_remember_token => 'string',
 
-            'email_verified_at' => 'datetime:Y-m-d',
-            'created_at'        => 'datetime:Y-m-d',
-            'updated_at'        => 'datetime:Y-m-d'
+            self::column_created_at        => 'datetime:Y-m-d',
+            self::column_email_verified_at => 'datetime:Y-m-d',
+            self::column_updated_at        => 'datetime:Y-m-d'
         ];
     }
 ?>
