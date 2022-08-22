@@ -26,8 +26,10 @@
         private const column_id = 'id';
 
         private const column_group_name = 'group_name';
+
         private const column_created_at = 'created_at';
         private const column_updated_at = 'updated_at';
+
 
         protected $fillable =
         [
