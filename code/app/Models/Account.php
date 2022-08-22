@@ -81,8 +81,8 @@
             self::column_id => 'integer',
 
             self::column_username => 'string',
-            self::column_name => 'string',
-            self::column_email => 'string',
+            self::column_name     => 'string',
+            self::column_email    => 'string',
 
 
             self::column_remember_token => 'string',
