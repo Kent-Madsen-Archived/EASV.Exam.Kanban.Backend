@@ -51,10 +51,10 @@
 
         protected $casts =
         [
-            'id' => 'integer',
-            'email' => 'string',
-            'token' => 'string',
-            'created_at' => 'timestamp'
+            self::column_id => 'integer',
+            self::column_email => 'string',
+            self::column_token => 'string',
+            self::column_created_at => 'timestamp'
         ];
     }
 ?>
