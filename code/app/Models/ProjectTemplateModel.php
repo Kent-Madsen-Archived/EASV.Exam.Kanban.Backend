@@ -23,37 +23,50 @@
         protected $table = 'project_templates';
         public $timestamps = true;
 
+        private const column_id = 'id';
+
+        private const column_title = 'title';
+        private const column_description = 'description';
+        private const column_implementation = 'implementation';
+
+        private const column_created_at = 'created_at';
+        private const column_updated_at = 'updated_at';
+
+
         protected $fillable =
         [
-            'id',
+            self::column_id,
 
-            'title',
+            self::column_title,
 
-            'description',
-            'implementation',
+            self::column_description,
+            self::column_implementation,
 
-            'created_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $hidden =
         [
+            self::column_implementation,
 
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id => 'integer',
 
-            'title' => 'string',
-            'description' => 'string',
+            self::column_title       => 'string',
+            self::column_description => 'string',
 
-            'implementation' => 'collection',
+            self::column_implementation => 'collection',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            self::column_created_at => 'datetime:Y-m-d',
+            self::column_updated_at => 'datetime:Y-m-d'
         ];
     }
 ?>

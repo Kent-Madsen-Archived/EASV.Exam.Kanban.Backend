@@ -23,15 +23,24 @@
         protected $table = 'images_previews';
         public $timestamps = false;
 
+        private const column_id = 'id';
+        private const column_url = 'url';
+
+        private const column_image_id = 'image_id';
+
+        private const column_width = 'width';
+        private const column_height = 'height';
+
+
         protected $fillable =
         [
-            'id',
-            'url',
+            self::column_id,
+            self::column_url,
 
-            'image_id',
+            self::column_image_id,
 
-            'width',
-            'height'
+            self::column_width,
+            self::column_height
         ];
 
 
@@ -43,13 +52,13 @@
 
         protected $casts =
         [
-            'id' => 'integer',
-            'url' => 'string',
+            self::column_id => 'integer',
+            self::column_url => 'string',
 
-            'image_id' => 'integer',
+            self::column_image_id => 'integer',
 
-            'width' => 'integer',
-            'height' => 'integer'
+            self::column_width => 'integer',
+            self::column_height => 'integer'
         ];
     }
 ?>

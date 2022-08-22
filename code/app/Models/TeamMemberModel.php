@@ -23,33 +23,46 @@
         protected $table = 'team_members';
         public $timestamps = true;
 
+        private const column_id = 'id';
+
+        private const column_account_id = 'account_id';
+        private const column_project_id = 'project_id';
+
+        private const column_created_at = 'created_at';
+        private const column_updated_at = 'updated_at';
+
+
+
         protected $fillable =
         [
-            'id',
+            self::column_id,
 
-            'account_id',
-            'project_id',
+            self::column_account_id,
+            self::column_project_id,
 
-            'created_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $hidden =
         [
+            self::column_id,
 
+            self::column_account_id,
+            self::column_project_id,
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id         => 'integer',
 
-            'account_id' => 'integer',
-            'project_id' => 'integer',
+            self::column_account_id => 'integer',
+            self::column_project_id => 'integer',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            self::column_created_at => 'datetime:Y-m-d',
+            self::column_updated_at => 'datetime:Y-m-d'
         ];
     }
 ?>
