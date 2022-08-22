@@ -25,32 +25,36 @@
 
         private const column_id = 'id';
 
+        private const column_group_name = 'group_name';
+        private const column_created_at = 'created_at';
+        private const column_updated_at = 'updated_at';
+
         protected $fillable =
         [
-            'id',
-            'group_name',
+            self::column_id,
+            self::column_group_name,
 
-            'created_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $hidden =
         [
-            'id',
+            self::column_id,
 
-            'created_at',
-            'updated_at'
+            self::column_created_at,
+            self::column_updated_at
         ];
 
 
         protected $casts =
         [
-            'id' => 'integer',
-            'group_name' => 'integer',
+            self::column_id => 'integer',
+            self::column_group_name => 'integer',
 
-            'created_at' => 'datetime:Y-m-d',
-            'updated_at' => 'datetime:Y-m-d'
+            self::column_created_at => 'datetime:Y-m-d',
+            self::column_updated_at => 'datetime:Y-m-d'
         ];
     }
 ?>

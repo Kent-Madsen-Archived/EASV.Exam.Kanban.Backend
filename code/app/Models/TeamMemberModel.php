@@ -56,8 +56,7 @@
 
         protected $casts =
         [
-            self::column_id => 'integer',
-
+            self::column_id         => 'integer',
             self::column_account_id => 'integer',
             self::column_project_id => 'integer',
 
