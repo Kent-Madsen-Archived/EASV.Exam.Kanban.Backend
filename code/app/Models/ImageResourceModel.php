@@ -58,15 +58,15 @@
 
         protected $casts =
         [
-            'id' => 'integer',
+            self::column_id => 'integer',
 
-            'url' => 'string',
-            'image_id' => 'integer',
+            self::column_url => 'string',
+            self::column_image_id => 'integer',
 
-            'width' => 'integer',
-            'height' => 'integer',
+            self::column_width => 'integer',
+            self::column_height => 'integer',
 
-            'type' => 'string'
+            self::column_type => 'string'
         ];
     }
 ?>
