@@ -10,7 +10,12 @@
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
 
-    use App\Http\Requests\access\AccessSettingRequest;use App\Http\Requests\store\StoreSettingRequest;use App\Http\Requests\update\UpdateSettingRequest;use Illuminate\Http\JsonResponse;use OpenApi\Attributes as OA;
+    use App\Http\Requests\access\AccessSettingRequest;
+    use App\Http\Requests\store\StoreSettingRequest;
+    use App\Http\Requests\update\UpdateSettingRequest;
+    use Illuminate\Http\JsonResponse;
+    use OpenApi\Attributes
+        as OA;
 
 
     #[OA\Schema( title: 'Setting Controller',

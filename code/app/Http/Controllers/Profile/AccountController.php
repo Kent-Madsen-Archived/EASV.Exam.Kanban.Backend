@@ -18,7 +18,9 @@
     use Illuminate\Http\Request;
     use Illuminate\Routing\Controller
         as BaseController;
+
     use Illuminate\Support\Facades\Hash;
+
     use OpenApi\Attributes
         as OA;
 
@@ -26,7 +28,9 @@
     use App\Http\Requests\access\global\AccessPublicRequest;
     use App\Http\Requests\store\StoreAccountRequest;
     use App\Http\Requests\update\UpdateAccountRequest;
-    use App\Models\Account as Account;
+    
+    use App\Models\Account
+        as Account;
 
 
 
