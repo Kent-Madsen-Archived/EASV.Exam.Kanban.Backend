@@ -9,13 +9,14 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Profile;
 
-    use Illuminate\Http\JsonResponse;
-
+    use App\Http\Controllers\Controller;
     use App\Http\Requests\access\AccessTeamMemberOptionRequest;
     use App\Http\Requests\store\StoreTeamMemberOptionRequest;
     use App\Http\Requests\update\UpdateTeamMemberOptionRequest;
+
+    use Illuminate\Http\JsonResponse;
 
     use OpenApi\Attributes
         as OA;
@@ -85,5 +86,8 @@
             //
             return response()->json('');
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

@@ -12,21 +12,21 @@
     namespace App;
 
 
-    class cfg
+    class Configuration
     {
         public static string $secure = 'auth:sanctum';
 
         public const actions =
         [
-            "c" => 'create',
-            "d" => 'delete',
-            "u" => 'update'
+            'c' => 'create',
+            'd' => 'delete',
+            'u' => 'update'
         ];
 
         public const names =
         [
             'ac' => 'accounts',
-            'pj' =>'projects',
+            'pj' => 'projects',
             're' => 'resources',
             'se' => 'settings',
             'ta' => 'tasks',

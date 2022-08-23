@@ -9,19 +9,9 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
-    use Illuminate\Http\JsonResponse;
-    use Illuminate\Support\Str;
-
-    use App\Models\ProjectModel;
-
-    use App\Http\Requests\access\AccessProjectRequest;
-    use App\Http\Requests\store\StoreProjectRequest;
-    use App\Http\Requests\update\UpdateProjectRequest;
-
-    use OpenApi\Attributes
-        as OA;
+    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessProjectRequest;use App\Http\Requests\store\StoreProjectRequest;use App\Http\Requests\update\UpdateProjectRequest;use App\Models\Projects\ProjectModel;use Illuminate\Http\JsonResponse;use Illuminate\Support\Str;use OpenApi\Attributes as OA;
 
 
     #[OA\Schema( title: 'Project Controller',
@@ -69,7 +59,7 @@
 
 
         #[OA\Post( path: '/api/1.0.0/projects/create',
-                  tags: [ '1.0.0', '' ] )]
+                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
@@ -123,7 +113,7 @@
 
 
         #[OA\Patch( path: '/api/1.0.0/projects/update',
-                  tags: [ '1.0.0', '' ] )]
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
@@ -192,5 +182,8 @@
 
             return response()->json( [ 'status' => 'failed' ] );
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

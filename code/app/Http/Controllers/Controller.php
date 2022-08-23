@@ -19,12 +19,11 @@
         as BaseController;
 
 
-
-    class Controller
+    abstract class Controller
         extends BaseController
     {
         use AuthorizesRequests,
-            DispatchesJobs,
-            ValidatesRequests;
+            ValidatesRequests,
+            DispatchesJobs;
     }
 ?>
