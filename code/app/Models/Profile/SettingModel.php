@@ -20,8 +20,8 @@
     {
         use HasFactory;
 
-        protected $table = 'settings';
-        public $timestamps = false;
+        protected $table   = 'settings';
+        public $timestamps = true;
 
         private const column_id = 'id';
 

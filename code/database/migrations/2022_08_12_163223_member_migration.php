@@ -19,6 +19,24 @@
 
         public function up()
         {
+            Schema::create( 'teams',
+                function( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->string( 'team_name' )
+                          ->index();
+
+                    $table->mediumText( 'description' )
+                          ->nullable();
+
+                    $table->bigInteger( 'team_owner_id' )
+                          ->unsigned()
+                          ->index();
+                }
+            );
+
+
             //
             Schema::create( 'team_members',
                 function( Blueprint $table )
@@ -30,8 +48,14 @@
                           ->nullable()
                           ->index();
 
+                    $table->bigInteger( 'team_id' )
+                          ->unsigned()
+                          ->nullable()
+                          ->index();
+
                     $table->bigInteger('project_id' )
-                          ->unsigned();
+                          ->unsigned()
+                          ->nullable();
 
                     $table->timestamps();
 
@@ -51,6 +75,7 @@
         {
             //
             Schema::dropIfExists( 'team_members' );
+            Schema::dropIfExists( 'teams' );
         }
     };
 ?>

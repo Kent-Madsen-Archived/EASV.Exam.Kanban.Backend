@@ -19,6 +19,16 @@
 
         public function up()
         {
+            Schema::create('setting_categories',
+                function ( Blueprint $table )
+                {
+                    $table->id();
+
+                    $table->string( 'categories' )
+                          ->index();
+                }
+            );
+
             //
             Schema::create( 'settings',
                 function( Blueprint $table )
@@ -29,7 +39,8 @@
                           ->unsigned()
                           ->index();
 
-                    $table->string( 'category' )
+                    $table->bigInteger( 'category_id' )
+                          ->unsigned()
                           ->index();
 
                     $table->json( 'attributes' );
@@ -39,6 +50,10 @@
                     $table->foreign( 'account_id' )
                           ->references( 'id' )
                           ->on( 'users' );
+
+                    $table->foreign( 'category_id' )
+                          ->references( 'id' )
+                          ->on( 'setting_categories' );
                 }
             );
         }
@@ -48,6 +63,7 @@
         {
             //
             Schema::dropIfExists( 'settings' );
+            Schema::dropIfExists( 'setting_categories' );
         }
     };
 ?>

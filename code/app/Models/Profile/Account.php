@@ -30,7 +30,7 @@
             Notifiable;
 
         public $timestamps = true;
-        protected $table = 'users';
+        protected $table   = 'users';
 
         private const column_id = 'id';
 
