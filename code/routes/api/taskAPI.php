@@ -10,7 +10,7 @@
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
     use Illuminate\Support\Facades\Route;
-    
+
     use App\Configuration;
     use App\Http\Controllers\Projects\TaskController
         as TaskController;
