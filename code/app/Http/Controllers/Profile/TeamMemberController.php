@@ -11,7 +11,15 @@
      */
     namespace App\Http\Controllers\Profile;
 
-    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessTeamMemberRequest;use App\Http\Requests\store\StoreTeamMemberRequest;use App\Http\Requests\update\UpdateTeamMemberRequest;use Illuminate\Http\JsonResponse;use OpenApi\Attributes as OA;
+    use App\Http\Controllers\Controller;
+    use App\Http\Requests\access\AccessTeamMemberRequest;
+    use App\Http\Requests\store\StoreTeamMemberRequest;
+    use App\Http\Requests\update\UpdateTeamMemberRequest;
+
+    use Illuminate\Http\JsonResponse;
+
+    use OpenApi\Attributes
+        as OA;
 
 
     #[OA\Schema( title: 'Team Member Controller',
