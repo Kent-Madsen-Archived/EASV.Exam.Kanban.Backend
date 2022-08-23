@@ -29,21 +29,16 @@
             'users' =>
             [
                 'driver' => 'eloquent',
-                'model' => App\Models\User::class,
+                'model' => \App\Models\Profile\Account::class,
             ],
-
-            // 'users' => [
-            //     'driver' => 'database',
-            //     'table' => 'users',
-            // ],
         ],
         'passwords' =>
         [
             'users' =>
             [
                 'provider' => 'users',
-                'table' => 'password_resets',
-                'expire' => 60,
+                'table'    => 'password_resets',
+                'expire'   => 60,
                 'throttle' => 60,
             ],
         ],

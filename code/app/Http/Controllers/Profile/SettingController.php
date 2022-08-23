@@ -9,22 +9,24 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Profile;
 
     use Illuminate\Http\JsonResponse;
-
-    use App\Http\Requests\access\AccessTeamMemberRequest;
-    use App\Http\Requests\store\StoreTeamMemberRequest;
-    use App\Http\Requests\update\UpdateTeamMemberRequest;
 
     use OpenApi\Attributes
         as OA;
 
+    use App\Http\Controllers\Controller;
 
-    #[OA\Schema( title: 'Team Member Controller',
+    use App\Http\Requests\access\AccessSettingRequest;
+    use App\Http\Requests\store\StoreSettingRequest;
+    use App\Http\Requests\update\UpdateSettingRequest;
+
+
+    #[OA\Schema( title: 'Setting Controller',
                  description: '',
                  type: 'controller' )]
-    class TeamMemberController
+    class SettingController
         extends Controller
     {
         #[OA\Get( path: '/api/1.0.0/',
@@ -32,58 +34,66 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function index( AccessTeamMemberRequest $request ): JsonResponse
+        public function index( AccessSettingRequest $request ): JsonResponse
         {
             //
+
             return response()->json('');
         }
 
 
-        #[OA\Post( path: '/api/1.0.0/teams/members/create',
+        #[OA\Post( path: '/api/1.0.0/',
+                   tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
+        public function store( StoreSettingRequest $request ): JsonResponse
+        {
+            //
+
+            return response()->json('');
+        }
+
+
+        #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function store( StoreTeamMemberRequest $request ): JsonResponse
+        public function show( AccessSettingRequest $request ): JsonResponse
         {
             //
+
             return response()->json('');
         }
 
 
-        #[OA\Get( path: '/api/1.0.0/teams/members/identity/{id}',
-                  tags: [ '1.0.0', '' ] )]
+        #[OA\Patch( path: '/api/1.0.0/',
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function show( AccessTeamMemberRequest $request ): JsonResponse
+        public function update( UpdateSettingRequest $request ): JsonResponse
         {
             //
+
             return response()->json('');
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/teams/members/update',
-                  tags: [ '1.0.0', '' ] )]
+        #[OA\Delete( path: '/api/1.0.0/',
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function update( UpdateTeamMemberRequest $request ): JsonResponse
+        public function destroy( AccessSettingRequest $request ): JsonResponse
         {
             //
+
             return response()->json('');
         }
 
-
-        #[OA\Delete( path: '/api/1.0.0/teams/members/delete',
-                  tags: [ '1.0.0', '' ] )]
-        #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
-                        in: 'header' )]
-        public function destroy( AccessTeamMemberRequest $request ): JsonResponse
-        {
-            //
-            return response()->json('');
-        }
+        public static function generateRoutes()
+        {}
     }
 ?>

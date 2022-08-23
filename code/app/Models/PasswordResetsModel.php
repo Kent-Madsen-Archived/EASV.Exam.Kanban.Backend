@@ -34,11 +34,14 @@
 
         private const column_created_at = 'created_at';
 
+
         protected $fillable =
         [
             self::column_id,
+
             self::column_email,
             self::column_token,
+
             self::column_created_at
         ];
 
@@ -51,9 +54,11 @@
 
         protected $casts =
         [
-            self::column_id => 'integer',
-            self::column_email => 'string',
-            self::column_token => 'string',
+            self::column_id         => 'integer',
+
+            self::column_email      => 'string',
+            self::column_token      => 'string',
+
             self::column_created_at => 'timestamp'
         ];
     }
