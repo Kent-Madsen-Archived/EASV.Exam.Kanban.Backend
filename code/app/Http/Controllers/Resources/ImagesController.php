@@ -9,18 +9,17 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Resources;
 
-    use Illuminate\Http\JsonResponse;
-
+    use App\Http\Controllers\Controller;
     use App\Http\Requests\access\AccessImageRequest;
     use App\Http\Requests\store\StoreImageRequest;
     use App\Http\Requests\update\UpdateImageRequest;
-
-    use App\Models\ImageModel;
+    use Illuminate\Http\JsonResponse;
 
     use OpenApi\Attributes
         as OA;
+
 
     #[OA\Schema( title: 'Image Controller',
                  description: '',

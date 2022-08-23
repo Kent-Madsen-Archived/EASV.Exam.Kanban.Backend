@@ -9,13 +9,8 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Route;
+    use App\Configuration;use App\Http\Controllers\Projects\TaskGroupController as TaskGroupController;use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\TaskGroupController
-        as TaskGroupController;
-
-    use App\Configuration;
     $secure = Configuration::$secure;
 
 

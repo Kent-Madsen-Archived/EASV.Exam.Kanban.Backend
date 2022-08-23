@@ -9,22 +9,15 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
-    use Illuminate\Http\JsonResponse;
-
-    use App\Http\Requests\access\AccessSettingRequest;
-    use App\Http\Requests\store\StoreSettingRequest;
-    use App\Http\Requests\update\UpdateSettingRequest;
-
-    use OpenApi\Attributes
-      	as OA;
+    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessProjectConfigurationRequest;use App\Http\Requests\store\StoreProjectConfigurationRequest;use App\Http\Requests\update\UpdateProjectConfigurationRequest;use Illuminate\Http\JsonResponse;use OpenApi\Attributes as OA;
 
 
-    #[OA\Schema( title: 'Setting Controller',
+    #[OA\Schema( title: 'Project Configuration Controller',
                  description: '',
                  type: 'controller' )]
-    class SettingController
+    class ProjectConfigurationController
         extends Controller
     {
         #[OA\Get( path: '/api/1.0.0/',
@@ -32,20 +25,7 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function index( AccessSettingRequest $request ): JsonResponse
-        {
-            //
-
-            return response()->json('');
-        }
-
-
-        #[OA\Post( path: '/api/1.0.0/',
-                   tags: [ '1.0.0', '' ] )]
-        #[OA\Parameter( name:'Authorization',
-                        description: 'has to be included in the header of the request',
-                        in: 'header' )]
-        public function store( StoreSettingRequest $request ): JsonResponse
+        public function index( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
 
@@ -58,7 +38,7 @@
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function show( AccessSettingRequest $request ): JsonResponse
+        public function store( StoreProjectConfigurationRequest $request ): JsonResponse
         {
             //
 
@@ -66,12 +46,12 @@
         }
 
 
-        #[OA\Patch( path: '/api/1.0.0/',
-                    tags: [ '1.0.0', '' ] )]
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function update( UpdateSettingRequest $request ): JsonResponse
+        public function show( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
 
@@ -79,12 +59,25 @@
         }
 
 
-        #[OA\Delete( path: '/api/1.0.0/',
-                     tags: [ '1.0.0', '' ] )]
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
-        public function destroy( AccessSettingRequest $request ): JsonResponse
+        public function update( UpdateProjectConfigurationRequest $request ): JsonResponse
+        {
+            //
+
+            return response()->json('');
+        }
+
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'has to be included in the header of the request',
+                        in: 'header' )]
+        public function destroy( AccessProjectConfigurationRequest $request ): JsonResponse
         {
             //
 

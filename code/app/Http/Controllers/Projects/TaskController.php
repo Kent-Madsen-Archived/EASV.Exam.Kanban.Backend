@@ -9,19 +9,9 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
-    use Illuminate\Support\Carbon;
-    use Illuminate\Http\JsonResponse;
-    use Illuminate\Support\Str;
-
-    use App\Models\TaskModel;
-    use App\Http\Requests\access\AccessTaskRequest;
-    use App\Http\Requests\store\StoreTaskRequest;
-    use App\Http\Requests\update\UpdateTaskRequest;
-
-    use OpenApi\Attributes
-        as OA;
+    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessTaskRequest;use App\Http\Requests\store\StoreTaskRequest;use App\Http\Requests\update\UpdateTaskRequest;use App\Models\TaskModel;use Illuminate\Http\JsonResponse;use Illuminate\Support\Carbon;use Illuminate\Support\Str;use OpenApi\Attributes as OA;
 
 
     #[OA\Schema( title: 'Task Controller',

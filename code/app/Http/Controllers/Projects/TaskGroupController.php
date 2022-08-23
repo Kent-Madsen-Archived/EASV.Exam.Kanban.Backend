@@ -9,16 +9,9 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
-    use Illuminate\Http\JsonResponse;
-
-    use App\Http\Requests\access\AccessTaskGroupRequest;
-    use App\Http\Requests\store\StoreTaskGroupRequest;
-    use App\Http\Requests\update\UpdateTaskGroupRequest;
-
-    use OpenApi\Attributes
-        as OA;
+    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessTaskGroupRequest;use App\Http\Requests\store\StoreTaskGroupRequest;use App\Http\Requests\update\UpdateTaskGroupRequest;use Illuminate\Http\JsonResponse;use OpenApi\Attributes as OA;
 
 
     #[OA\Schema( title: 'Task Group Controller',

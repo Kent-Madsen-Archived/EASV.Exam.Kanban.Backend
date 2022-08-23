@@ -9,13 +9,8 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Route;
+    use App\Configuration;use Illuminate\Support\Facades\Route;use SettingController as SettingController;
 
-    use App\Http\Controllers\SettingController
-        as SettingController;
-
-    use App\Configuration;
     $secure = Configuration::$secure;
 
 
