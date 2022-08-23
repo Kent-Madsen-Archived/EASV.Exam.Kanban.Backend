@@ -29,7 +29,7 @@
             'users' =>
             [
                 'driver' => 'eloquent',
-                'model' => App\Models\Account::class,
+                'model' => \App\Models\Profile\Account::class,
             ],
         ],
         'passwords' =>

@@ -9,23 +9,24 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Models;
+    namespace App\Models\Projects;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;use Illuminate\Database\Eloquent\Model;
 
 
-    class TaskGroupModel
+    class ProjectTemplateModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'task_groups';
+        protected $table = 'project_templates';
         public $timestamps = true;
 
         private const column_id = 'id';
 
-        private const column_group_name = 'group_name';
+        private const column_title = 'title';
+        private const column_description = 'description';
+        private const column_implementation = 'implementation';
 
         private const column_created_at = 'created_at';
         private const column_updated_at = 'updated_at';
@@ -34,7 +35,11 @@
         protected $fillable =
         [
             self::column_id,
-            self::column_group_name,
+
+            self::column_title,
+
+            self::column_description,
+            self::column_implementation,
 
             self::column_created_at,
             self::column_updated_at
@@ -43,7 +48,7 @@
 
         protected $hidden =
         [
-            self::column_id,
+            self::column_implementation,
 
             self::column_created_at,
             self::column_updated_at
@@ -53,7 +58,11 @@
         protected $casts =
         [
             self::column_id => 'integer',
-            self::column_group_name => 'integer',
+
+            self::column_title       => 'string',
+            self::column_description => 'string',
+
+            self::column_implementation => 'collection',
 
             self::column_created_at => 'datetime:Y-m-d',
             self::column_updated_at => 'datetime:Y-m-d'

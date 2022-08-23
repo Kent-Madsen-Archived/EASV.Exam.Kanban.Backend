@@ -9,47 +9,31 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Models;
+    namespace App\Models\Projects;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;use Illuminate\Database\Eloquent\Model;
 
 
-    class ImageModel
+    class TaskGroupModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'images';
+        protected $table = 'task_groups';
         public $timestamps = true;
 
         private const column_id = 'id';
 
-        private const column_original_owner_id = 'original_owner_id';
-        private const column_origin_url = 'origin_url';
-
-        private const column_width = 'width';
-        private const column_height = 'height';
+        private const column_group_name = 'group_name';
 
         private const column_created_at = 'created_at';
         private const column_updated_at = 'updated_at';
-
-        private const column_alt = 'alt';
-        private const column_attributes = 'attributes';
 
 
         protected $fillable =
         [
             self::column_id,
-
-            self::column_original_owner_id,
-            self::column_origin_url,
-
-            self::column_width,
-            self::column_height,
-
-            self::column_alt,
-            self::column_attributes,
+            self::column_group_name,
 
             self::column_created_at,
             self::column_updated_at
@@ -60,8 +44,6 @@
         [
             self::column_id,
 
-            self::column_attributes,
-
             self::column_created_at,
             self::column_updated_at
         ];
@@ -70,15 +52,7 @@
         protected $casts =
         [
             self::column_id => 'integer',
-
-            self::column_original_owner_id  => 'integer',
-            self::column_origin_url         => 'string',
-
-            self::column_width  => 'integer',
-            self::column_height => 'integer',
-
-            self::column_alt        => 'string',
-            self::column_attributes => 'collection',
+            self::column_group_name => 'integer',
 
             self::column_created_at => 'datetime:Y-m-d',
             self::column_updated_at => 'datetime:Y-m-d'

@@ -9,49 +9,42 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Models;
+    namespace App\Models\Resources;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;use Illuminate\Database\Eloquent\Model;
 
 
-    class ImageResourceModel
+    class ImagePreviewModel
         extends Model
     {
         use HasFactory;
 
-        protected $table = 'images_resources';
+        protected $table = 'images_previews';
         public $timestamps = false;
 
         private const column_id = 'id';
-
         private const column_url = 'url';
+
         private const column_image_id = 'image_id';
 
         private const column_width = 'width';
         private const column_height = 'height';
 
-        private const column_type = 'type';
-
 
         protected $fillable =
         [
             self::column_id,
-
             self::column_url,
+
             self::column_image_id,
 
             self::column_width,
-            self::column_height,
-
-            self::column_type
+            self::column_height
         ];
 
 
         protected $hidden =
         [
-            self::column_id,
-
 
         ];
 
@@ -59,14 +52,12 @@
         protected $casts =
         [
             self::column_id => 'integer',
-
             self::column_url => 'string',
+
             self::column_image_id => 'integer',
 
             self::column_width => 'integer',
-            self::column_height => 'integer',
-
-            self::column_type => 'string'
+            self::column_height => 'integer'
         ];
     }
 ?>

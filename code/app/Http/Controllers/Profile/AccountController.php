@@ -11,26 +11,7 @@
      */
     namespace App\Http\Controllers\Profile;
 
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-    use Illuminate\Foundation\Bus\DispatchesJobs;
-    use Illuminate\Foundation\Validation\ValidatesRequests;
-    use Illuminate\Http\JsonResponse;
-    use Illuminate\Http\Request;
-    use Illuminate\Routing\Controller
-        as BaseController;
-
-    use Illuminate\Support\Facades\Hash;
-
-    use OpenApi\Attributes
-        as OA;
-
-    use App\Http\Requests\access\AccessAccountRequest;
-    use App\Http\Requests\access\global\AccessPublicRequest;
-    use App\Http\Requests\store\StoreAccountRequest;
-    use App\Http\Requests\update\UpdateAccountRequest;
-    
-    use App\Models\Account
-        as Account;
+    use App\Http\Requests\access\AccessAccountRequest;use App\Http\Requests\access\global\AccessPublicRequest;use App\Http\Requests\store\StoreAccountRequest;use App\Http\Requests\update\UpdateAccountRequest;use App\Models\Profile\Account as Account;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;use Illuminate\Foundation\Bus\DispatchesJobs;use Illuminate\Foundation\Validation\ValidatesRequests;use Illuminate\Http\JsonResponse;use Illuminate\Http\Request;use Illuminate\Routing\Controller as BaseController;use Illuminate\Support\Facades\Hash;use OpenApi\Attributes as OA;
 
 
 

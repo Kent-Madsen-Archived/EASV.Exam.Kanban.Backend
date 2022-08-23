@@ -11,15 +11,7 @@
      */
     namespace App\Http\Controllers\Projects;
 
-    use App\Http\Controllers\Controller;
-    use App\Http\Requests\access\AccessProjectRequest;
-    use App\Http\Requests\store\StoreProjectRequest;
-    use App\Http\Requests\update\UpdateProjectRequest;
-    use App\Models\ProjectModel;
-    use Illuminate\Http\JsonResponse;
-    use Illuminate\Support\Str;
-    use OpenApi\Attributes
-        as OA;
+    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessProjectRequest;use App\Http\Requests\store\StoreProjectRequest;use App\Http\Requests\update\UpdateProjectRequest;use App\Models\Projects\ProjectModel;use Illuminate\Http\JsonResponse;use Illuminate\Support\Str;use OpenApi\Attributes as OA;
 
 
     #[OA\Schema( title: 'Project Controller',
