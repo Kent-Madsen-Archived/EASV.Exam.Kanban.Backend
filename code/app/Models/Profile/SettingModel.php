@@ -11,7 +11,8 @@
      */
     namespace App\Models\Profile;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
 
 
     class SettingModel
@@ -25,7 +26,7 @@
         private const column_id = 'id';
 
         private const column_account_id = 'account_id';
-        private const column_category = 'category';
+        private const column_category   = 'category';
         private const column_attributes = 'attributes';
 
         private const column_created_at = 'created_at';
@@ -56,7 +57,7 @@
             self::column_id => 'integer',
 
             self::column_account_id => 'integer',
-            self::column_category => 'string',
+            self::column_category   => 'string',
             self::column_attributes => 'collection',
 
             self::column_created_at => 'datetime:Y-m-d',

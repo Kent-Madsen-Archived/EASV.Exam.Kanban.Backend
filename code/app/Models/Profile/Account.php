@@ -12,7 +12,14 @@
     namespace App\Models\Profile;
 
     // use Illuminate\Contracts\Auth\MustVerifyEmail;
-    use Illuminate\Database\Eloquent\Factories\HasFactory;use Illuminate\Foundation\Auth\User as Authenticatable;use Illuminate\Notifications\Notifiable;use Laravel\Sanctum\HasApiTokens;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+    use Illuminate\Foundation\Auth\User
+        as Authenticatable;
+
+    use Illuminate\Notifications\Notifiable;
+
+    use Laravel\Sanctum\HasApiTokens;
 
 
     class Account
@@ -27,15 +34,15 @@
 
         private const column_id = 'id';
 
-        private const column_name = 'name';
+        private const column_name  = 'name';
         private const column_email = 'email';
 
         private const column_username = 'username';
         private const column_password = 'password';
 
-        private const column_created_at = 'created_at';
-        private const column_email_verified_at = 'email_verified_at';
-        private const column_updated_at = 'updated_at';
+        private const column_created_at         = 'created_at';
+        private const column_email_verified_at  = 'email_verified_at';
+        private const column_updated_at         = 'updated_at';
 
         private const column_remember_token = 'remember_token';
 
