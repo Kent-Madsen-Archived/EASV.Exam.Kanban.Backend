@@ -63,6 +63,10 @@
                           ->references( 'id' )
                           ->on( 'users' );
 
+                    $table->foreign( 'team_id' )
+                          ->references( 'id' )
+                          ->on( 'teams' );
+
                     $table->foreign( 'project_id' )
                           ->references( 'id' )
                           ->on( 'projects' );

@@ -81,7 +81,6 @@
                        content:
                        [
                            new OA\JsonContent(
-
                                example: "<<<JSON \r\n" .
                                         "{ \r\n" .
                                          	"'identity': id, \r\n" .
@@ -126,7 +125,9 @@
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent(example: "<<<JSON"),
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           ),
                        ]
         )]
         #[OA\Response( response: '404',
@@ -154,13 +155,17 @@
         #[OA\Post( path: '/api/1.0.0/accounts/create',
                    tags: [ '1.0.0', '' ] )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent( example: "" )
+                  content: new OA\JsonContent(
+                      example: ""
+                  )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent(example: "<<<JSON")
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           )
                        ]
         )]
         #[OA\Response( response: '404',
@@ -192,7 +197,9 @@
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent(example: "<<<JSON")
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           )
                        ]
         )]
         #[OA\Response( response: '404',
@@ -218,13 +225,17 @@
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         #[OA\RequestBody(
-            content: new OA\JsonContent(example: "")
+            content: new OA\JsonContent(
+                example: ""
+            )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent(example: "<<<JSON")
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           )
                        ]
         )]
         #[OA\Response( response: '404',
@@ -309,7 +320,9 @@
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent(example: "<<<JSON"),
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           ),
                        ]
         )]
         #[OA\Response( response: '404',
@@ -337,7 +350,9 @@
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent( example: "<<<JSON" ),
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           ),
                        ]
         )]
         #[OA\Response( response: '404',
@@ -359,13 +374,15 @@
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
-                                description: 'bearer token - has to be included in the header of the request',
-                                in: 'header' )]
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
         #[OA\Response( response: '200',
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent( example: "<<<JSON" ),
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           ),
                        ]
         )]
         #[OA\Response( response: '404',
@@ -392,7 +409,9 @@
                        description: 'The data',
                        content:
                        [
-                           new OA\JsonContent( example: "<<<JSON" ),
+                           new OA\JsonContent(
+                               example: "<<<JSON"
+                           ),
                        ]
         )]
         #[OA\Response( response: '404',
