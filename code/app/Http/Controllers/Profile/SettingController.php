@@ -9,12 +9,14 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
+    namespace App\Http\Controllers\Profile;
 
     use Illuminate\Http\JsonResponse;
 
     use OpenApi\Attributes
         as OA;
 
+    use App\Http\Controllers\Controller;
 
     use App\Http\Requests\access\AccessSettingRequest;
     use App\Http\Requests\store\StoreSettingRequest;
@@ -25,7 +27,7 @@
                  description: '',
                  type: 'controller' )]
     class SettingController
-        extends \App\Http\Controllers\Controller
+        extends Controller
     {
         #[OA\Get( path: '/api/1.0.0/',
                   tags: [ '1.0.0', '' ] )]

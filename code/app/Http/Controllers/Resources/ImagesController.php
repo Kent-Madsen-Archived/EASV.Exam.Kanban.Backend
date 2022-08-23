@@ -11,14 +11,15 @@
      */
     namespace App\Http\Controllers\Resources;
 
-    use App\Http\Controllers\Controller;
-    use App\Http\Requests\access\AccessImageRequest;
-    use App\Http\Requests\store\StoreImageRequest;
-    use App\Http\Requests\update\UpdateImageRequest;
     use Illuminate\Http\JsonResponse;
 
     use OpenApi\Attributes
         as OA;
+
+    use App\Http\Controllers\Controller;
+    use App\Http\Requests\access\AccessImageRequest;
+    use App\Http\Requests\store\StoreImageRequest;
+    use App\Http\Requests\update\UpdateImageRequest;
 
 
     #[OA\Schema( title: 'Image Controller',

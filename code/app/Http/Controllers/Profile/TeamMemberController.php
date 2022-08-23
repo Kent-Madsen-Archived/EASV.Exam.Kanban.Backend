@@ -12,6 +12,7 @@
     namespace App\Http\Controllers\Profile;
 
     use App\Http\Controllers\Controller;
+
     use App\Http\Requests\access\AccessTeamMemberRequest;
     use App\Http\Requests\store\StoreTeamMemberRequest;
     use App\Http\Requests\update\UpdateTeamMemberRequest;
