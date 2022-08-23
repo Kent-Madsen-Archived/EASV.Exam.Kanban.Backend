@@ -9,47 +9,47 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\ImagesController
+    use App\Configuration;
+    use App\Http\Controllers\Resources\ImagesController
         as ImageController;
 
-    use App\cfg;
-    $secure = cfg::$secure;
 
-    $retrievePath = cfg::versions[ 'v1' ] . '/' .
-                    cfg::names[ 're' ] . '/' .
-                    cfg::resources[ 'img' ] . '/identity/' .
-                    cfg::urls[ 'id' ];
+    $secure = Configuration::$secure;
+
+    $retrievePath = Configuration::versions[ 'v1' ] . '/' .
+                    Configuration::names[ 're' ] . '/' .
+                    Configuration::resources[ 'img' ] . '/identity/' .
+                    Configuration::urls[ 'id' ];
     Route::get( $retrievePath,
         [ImageController::class, 'show']
     );
 
 
-    $createPath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 're' ] . '/' .
-                  cfg::resources[ 'img' ] . '/' .
-                  cfg::actions[ 'c' ];
+    $createPath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 're' ] . '/' .
+                  Configuration::resources[ 'img' ] . '/' .
+                  Configuration::actions[ 'c' ];
     Route::middleware( $secure )->post( $createPath,
         [ImageController::class, 'store']
     );
 
 
-    $updatePath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 're' ] . '/' .
-                  cfg::resources[ 'img' ] . '/' .
-                  cfg::actions[ 'u' ];
+    $updatePath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 're' ] . '/' .
+                  Configuration::resources[ 'img' ] . '/' .
+                  Configuration::actions[ 'u' ];
     Route::middleware( $secure )->patch( $updatePath,
         [ImageController::class, 'update']
     );
 
 
-    $deletePath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 're' ] . '/' .
-                  cfg::resources[ 'img' ] . '/' .
-                  cfg::actions[ 'd' ] . '/' .
-                  cfg::urls[ 'id' ];
+    $deletePath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 're' ] . '/' .
+                  Configuration::resources[ 'img' ] . '/' .
+                  Configuration::actions[ 'd' ] . '/' .
+                  Configuration::urls[ 'id' ];
     Route::middleware( $secure )->delete( $deletePath,
         [ImageController::class, 'destroy']
     );

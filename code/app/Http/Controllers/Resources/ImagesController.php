@@ -9,18 +9,18 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Resources;
 
     use Illuminate\Http\JsonResponse;
 
+    use OpenApi\Attributes
+        as OA;
+
+    use App\Http\Controllers\Controller;
     use App\Http\Requests\access\AccessImageRequest;
     use App\Http\Requests\store\StoreImageRequest;
     use App\Http\Requests\update\UpdateImageRequest;
 
-    use App\Models\ImageModel;
-
-    use OpenApi\Attributes
-        as OA;
 
     #[OA\Schema( title: 'Image Controller',
                  description: '',
@@ -39,7 +39,7 @@
 
 
         #[OA\Post( path: '/api/1.0.0/resources/images/create',
-                  tags: [ '1.0.0', '' ] )]
+                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
@@ -84,6 +84,11 @@
             //
 
             return response()->json('');
+        }
+
+        public static function generateRoutes()
+        {
+
         }
     }
 ?>

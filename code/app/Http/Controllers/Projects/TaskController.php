@@ -9,19 +9,19 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
-    use Illuminate\Support\Carbon;
     use Illuminate\Http\JsonResponse;
+    use Illuminate\Support\Carbon;
     use Illuminate\Support\Str;
+    use OpenApi\Attributes
+        as OA;
 
-    use App\Models\TaskModel;
+    use App\Http\Controllers\Controller;
     use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
-
-    use OpenApi\Attributes
-        as OA;
+    use App\Models\Projects\TaskModel;
 
 
     #[OA\Schema( title: 'Task Controller',
@@ -147,7 +147,7 @@
 
 
         #[OA\Delete( path: '/api/1.0.0/tasks/groups/delete/{id}',
-                  tags: [ '1.0.0', '' ] )]
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
@@ -172,5 +172,8 @@
 
             return response()->json( [ 'status' => 'failed' ] );
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

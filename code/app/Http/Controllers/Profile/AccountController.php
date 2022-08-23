@@ -9,41 +9,35 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Profile;
 
-
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use App\Http\Controllers\Controller;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
-
     use Illuminate\Http\JsonResponse;
-
     use Illuminate\Http\Request;
-
     use Illuminate\Routing\Controller
         as BaseController;
-
     use Illuminate\Support\Facades\Hash;
-
-
-    use App\Http\Requests\access\AccessAccountRequest;
-    use App\Http\Requests\access\global\AccessPublicRequest;
-
-    use App\Models\User
-        as Account;
-
-    use App\Http\Requests\store\StoreAccountRequest;
-    use App\Http\Requests\update\UpdateAccountRequest;
 
     use OpenApi\Attributes
         as OA;
+
+    use App\Http\Requests\access\global\AccessPublicRequest;
+    use App\Http\Requests\access\AccessAccountRequest;
+    use App\Http\Requests\store\StoreAccountRequest;
+    use App\Http\Requests\update\UpdateAccountRequest;
+
+    use App\Models\Profile\Account
+        as Account;
+
 
 
     #[OA\Schema( title: 'Account Controller',
                  description: '',
                  type: 'controller' )]
     class AccountController
-        extends BaseController
+        extends Controller
     {
         private const field_identity = 'identity';
         private const field_name = 'name';
@@ -55,12 +49,6 @@
         private const field_created_at = 'created_at';
 
         private const field_email = 'email';
-
-
-
-        use AuthorizesRequests,
-            DispatchesJobs,
-            ValidatesRequests;
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/index',
@@ -130,7 +118,9 @@
                   tags: [ '1.0.0', '' ]
         )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+            content: new OA\JsonContent(
+                example: ""
+            )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -162,7 +152,7 @@
 
 
         #[OA\Post( path: '/api/1.0.0/accounts/create',
-                  tags: [ '1.0.0', '' ] )]
+                   tags: [ '1.0.0', '' ] )]
         #[OA\RequestBody(
                   content: new OA\JsonContent( example: "" )
         )]
@@ -223,12 +213,12 @@
 
 
         #[OA\Patch( path: '/api/1.0.0/accounts/update',
-                  tags: [ '1.0.0', '' ] )]
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+            content: new OA\JsonContent(example: "")
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -275,12 +265,14 @@
 
 
         #[OA\Delete( path: '/api/1.0.0/accounts/delete',
-                  tags: [ '1.0.0', '' ] )]
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+                  content: new OA\JsonContent(
+                      example: ""
+                  )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -365,19 +357,19 @@
 
 
         #[OA\Get( path: '/api/1.0.0/',
-                          tags: [ '1.0.0', '' ] )]
+                  tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                                 description: 'bearer token - has to be included in the header of the request',
                                 in: 'header' )]
         #[OA\Response( response: '200',
-                               description: 'The data',
-                               content:
-                               [
-                                   new OA\JsonContent( example: "<<<JSON" ),
-                               ]
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
         )]
         #[OA\Response( response: '404',
-                               description: 'content not found' )]
+                       description: 'content not found' )]
         public final function verify( AccessAccountRequest $request ): JsonResponse
         {
 
@@ -390,6 +382,21 @@
             );
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function verify_now( AccessAccountRequest $request ): JsonResponse
         {
 
@@ -402,6 +409,7 @@
             );
         }
 
-
+        public static function generateRoutes()
+        {}
     }
 ?>

@@ -9,7 +9,7 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Models;
+    namespace App\Models\Resources;
 
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Model;
@@ -52,12 +52,12 @@
 
         protected $casts =
         [
-            self::column_id => 'integer',
+            self::column_id  => 'integer',
             self::column_url => 'string',
 
             self::column_image_id => 'integer',
 
-            self::column_width => 'integer',
+            self::column_width  => 'integer',
             self::column_height => 'integer'
         ];
     }
