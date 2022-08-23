@@ -11,7 +11,13 @@
      */
     namespace App\Http\Controllers\Projects;
 
-    use App\Http\Controllers\Controller;use App\Http\Requests\access\AccessProjectConfigurationRequest;use App\Http\Requests\store\StoreProjectConfigurationRequest;use App\Http\Requests\update\UpdateProjectConfigurationRequest;use Illuminate\Http\JsonResponse;use OpenApi\Attributes as OA;
+    use App\Http\Controllers\Controller;
+    use App\Http\Requests\access\AccessProjectConfigurationRequest;
+    use App\Http\Requests\store\StoreProjectConfigurationRequest;
+    use App\Http\Requests\update\UpdateProjectConfigurationRequest;
+    use Illuminate\Http\JsonResponse;
+    use OpenApi\Attributes
+        as OA;
 
 
     #[OA\Schema( title: 'Project Configuration Controller',
