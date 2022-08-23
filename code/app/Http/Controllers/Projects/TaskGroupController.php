@@ -9,16 +9,17 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\Projects;
 
     use Illuminate\Http\JsonResponse;
 
+    use OpenApi\Attributes
+        as OA;
+
+    use App\Http\Controllers\Controller;
     use App\Http\Requests\access\AccessTaskGroupRequest;
     use App\Http\Requests\store\StoreTaskGroupRequest;
     use App\Http\Requests\update\UpdateTaskGroupRequest;
-
-    use OpenApi\Attributes
-        as OA;
 
 
     #[OA\Schema( title: 'Task Group Controller',
@@ -64,7 +65,7 @@
 
 
         #[OA\Patch( path: '/api/1.0.0/tasks/groups/update',
-                  tags: [ '1.0.0', '' ] )]
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
@@ -76,7 +77,7 @@
 
 
         #[OA\Delete( path: '/api/1.0.0/tasks/groups/delete/{id}',
-                  tags: [ '1.0.0', '' ] )]
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'has to be included in the header of the request',
                         in: 'header' )]
@@ -85,5 +86,8 @@
             //
             return response()->json('');
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

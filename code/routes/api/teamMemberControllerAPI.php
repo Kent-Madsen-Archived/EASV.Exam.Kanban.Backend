@@ -9,36 +9,35 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\TeamMemberController
+    use App\Configuration;
+    use App\Http\Controllers\Profile\TeamMemberController
         as TeamMemberController;
 
-    use App\cfg;
-    $secure = cfg::$secure;
+    $secure = Configuration::$secure;
 
 
     Route::middleware( $secure )->get(
-        cfg::versions[ 'v1' ] . '/teams/members/identity/{id}',
+        Configuration::versions[ 'v1' ] . '/teams/members/identity/{id}',
         [ TeamMemberController::class, 'show' ]
     );
 
 
     Route::middleware( $secure )->post(
-        cfg::versions[ 'v1' ] . '/teams/members/create',
+        Configuration::versions[ 'v1' ] . '/teams/members/create',
         [ TeamMemberController::class, 'store' ]
     );
 
 
     Route::middleware( $secure )->patch(
-        cfg::versions[ 'v1' ] . '/teams/members/update',
+        Configuration::versions[ 'v1' ] . '/teams/members/update',
         [ TeamMemberController::class, 'update' ]
     );
 
 
     Route::middleware( $secure )->delete(
-        cfg::versions[ 'v1' ] . '/teams/members/delete/{id}',
+        Configuration::versions[ 'v1' ] . '/teams/members/delete/{id}',
         [ TeamMemberController::class, 'destroy' ]
     );
 ?>

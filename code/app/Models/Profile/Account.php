@@ -9,7 +9,7 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    namespace App\Models;
+    namespace App\Models\Profile;
 
     // use Illuminate\Contracts\Auth\MustVerifyEmail;
     use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,10 +18,11 @@
         as Authenticatable;
 
     use Illuminate\Notifications\Notifiable;
+
     use Laravel\Sanctum\HasApiTokens;
 
 
-    class User
+    class Account
         extends Authenticatable
     {
         use HasApiTokens,
@@ -33,15 +34,15 @@
 
         private const column_id = 'id';
 
-        private const column_name = 'name';
+        private const column_name  = 'name';
         private const column_email = 'email';
 
         private const column_username = 'username';
         private const column_password = 'password';
 
-        private const column_created_at = 'created_at';
-        private const column_email_verified_at = 'email_verified_at';
-        private const column_updated_at = 'updated_at';
+        private const column_created_at         = 'created_at';
+        private const column_email_verified_at  = 'email_verified_at';
+        private const column_updated_at         = 'updated_at';
 
         private const column_remember_token = 'remember_token';
 
@@ -81,8 +82,8 @@
             self::column_id => 'integer',
 
             self::column_username => 'string',
-            self::column_name => 'string',
-            self::column_email => 'string',
+            self::column_name     => 'string',
+            self::column_email    => 'string',
 
 
             self::column_remember_token => 'string',

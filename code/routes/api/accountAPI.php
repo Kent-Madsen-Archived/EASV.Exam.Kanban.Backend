@@ -9,17 +9,16 @@
      *
      * License: https://github.com/KentVejrupMadsen/EASV.Exam.Kanban.Backend/blob/main/license.md
      */
-    use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
-    use App\Http\Controllers\AccountController
+    use App\Configuration;
+    use App\Http\Controllers\Profile\AccountController
         as AccountController;
 
-    use App\cfg;
-    $secure = cfg::$secure;
+    $secure = Configuration::$secure;
 
 
-    Route::prefix( cfg::versions[ 'v1' ] )->group(
+    Route::prefix( Configuration::versions[ 'v1' ] )->group(
         function()
         {
 
@@ -27,30 +26,30 @@
     );
 
 
-    $indexPath = cfg::versions[ 'v1' ] . '/' .
-                 cfg::names[ 'ac' ] . '/index';
+    $indexPath = Configuration::versions[ 'v1' ] . '/' .
+                 Configuration::names[ 'ac' ] . '/index';
         Route::get( $indexPath,
                     [ AccountController::class, 'index' ]
     );
 
 
-    $retrievePath = cfg::versions[ 'v1' ] . '/' .
-                    cfg::names[ 'ac' ] . '/identity/{id}';
+    $retrievePath = Configuration::versions[ 'v1' ] . '/' .
+                    Configuration::names[ 'ac' ] . '/identity/{id}';
     Route::get( $retrievePath,
                 [ AccountController::class, 'show' ]
     );
 
 
-    $loginPath = cfg::versions[ 'v1' ] . '/' .
-                 cfg::names[ 'ac' ] . '/login';
+    $loginPath = Configuration::versions[ 'v1' ] . '/' .
+                 Configuration::names[ 'ac' ] . '/login';
     Route::post( $loginPath,
                  [ AccountController::class, 'login' ]
     );
 
 
-    $createPath = cfg::versions[ 'v1' ] . '/' .
-                  cfg::names[ 'ac' ] . '/' .
-                  cfg::actions[ 'c' ];
+    $createPath = Configuration::versions[ 'v1' ] . '/' .
+                  Configuration::names[ 'ac' ] . '/' .
+                  Configuration::actions[ 'c' ];
 
     Route::post( $createPath,
         [ AccountController::class, 'store' ]
@@ -60,37 +59,37 @@
     Route::middleware( $secure )->group(
         function()
         {
-            $whoAmIPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/me';
+            $whoAmIPath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/me';
             Route::get( $whoAmIPath,
                 [ AccountController::class, 'me' ]
             );
 
-            $updatePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'u' ];
+            $updatePath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/' . Configuration::actions[ 'u' ];
             Route::patch( $updatePath,
                 [ AccountController::class, 'update' ]
             );
 
-            $deletePath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/' . cfg::actions[ 'd' ];
+            $deletePath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/' . Configuration::actions[ 'd' ];
             Route::delete( $deletePath,
                 [ AccountController::class, 'delete' ]
             );
 
-            $verifyPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/verify/request';
+            $verifyPath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/verify/request';
             Route::post( $verifyPath,
                          [ AccountController::class, 'verify' ]
             );
 
-            $verifyPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/verify/now';
+            $verifyPath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/verify/now';
             Route::post( $verifyPath,
                         [ AccountController::class, 'verify_now' ]
             );
 
-            $logoutPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/logout';
+            $logoutPath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/logout';
             Route::post( $logoutPath,
                          [ AccountController::class, 'logout' ]
             );
 
-            $resetPath = cfg::versions[ 'v1' ] . '/' . cfg::names[ 'ac' ] . '/reset_tokens';
+            $resetPath = Configuration::versions[ 'v1' ] . '/' . Configuration::names[ 'ac' ] . '/reset_tokens';
             Route::post( $resetPath,
                         [ AccountController::class, 'resetTokens' ]
             );
