@@ -31,7 +31,7 @@
         private const column_author_id = 'author_id';
         private const column_project_id = 'project_id';
 
-        private const column_deadline = 'deadline';
+        private const column_deadline_at = 'deadline';
 
         private const column_created_at = 'created_at';
         private const column_updated_at = 'updated_at';
@@ -47,7 +47,7 @@
             self::column_author_id,
             self::column_project_id,
 
-            self::column_deadline,
+            self::column_deadline_at,
 
             self::column_created_at,
             self::column_updated_at,
@@ -72,12 +72,12 @@
             self::column_title       => 'string',
             self::column_description => 'string',
 
-            self::column_deadline => 'datetime:Y-m-d',
 
             self::column_author_id => 'integer',
 
-            self::column_created_at => 'datetime:Y-m-d',
-            self::column_updated_at => 'datetime:Y-m-d'
+            self::column_deadline_at => 'datetime:Y-m-d',
+            self::column_created_at  => 'datetime:Y-m-d',
+            self::column_updated_at  => 'datetime:Y-m-d'
         ];
     }
 ?>

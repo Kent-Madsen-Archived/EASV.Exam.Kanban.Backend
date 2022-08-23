@@ -23,12 +23,12 @@
         protected $table = 'projects';
         public $timestamps = true;
 
-        private const column_id = 'id';
-        private const column_title = 'title';
+        private const column_id          = 'id';
+        private const column_title       = 'title';
         private const column_description = 'description';
 
         private const column_template_id = 'template_id';
-        private const column_creator_id = 'creator_id';
+        private const column_creator_id  = 'creator_id';
 
         private const column_created_at = 'created_at';
         private const column_updated_at = 'updated_at';

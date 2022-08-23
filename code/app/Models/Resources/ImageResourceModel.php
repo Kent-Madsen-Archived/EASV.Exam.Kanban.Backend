@@ -60,10 +60,10 @@
         [
             self::column_id => 'integer',
 
-            self::column_url => 'string',
-            self::column_image_id => 'integer',
+            self::column_url        => 'string',
+            self::column_image_id   => 'integer',
 
-            self::column_width => 'integer',
+            self::column_width  => 'integer',
             self::column_height => 'integer',
 
             self::column_type => 'string'

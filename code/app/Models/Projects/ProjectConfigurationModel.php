@@ -23,7 +23,7 @@
         protected $table = 'project_configurations';
         public $timestamps = true;
 
-        private const column_id = 'id';
+        private const column_id         = 'id';
         private const column_project_id = 'project_id';
 
         private const column_attributes = 'attributes';

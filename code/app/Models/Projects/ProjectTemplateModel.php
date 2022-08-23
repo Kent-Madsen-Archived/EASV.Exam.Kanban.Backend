@@ -25,8 +25,8 @@
 
         private const column_id = 'id';
 
-        private const column_title = 'title';
-        private const column_description = 'description';
+        private const column_title          = 'title';
+        private const column_description    = 'description';
         private const column_implementation = 'implementation';
 
         private const column_created_at = 'created_at';

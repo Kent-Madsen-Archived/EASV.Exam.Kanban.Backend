@@ -52,7 +52,7 @@
 
         protected $casts =
         [
-            self::column_id => 'integer',
+            self::column_id         => 'integer',
             self::column_group_name => 'integer',
 
             self::column_created_at => 'datetime:Y-m-d',
