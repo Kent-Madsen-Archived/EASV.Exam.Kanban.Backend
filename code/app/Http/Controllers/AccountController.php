@@ -130,7 +130,9 @@
                   tags: [ '1.0.0', '' ]
         )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+            content: new OA\JsonContent(
+                example: ""
+            )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -162,7 +164,7 @@
 
 
         #[OA\Post( path: '/api/1.0.0/accounts/create',
-                  tags: [ '1.0.0', '' ] )]
+                   tags: [ '1.0.0', '' ] )]
         #[OA\RequestBody(
                   content: new OA\JsonContent( example: "" )
         )]
@@ -223,12 +225,12 @@
 
 
         #[OA\Patch( path: '/api/1.0.0/accounts/update',
-                  tags: [ '1.0.0', '' ] )]
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+            content: new OA\JsonContent(example: "")
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -275,12 +277,14 @@
 
 
         #[OA\Delete( path: '/api/1.0.0/accounts/delete',
-                  tags: [ '1.0.0', '' ] )]
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
         #[OA\RequestBody(
-                  content: new OA\JsonContent(example: "")
+                  content: new OA\JsonContent(
+                      example: ""
+                  )
         )]
         #[OA\Response( response: '200',
                        description: 'The data',
@@ -365,19 +369,19 @@
 
 
         #[OA\Get( path: '/api/1.0.0/',
-                          tags: [ '1.0.0', '' ] )]
+                  tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                                 description: 'bearer token - has to be included in the header of the request',
                                 in: 'header' )]
         #[OA\Response( response: '200',
-                               description: 'The data',
-                               content:
-                               [
-                                   new OA\JsonContent( example: "<<<JSON" ),
-                               ]
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
         )]
         #[OA\Response( response: '404',
-                               description: 'content not found' )]
+                       description: 'content not found' )]
         public final function verify( AccessAccountRequest $request ): JsonResponse
         {
 
@@ -390,6 +394,21 @@
             );
         }
 
+
+        #[OA\Get( path: '/api/1.0.0/',
+                  tags: [ '1.0.0', '' ] )]
+        #[OA\Parameter( name:'Authorization',
+                        description: 'bearer token - has to be included in the header of the request',
+                        in: 'header' )]
+        #[OA\Response( response: '200',
+                       description: 'The data',
+                       content:
+                       [
+                           new OA\JsonContent( example: "<<<JSON" ),
+                       ]
+        )]
+        #[OA\Response( response: '404',
+                       description: 'content not found' )]
         public final function verify_now( AccessAccountRequest $request ): JsonResponse
         {
 
@@ -401,7 +420,5 @@
                 ]
             );
         }
-
-
     }
 ?>
