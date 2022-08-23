@@ -87,5 +87,8 @@
             //
             return response()->json('');
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

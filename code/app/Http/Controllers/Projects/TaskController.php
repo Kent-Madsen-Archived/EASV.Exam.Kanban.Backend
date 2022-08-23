@@ -172,5 +172,8 @@
 
             return response()->json( [ 'status' => 'failed' ] );
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>

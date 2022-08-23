@@ -11,7 +11,7 @@
      */
     namespace App\Http\Controllers\Profile;
 
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use App\Http\Controllers\Controller;use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Foundation\Validation\ValidatesRequests;
     use Illuminate\Http\JsonResponse;
@@ -23,10 +23,11 @@
     use OpenApi\Attributes
         as OA;
 
-    use App\Http\Requests\access\AccessAccountRequest;
     use App\Http\Requests\access\global\AccessPublicRequest;
+    use App\Http\Requests\access\AccessAccountRequest;
     use App\Http\Requests\store\StoreAccountRequest;
     use App\Http\Requests\update\UpdateAccountRequest;
+
     use App\Models\Profile\Account
         as Account;
 
@@ -36,7 +37,7 @@
                  description: '',
                  type: 'controller' )]
     class AccountController
-        extends BaseController
+        extends Controller
     {
         private const field_identity = 'identity';
         private const field_name = 'name';
@@ -48,12 +49,6 @@
         private const field_created_at = 'created_at';
 
         private const field_email = 'email';
-
-
-
-        use AuthorizesRequests,
-            DispatchesJobs,
-            ValidatesRequests;
 
 
         #[OA\Get( path: '/api/1.0.0/accounts/index',
@@ -413,5 +408,8 @@
                 ]
             );
         }
+
+        public static function generateRoutes()
+        {}
     }
 ?>
