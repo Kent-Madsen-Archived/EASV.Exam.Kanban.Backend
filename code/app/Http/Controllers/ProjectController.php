@@ -69,7 +69,7 @@
 
 
         #[OA\Post( path: '/api/1.0.0/projects/create',
-                  tags: [ '1.0.0', '' ] )]
+                   tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
@@ -123,7 +123,7 @@
 
 
         #[OA\Patch( path: '/api/1.0.0/projects/update',
-                  tags: [ '1.0.0', '' ] )]
+                    tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]

@@ -147,7 +147,7 @@
 
 
         #[OA\Delete( path: '/api/1.0.0/tasks/groups/delete/{id}',
-                  tags: [ '1.0.0', '' ] )]
+                     tags: [ '1.0.0', '' ] )]
         #[OA\Parameter( name:'Authorization',
                         description: 'bearer token - has to be included in the header of the request',
                         in: 'header' )]
