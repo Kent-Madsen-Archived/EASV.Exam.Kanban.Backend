@@ -14,6 +14,7 @@
     use Illuminate\Http\JsonResponse;
     use Illuminate\Support\Carbon;
     use Illuminate\Support\Str;
+
     use OpenApi\Attributes
         as OA;
 
@@ -21,6 +22,7 @@
     use App\Http\Requests\access\AccessTaskRequest;
     use App\Http\Requests\store\StoreTaskRequest;
     use App\Http\Requests\update\UpdateTaskRequest;
+
     use App\Models\Projects\TaskModel;
 
 
@@ -57,7 +59,7 @@
                     [
                         'id' => $current->id,
                         'title' => $current->title,
-                        'deadline' => $current->deadline
+                        'deadline_at' => $current->deadline_at
                     ];
 
                     array_push($res, $sorted );
@@ -85,7 +87,7 @@
                     'description'   => $inpKeys[ 'description' ],
                     'author_id'     => $id,
                     'project_id'    => $inpKeys[ 'project_id' ],
-                    'deadline'      => Carbon::parse( $inpKeys[ 'deadline' ] )->toDateTimeString()
+                    'deadline_at'   => Carbon::parse( $inpKeys[ 'deadline_at' ] )->toDateTimeString()
                 ]
             );
 
@@ -119,21 +121,24 @@
 
             $model = TaskModel::where( 'id', '=', $inpKeys[ 'id' ] )->firstOrFail();
 
-            if($request->has('title')&& isset($inpKeys['title']))
+            if( $request->has( 'title' ) &&
+                isset( $inpKeys[ 'title' ] ) )
             {
-                $model->title = $inpKeys['title'];
+                $model->title = $inpKeys[ 'title' ];
                 $onChange = true;
             }
 
-            if($request->has('description')&& isset($inpKeys['description']))
+            if( $request->has( 'description' ) &&
+                isset( $inpKeys[ 'description' ] ) )
             {
-                $model->title = $inpKeys['description'];
+                $model->description = $inpKeys[ 'description' ];
                 $onChange = true;
             }
 
-            if($request->has('deadline') && isset($inpKeys['deadline']))
+            if( $request->has( 'deadline_at' ) &&
+                isset( $inpKeys[ 'deadline_at' ] ) )
             {
-                $model->title = $inpKeys['deadline'];
+                $model->deadline_at = $inpKeys[ 'deadline_at' ];
                 $onChange = true;
             }
 

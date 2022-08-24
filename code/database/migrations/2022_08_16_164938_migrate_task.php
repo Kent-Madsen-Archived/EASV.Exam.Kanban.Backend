@@ -38,7 +38,7 @@
                           ->nullable()
                           ->index();
 
-                    $table->timestamp('deadline')
+                    $table->timestamp( 'deadline_at' )
                           ->nullable()
                           ->index();
 
